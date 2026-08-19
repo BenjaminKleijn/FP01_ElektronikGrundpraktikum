@@ -1,0 +1,20 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Einleitung}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Motivation}{4}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Durchführung}{5}{section.2}%
+\contentsline {section}{\numberline {3}Auswertung}{6}{section.3}%
+\contentsline {paragraph}{\nonumberline Varianzen:}{6}{paragraph*.8}%
+\contentsline {paragraph}{\nonumberline Fehlerfortpflanzung:}{6}{paragraph*.10}%
+\contentsline {paragraph}{\nonumberline Ergebnissignifikanz:}{6}{paragraph*.12}%
+\contentsline {paragraph}{\nonumberline Fitgüte:}{7}{paragraph*.14}%
+\contentsline {subsection}{\numberline {3.I}Messungen an der Emitterschaltung}{7}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Diskussion}{9}{section.4}%
+\contentsline {section}{\nonumberline Literaturquellen}{10}{section*.17}%
+\contentsline {section}{\nonumberline Abbildungsquellen}{10}{section*.19}%
+\contentsline {section}{\numberline {A}Dimensionierungsberechnung}{11}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Emitterschaltung}{11}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Kollektorschaltung}{13}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}PID-Regler}{14}{subsection.A.3}%
+\contentsline {section}{\numberline {B}Bauteilergebnisse}{16}{appendix.B}%
+\contentsline {section}{\numberline {C}Widerstandsnormreihe E12}{17}{appendix.C}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

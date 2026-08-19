@@ -1,0 +1,208 @@
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+% ==============================================================================
+% 1. EMITTERSCHALTUNG
+% ==============================================================================
+\section{Dimensionierungsberechnung}
+Anhand vorgegebener Parameter und den theoretischen Erläuterungen sowie Gleichungen im Skript\autocite{Skript_01} wurden die Größen der zu verwendenden Bauteile sowie die anschließend im Experiment zu messenden Größen berechnet. Die Widerstände und Kondensatoren wurden hierzu an die Normreihe E12 angepasst. Alle mit \enquote{Norm} indizierten Werte (also Spannungen, etc) wurden dann sukzessive mit den genormten Bauteilgrößen berechnet. 
+Die Größen werden in diesem Format angegeben:
+\begin{flalign*}
+  \hspace*{1.5cm} X_i = f(x_i) &&&& = X_{\mathrm{Norm}}\text{[a.u.]} \quad (X_{\mathrm{theo}}\text{[a.u.]})
+\end{flalign*}
+
+\subsection{Emitterschaltung}
+\subsubsection*{Gesetzte Parameter}
+Randbedingungen (vom Aufbau vorgegebene Parameter):
+\begin{itemize}
+  \item Versorgungsspannung: $U_V = \qty{15}{\volt}$ (am Experiment eingestellt)
+  \item Stromverstärkungsfaktor: $\beta \approx 400$ (\(\defeq h_{\mathrm{FE}}\) in \cite[58]{Skript_01}, Eigenschaft des Transistors BC457C)
+  \item Basis-Emitter-Spannung: $U_{BE} \approx \qty{0.6}{\volt}$ (\(\defeq V_{\mathrm{BE}}(\mathrm{on})\) in \cite[58]{Skript_01}, Flussspannung der Silizium Diode des Transistors)
+\end{itemize}
+Gewünschte Parameter:
+\begin{itemize}
+  \item Kollektorstrom: $I_C = \qty{1}{\milli\ampere}$
+  \item Spannungsverstärkung: $V_U = 20$
+  \item Untere Grenzfrequenz: $f_{ug} = \qty{100}{\hertz}$
+\end{itemize}
+
+Berechnung des erforderlichen Basisstroms:
+\begin{flalign*}
+  &\hspace*{1.5cm} I_B = \frac{I_C}{\beta} &&&& = \qty{2.50}{\micro\ampere} \\
+  \intertext{Dimensionierung des Kollektorwiderstandes $R_C$:}
+  &\hspace*{1.5cm} R_C = \frac{U_V}{2 \cdot I_C \cdot \left(1 + \frac{1}{V_U}\right)} &&&& = \qty{6.80}{\kilo\ohm} \quad (\qty{7.14}{\kilo\ohm}) \\
+  \intertext{Berechnung der Kollektorspannung $U_C$:}
+  &\hspace*{1.5cm} U_C = R_C \cdot I_C &&&& = \qty{6.80}{\volt} \quad (\qty{7.14}{\volt}) \\
+  \intertext{Dimensionierung des Emitterwiderstandes $R_E$:}
+  &\hspace*{1.5cm} R_E = \frac{R_C}{V_U} &&&& = \qty{330.00}{\ohm} \quad (\qty{357.14}{\ohm}) \\
+  \intertext{Berechnung der Emitterspannung $U_E$:}
+  &\hspace*{1.5cm} U_E = R_E \cdot I_C &&&& = \qty{0.33}{\volt} \quad (\qty{0.36}{\volt}) \\
+  \intertext{Berechnung der Kollektor-Emitter-Spannung $U_{CE}$ im Arbeitspunkt:}
+  &\hspace*{1.5cm} U_{CE} = U_V - U_E - U_C &&&& = \qty{7.87}{\volt} \quad (\qty{7.50}{\volt}) \\
+  \intertext{Berechnung der Spannung $U_{R2}$ am unteren Widerstand des Basisspannungsteilers:}
+  &\hspace*{1.5cm} U_{R2} = U_{BE} + U_E &&&& = \qty{0.93}{\volt} \quad (\qty{0.96}{\volt}) \\
+  \intertext{Dimensionierung des unteren Spannungsteilerwiderstandes $R_2$ ($I_{R_2} \geq 5 \cdot I_B$ nach Vorgabe):}
+  &\hspace*{1.5cm} R_2 = \frac{U_{R2}}{5 \cdot I_B} &&&& = \qty{68.00}{\kilo\ohm} \quad (\qty{74.39}{\kilo\ohm}) \\
+  \intertext{Dimensionierung des oberen Spannungsteilerwiderstandes $R_1$ ($I_{R_1} \geq 6 \cdot I_B$):}
+  &\hspace*{1.5cm} R_1 = \frac{U_V - U_{R2}}{6 \cdot I_B} &&&& = \qty{820.00}{\kilo\ohm} \quad (\qty{937.99}{\kilo\ohm}) \\
+  \intertext{Berechnung der Spannung $U_{R1}$ am oberen Widerstand des Basisspannungsteilers:}
+  &\hspace*{1.5cm} U_{R1} = U_V - U_{R2} &&&& =\qty{14.07}{\volt} \quad (\qty{14.04}{\volt}) \\
+  \intertext{Berechnung des effektiven Gesamteingangswiderstandes $R_{\text{EIN}}$ der gesamten Schaltung:}
+  &\hspace*{1.5cm} R_{\text{EIN}} = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{\beta \cdot R_E}} &&&& = \qty{42.55}{\kilo\ohm} \quad (\qty{47.33}{\kilo\ohm}) \\
+  \intertext{Bestimmung des effektiven Ausgangswiderstandes $R_{\text{AUS}}$ der gesamten Schaltung:}
+  &\hspace*{1.5cm} R_{\text{AUS}} = R_C &&&& = \qty{6.80}{\kilo\ohm} \quad (\qty{7.14}{\kilo\ohm}) \\
+  \intertext{Dimensionierung der Eingangskapazität $C_{\text{EIN}}$ für die untere Grenzfrequenz $f_{ug}$, anschließendes Verdreifachen aus Sicherheitsgründen:}
+  &\hspace*{1.5cm} C_{\text{EIN}} = \frac{1}{2 \cdot \pi \cdot R_{\text{EIN}} \cdot f_{ug}} &&&& = \qty{100.00}{\nano\farad} \quad (\qty{33.63}{\nano\farad}) \\
+  \intertext{Dimensionierung der Ausgangskapazität $C_{\text{AUS}}$ für die untere Grenzfrequenz $f_{ug}$ und Überdimensionierung aus Sicherheitsgründen:}
+  &\hspace*{1.5cm} C_{\text{AUS}} = \frac{1}{2 \cdot \pi \cdot R_{\text{AUS}} \cdot f_{ug}} &&&& = \qty{1.00}{\micro\farad} \quad (\qty{222.82}{\nano\farad})\\
+  \intertext{erneutes Berechnen der unteren Grenzfrequenz mit neu gewählter Kapazität:}
+  &\hspace*{1.5cm} f_{ug}=(2\pi\cdot R_{\text{EIN}} \cdot C_{\text{EIN}})^{-1} &&&& =\qty{37.40}{\hertz}
+\end{flalign*}
+
+% ==============================================================================
+% 2. KOLLEKTORSCHALTUNG
+% ==============================================================================
+\subsection{Kollektorschaltung}
+\subsubsection*{Randbedingungen/gewünschte Parameter}
+\begin{multicols}{2}
+\begin{itemize}
+  \item Versorgungsspannung: $U_V = \qty{15}{\volt}$
+  \item Stromverstärkungsfaktor: $\beta = 400$
+  \item Basis-Emitter-Spannung: $U_{BE} = \qty{0.6}{\volt}$
+  \item Untere Grenzfrequenz: $f_{ug} = \qty{100}{\hertz}$
+  \item Emitterstrom / Kollektorstrom: $I_E = I_C = \qty{15}{\milli\ampere}$  
+\end{itemize}
+\end{multicols}
+Berechnung des erforderlichen Basisstroms:
+\begin{flalign*}
+  &\hspace*{1.5cm} I_B = \frac{I_C}{\beta} &&&& = \qty{37.50}{\micro\ampere} \\
+  \intertext{Dimensionierung des Emitterwiderstandes $R_E$ für $U_V/2$ am Emitter:}
+  &\hspace*{1.5cm} R_E = \frac{U_V}{2 \cdot I_C} &&&& = \qty{470.00}{\ohm} \quad (\qty{500.00}{\ohm}) \\
+  \intertext{Berechnung der effektiven Emitterspannung $U_E$:}
+  &\hspace*{1.5cm} U_E = R_E \cdot I_C &&&& = \qty{7.05}{\volt} \quad (\qty{7.50}{\volt}) \\
+  \intertext{Berechnung der Basisspannung $U_{R2}$:}
+  &\hspace*{1.5cm} U_{R2} = \frac{U_V}{2} + U_{BE} &&&& = \qty{8.10}{\volt} \\
+  \intertext{Dimensionierung des unteren Spannungsteilerwiderstandes $R_2$:}
+  &\hspace*{1.5cm} R_2 = \frac{U_{R2}}{5 \cdot I_B} &&&& = \qty{39.00}{\kilo\ohm} \quad (\qty{43.20}{\kilo\ohm}) \\
+  \intertext{Dimensionierung des oberen Spannungsteilerwiderstandes $R_1$:}
+  &\hspace*{1.5cm} R_1 = \frac{U_V - U_{R2}}{6 \cdot I_B} &&&& = \qty{27.00}{\kilo\ohm} \quad (\qty{30.67}{\kilo\ohm}) \\
+  \intertext{Berechnung des effektiven Gesamteingangswiderstandes $R_{\text{EIN}}$ der gesamten Schaltung:}
+  &\hspace*{1.5cm} R_{\text{EIN}} = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{\beta \cdot R_E}} &&&& = \qty{14.71}{\kilo\ohm} \quad (\qty{16.46}{\kilo\ohm}) \\
+  \intertext{Bestimmung des effektiven Ausgangswiderstandes $R_{\text{AUS}}$ der gesamten Schaltung:}
+  &\hspace*{1.5cm} R_{\text{AUS}} = R_E &&&& = \qty{470.00}{\ohm} \quad (\qty{500.00}{\ohm}) \\
+  \intertext{Dimensionierung der Eingangskapazität $C_{\text{EIN}}$ und Überdimensionierung aus Sicherheitsgründen:}
+  &\hspace*{1.5cm} C_{\text{EIN}} = \frac{1}{2 \cdot \pi \cdot R_{\text{EIN}} \cdot f_{ug}} &&&& = \qty{220.00}{\nano\farad} \quad (\qty{96.70}{\nano\farad}) \\
+  \intertext{Dimensionierung der Ausgangskapazität $C_{\text{AUS}}$ für die untere Grenzfrequenz $f_{ug}$ und Überdimensionierung aus Sicherheitsgründen:}
+  &\hspace*{1.5cm} C_{\text{AUS}} = \frac{1}{2 \cdot \pi \cdot R_{\text{AUS}} \cdot f_{ug}} &&&& = \qty{10.00}{\micro\farad} \quad (\qty{3.18}{\micro\farad})
+  \intertext{erneutes Berechnen der unteren Grenzfrequenz mit neu gewählter Kapazität:}
+  &\hspace*{1.5cm} f_{ug}=(2\pi\cdot R_{\text{EIN}}\cdot C_{\text{EIN}})^{-1}&&&&=\qty{49.10}{\hertz}
+\end{flalign*}
+\todo{warum wurde für R1 nicht 33 kO benutzt, das ist näher?}
+
+% ==============================================================================
+% 3. PID-REGLER
+% ==============================================================================
+\subsection{PID-Regler}
+\subsubsection*{Gesetzte Parameter}
+\begin{itemize}
+  \item Widerstände: $R_2 = \qty{1.5}{\kilo\ohm}$, $R_5 = \qty{1}{\kilo\ohm}$, $R_7 = \qty{470}{\kilo\ohm}$, $R_8 = \qty{12}{\kilo\ohm}$, $R_{10} = \qty{100}{\kilo\ohm}$, $R_{17} = \qty{100}{\kilo\ohm}$, $R_{18} = \qty{2.2}{\kilo\ohm}$, $R_{23} = \qty{10}{\kilo\ohm}$, $R_{25} = \qty{10}{\kilo\ohm}$
+  \item Kapazität D-Glied: $C_4 = \qty{220}{\nano\farad}$
+  \item Grenzfrequenz / Verstärkung: $\omega_g = \qty{10}{\per\second}$, $V_{\min} = 1.15$
+  \item Reglerkenngrößen: $K_{0,\min} = 1$, $K_{P,\min} = 1.5$, $K_{I,\min} = \qty{10}{\per\second}$, $K_{D,\min} = \qty{0.001}{\second}$
+\end{itemize}
+
+Dimensionierung der Tiefpasskapazität $C_6$ zur Istwertanpassung:
+\begin{flalign*}
+  &\hspace*{1.5cm} C_6 = \frac{1}{\omega_g \cdot R_{17}} &&&& = \qty{1.00}{\micro\farad} \\
+  \intertext{Dimensionierung von $R_{19}$ für den nicht-invertierenden Verstärker:}
+  &\hspace*{1.5cm} R_{19} = \frac{R_{18}}{V_{\min} - 1} &&&& = \qty{15.00}{\kilo\ohm} \quad (\qty{14.67}{\kilo\ohm}) \\
+  \intertext{Symmetrische Widerstände des Subtrahierers:}
+  &\hspace*{1.5cm} R_{21} = R_{22} = R_{24} = R_{23} &&&& = \qty{10.00}{\kilo\ohm} \\
+  \intertext{Dimensionierung des Eingangswiderstandes $R_1$ für das P-Glied:}
+  &\hspace*{1.5cm} R_1 = \frac{P_{1,\min} + R_2}{K_{P,\min}} &&&& = \qty{1.00}{\kilo\ohm} \\
+  \intertext{Dimensionierung des Widerstandes $R_6$ für das I-Glied:}
+  &\hspace*{1.5cm} R_6 = K_{0,\min} \cdot R_5 + P_{2,\min} &&&& = \qty{1.00}{\kilo\ohm} \\
+  \intertext{Dimensionierung des Integrierkondensators $C_5$:}
+  &\hspace*{1.5cm} C_5 = \frac{P_{2,\min} + R_6}{R_5 \cdot R_7 \cdot K_{I,\min}} &&&& = \qty{220.00}{\nano\farad} \quad (\qty{212.77}{\nano\farad}) \\
+  \intertext{Dimensionierung des Eingangswiderstandes $R_4$ für das D-Glied:}
+  &\hspace*{1.5cm} R_4 = \frac{K_{D,\min}}{C_4} &&&& = \qty{4.70}{\kilo\ohm} \quad (\qty{4.55}{\kilo\ohm}) \\
+  \intertext{Symmetrie-Widerstände für Inverter-Stufen:}
+  &\hspace*{1.5cm} V=-1=\frac{R_{26}}{R_{25}}\implies R_{26} = R_{25} &&&& = \qty{10.00}{\kilo\ohm} \\
+  &\hspace*{1.5cm} V=-1=\frac{R_{9}}{R_{8}}\implies R_9 = R_8 &&&& = \qty{12.00}{\kilo\ohm} \\
+  \intertext{Widerstände des Summierers / Addierers:}
+  &\hspace*{1.5cm} U_s=\underbrace{\frac{R_{13}}{R_{10}}}_{=1}U_P+\underbrace{\frac{R_{13}}{R_{R_{11}}}}_{=100}U_I+\underbrace{\frac{R_{13}}{R_{12}}}_{=1}U_D\implies R_{12} = R_{13} = R_{10} &&&& = \qty{100.00}{\kilo\ohm}\\
+  &\hspace*{1.5cm} \implies R_{11}=\frac{R_{13}}{100}&&&&=\qty{1.00}{\kilo\ohm}
+\end{flalign*}   
+
+\section{Bauteilergebnisse}
+\sisetup{
+  table-format = 6.2,           % Globales Zahlenformat (3 Vorkommastellen, 2 Nachkommastellen)
+  table-number-alignment = center, % Alignment für S-Spalten (z. B. center, right)
+  % Falls du \qty direkt in S-Spalten nutzt:
+}
+Hier werden noch einmal kurz übersichtlich nur bauteilspezifische Größen aufgelistet, also Widerstände und Kapazitäten der zu verlötenden Widerstände. Für die Kollektor- und Emitterschaltung wurden die Kapazitätswerte überdimensioniert und der passendste Normwert ausgewählt. Bei der PID-Schaltung ist keine sicherheitsmotivierte Anpassung der Kapazitätswerte notwendig.
+\begin{table}[htbp]
+  \centering
+  \caption{Dimensionierung der Widerstände und Kapazitäten der Emitterschaltung}
+  \begin{tabularx}{0.8\textwidth}{@{\hspace{0.5cm}} L  @{\extracolsep{\fill}} S @{\extracolsep{\fill}} S }
+    \toprule
+    \text{Bauteil} & {\text{theoretisch}} & {\text{Normreihe}} \\
+    \midrule
+    R_C \, [\unit{\kilo\ohm}]       & 7.14   & 6.80 \\
+    R_E \, [\unit{\ohm}]            & 357.14 & 330.00 \\
+    R_1 \, [\unit{\kilo\ohm}]       & 936.19 & 820.00 \\
+    R_2 \, [\unit{\kilo\ohm}]       & 76.57  & 68.00 \\
+    C_{\text{EIN}} \, [\unit{\nano\farad}] & 33.63  & 100.00 \\
+    C_{\text{AUS}} \, [\unit{\nano\farad}] & 222.82 & 1000.00 \\
+    \bottomrule
+  \end{tabularx}
+  \label{table:emitterschaltung}  
+\end{table}
+
+\begin{table}[htb]
+  \centering
+  \caption{Dimensionierung der Widerstände und Kapazitäten der Kollektorschaltung}
+  \begin{tabularx}{0.8\textwidth}{@{\hspace{0.5cm}} L  @{\extracolsep{\fill}} S  @{\extracolsep{\fill}} S}
+    \toprule
+    \text{Bauteil} & {\text{theoretisch}} & {\text{Normreihe}} \\
+    \midrule
+    R_E \, [\unit{\ohm}]            & 500.00 & 470.00 \\
+    R_1 \, [\unit{\kilo\ohm}]       & 30.67  & 27.00 \\
+    R_2 \, [\unit{\kilo\ohm}]       & 43.20  & 39.00 \\
+    C_{\text{EIN}} \, [\unit{\nano\farad}] & 96.70  & 220.00 \\
+    C_{\text{AUS}} \, [\unit{\nano\farad}] & 3183.10 & 10000.00 \\
+    \bottomrule
+  \end{tabularx}
+  \label{table:kollektorschaltung}  
+\end{table}
+
+\begin{table}[htb]
+  \centering
+  \caption{Dimensionierung der Widerstände und Kapazitäten der PID-Schaltung}
+  \begin{tabularx}{0.8\textwidth}{@{\hspace{0.5cm}} L @{\extracolsep{\fill}} S @{\extracolsep{\fill}} S}
+    \toprule
+    \text{Bauteil} & {\text{theoretisch}} & {\text{Normreihe}} \\
+    \midrule
+    R_1 \, [\unit{\kilo\ohm}]       & 1.00   & 1.00 \\
+    R_4 \, [\unit{\kilo\ohm}]       & 4.55   & 4.70 \\
+    R_6 \, [\unit{\kilo\ohm}]       & 1.00   & 1.00 \\
+    R_9 \, [\unit{\kilo\ohm}]       & 12.00  & 12.00 \\
+    R_{11} \, [\unit{\kilo\ohm}]    & 1.00   & 1.00 \\
+    R_{12}, R_{13} \, [\unit{\kilo\ohm}] & 100.00 & 100.00 \\
+    R_{19} \, [\unit{\kilo\ohm}]    & 14.67  & 15.00 \\
+    R_{21}, R_{22}, R_{24} \, [\unit{\kilo\ohm}] & 10.00 & 10.00 \\
+    R_{26} \, [\unit{\kilo\ohm}]   & 10.00  & 10.00 \\
+    C_5 \, [\unit{\nano\farad}]     & 212.77 & 220.00 \\
+    C_6 \, [\unit{\nano\farad}]     & 1000.00 & 1000.00 \\
+    \bottomrule
+  \end{tabularx}
+  \label{table:pid_schaltung}  
+\end{table}
+
+\section{Widerstandsnormreihe E12}
+\label{sec:E12}
+Nach Skript\autocite{Skript_01} sind \enquote{Widerstände [\dots] in internationalen Normreihen klassifiziert.} Die theoretisch berechneten Werte werden also an die zur Verfügung stehenden Normwerte angepasst, indem der Normwert mit der kleinsten Abweichung verwendet wurde. Es steht für Widerstände die Normreihe E12 zur Verfügung:
+\[(\numlist{1.0;1.2;1.5;1.8;2.2;2.7;3.3;3.9;4.7;5.6;6.8;8.2})\cdot 10^{0}-10^{5}\;\unit{\ohm}\]
+
+% \section{Code-Anhang}
+% Bei den Funktionen habe ich teilweise Dinge von verschiedenen Altprotokollen zusammengesucht, und auf meine Bedürfnisse umgeschrieben. Die konkreten Berechnung sind dann eigenständig.
+% \includepdf[pages=-]{../Code/241/241.pdf}
