@@ -1,0 +1,20 @@
+# LaTeX Hilfsdateien
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Literaturverzeichnis (BibTeX / Biber)
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*-SAVE-ERROR
+
+# PDFs (optional)
+*.pdf

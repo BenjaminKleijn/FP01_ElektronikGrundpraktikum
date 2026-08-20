@@ -15,7 +15,7 @@
        U_{\text{CE}}\;[\unit{\volt}] & \num{6.820(0.014)} & 7.87 & \num{1.050(0.014)} & \num{15.40(0.20)} & 80.0 \\
        U_{\text{BE}}\;[\unit{\volt}] & \num{0.6220(0.0014)} & 0.6 & \num{0.0220(0.0014)} & \num{3.54(0.22)} & 17.0 \\
        U_{\text{C}}\;[\unit{\volt}] & \num{7.780(0.014)} & 6.8 & \num{0.980(0.014)} & \num{12.60(0.18)} & 80.0 \\
-       I_{\text{C}}\;[\unit{\milli\ampere}] & \num{1.40(21)} & 1 & \num{0.40(21)} & \num{29(16)} & 2.0 \\
+       I_{\text{C}}\;[\unit{\milli\ampere}] & \num{1.140(5)} & 1 & \num{0.140(5)} & \num{12.3(5)} & 30.0 \\
        U_{\text{E}}\;[\unit{\volt}] & \num{0.370(0.011)} & 0.33 & \num{0.040(0.011)} & \num{11(3)} & 4.0 \\
        U_{R_1}\;[\unit{\volt}] & \num{13.930(0.017)} & 14.07 & \num{0.140(0.017)} & \num{1.01(0.13)} & 9.0 \\
        U_{R_2}\;[\unit{\volt}] & \num{0.9910(0.0015)} & 0.93 & \num{0.0610(0.0015)} & \num{6.16(0.16)} & 50.0 \\
@@ -23,6 +23,12 @@
 \end{tabularx}
 \label{table:Vergleich_emitter} 
 \end{table}
+Die Stromstärke \(I_C\) wurde folgend berechnet:
+\begin{align}
+  I_C=\frac{U_C}{R_C}&&\Delta I_C=I_C\sqrt{\frac{\Delta{R_C}^{2}}{R_C^{2}} + \frac{\Delta{U_C}^{2}}{U_C^{2}}}
+  \label{eq:Stromstärke_fehler}
+\end{align}
+
 Offensichtlicherweise basieren die berechneten Werte auf Annahmen, die nur ungefähr getroffen wurden: \(\beta=400\) und \(U_{\text{BE}}=\qty{0.6}{\volt}\) aus der Berechnung entsprechen nicht den realen Werten aus dem Datasheet. Es gibt für diese beiden Werte keine exakten Angaben (\(U_{\text{CE}}\) und \(I_C\) abhängig, temperaturabhängig), die absolute Abweichung zwischen gewollter und experimentell vorliegender Kapazität ist auch unbekannt. Dadurch können die berechneten Werte gar nicht exakt dem untersuchten System entsprechen, was eine größere absolute Abweichung zwischen calc und exp Werten zur Folge hat. Diese Abweichung ist jedoch in der Interpreation der Sigma-Abweichungen zu vernachlässigen, denn die absoluten Abweichungen sind stets gering, die Größenordnung der berechneten Werte ist natürlich richtig. Der weitaus dominierende Grund für die hohen Sigma-Abweichungen ist der winzige Fehler, der sich bisher nur aus dem Messfehler des Multimeters zusammensetzt. Faktoren wie Temperatur,  
 
 \paragraph{Frequenzgang}
@@ -38,7 +44,56 @@ Aus dem Diagramm erhalten wir die Grenzfrequenz $\boxed{f_\text{ug}=31.2 \, \tex
 \subsubsection{Gleichstromgegenkopplung}
 siehe \href{Messprotokoll}{Messprotokoll}.
 
-\subsection{Kollektorschaltung}
+
+\paragraph{Verstärkung}
+Mithilfe folgender Abbildung konnte die Verstärkung der Emitterschaltung bei einer beliebigen, sinusförmigen Wechselspannungsfrequenz \(f =\qty{5}{\kilo\hertz}\gg f_{ug}\) mit einer Spitzen-Spitzen Spannung von \(V_{pp}=\qty{500}{\milli\volt}\) bestimmt werden. Hierbei liegt an Channel 1 (gelb) der Ausgang der Emitterschaltung, und an Channel 2 (blau) der Ausgang des Frequenzgenerators an. 
+\xfigure{htbp}{width=0.7\textwidth}{Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg}{Emitterschaltung: Verstärkung und Phasenverschiebung}{Emitterschaltung: Verstärkung und Phasenverschiebung}
+
+Die vom Oszilloskop gemittelten (\enquote{Mean}) Amplitudenwerte (= Spitzen-Spitzen Spannungen der detektierten Wechselspannungen) werden folgend als Ein (CH2)- und Ausgangsspannung (CH1) \(U_E,\;U_A\) bezeichnet. Die Fehler \(\Delta U_{E,A}\) werden den durch das Oszilloskop berechneten Standardabweichungen (\enquote{Std Dev}) entnommen.
+\begin{align}
+  V=\frac{U_A}{U_E}&&\Delta V=V\sqrt{\left(\frac{\Delta U_A}{U_A}\right)^2+\left(\frac{\Delta U_E}{U_E}\right)^2}&&\tcbhighmath{V_{\qty{5}{\kilo\hertz}}=\num{19.40(0.13)}}
+\end{align}
+\paragraph{Phasenverschiebung:} Da maximal nur 4 Messparameter am Bildschirm des Oszi angezeigt werden können, wurde anschließend der Messparameter \enquote{Phase} hinzugefügt, der die Phasenverschiebung der zwei Signale zeigt. Von diesem Bildschirm wurde jedoch kein Bild aufgenommen, aber der im Protokoll notierte Wert ist konsistent mit dem in \cref{fig:Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg} zu sehenden Wert: \(\tcbhighmath{\Phi=\ang{177(8)}}\).
+\paragraph{Ansteuerbereich:} Die maximale einstellbare Amplitude, bevor das CH1 Signal des Emitters in Sättigung geht, beträgt \(U_{E,\text{max}}=\qty{800}{\milli\volt}\).
+
+\todo{Phasenverschiebungsfehler im Protokoll adden}
+
+\subsubsection{Untersuchung des Eingangs- und Ausgangswiderstand}
+Mithilfe des Potentiometerkastens und diverser Verkabelungen (siehe \nameref{Messprotokoll}) konnten der Eingangs- und Ausgangswiderstand bestimmt und dann mithilfe der in \secref{sec:Dimensionierung} berechneten Werte verglichen werden:
+\begin{table}[htbp]
+\centering
+\caption{Vergleich von $R_{\text{exp}}$ und $R_{\text{calc.}}$ für \(R_{\text{EIN, AUS}}\)}
+\begin{tabularx}{\textwidth}{ZZZZZS[table-format=1.2]}
+    \toprule
+         \text{Messreihe} & R_{\text{exp}}[\unit{\kilo\ohm}] & R_{\text{calc.}}[\unit{\kilo\ohm}] & \text{abs.Abw.}[\unit{\kilo\ohm}] & \text{proz.Abw.}[\unit{\percent}] & {\(S[\sigma]\)} \\\midrule
+       R_{\text{EIN}} & \num{42.5(2.2)} & 42.55 & \num{0.0(2.2)} & \num{0(6)} & 0.01 \\
+       R_{\text{AUS}} & \num{6.9(0.4)} & 6.8 & \num{0.1(0.4)} & \num{2(6)} & 0.4 \\
+\bottomrule
+\end{tabularx}
+\label{table:Vergleich_emitter_R_EIN} 
+\end{table}
+
+\subsection{Messungen an der Kollektorschaltung}
+\begin{table}[htbp]
+\centering
+\caption{Vergleich der experimentellen und berechneten Messwerte an der Kollektorschaltung}
+\begin{tabularx}{\textwidth}{LZZZZS[table-format =2.1]}
+    \toprule
+         \text{Messreihe} & x_{\text{exp}} & x_{\text{calc.}} & \text{abs. Abw.}& \text{proz. Abw.}[\unit{\percent}] & {\(S[\sigma]\)} \\\midrule
+       R_E\;[\unit{\ohm}] & \num{471.9(1.1)} & 470.0 & \num{1.9(1.1)} & \num{0.40(0.23)} & 1.9 \\
+       R_1\;[\unit{\kilo\ohm}]  & \num{26.940(70)} & 27.0 & \num{0.060(70)} & \num{0.22(0.24)} & 1.0 \\
+       R_2 \;[\unit{\kilo\ohm}] & \num{38.400(90)} & 39.0 & \num{0.600(90)} & \num{1.56(0.23)} & 7.0 \\
+       U_{\text{E}}\;[\unit{\volt}] & \num{7.700(0.014)} & 7.05 & \num{0.650(0.014)} & \num{8.44(0.19)} & 50.0 \\
+       I_{\text{E}}\;[\unit{\milli\ampere}] & \num{16.32(5)} & 15 & \num{1.32(5)} & \num{8.1(0.4)} & 30.0 \\
+       U_{\text{BE}}\;[\unit{\volt}] & \num{0.6790(0.0014)} & 0.6 & \num{0.0790(0.0014)} & \num{11.63(0.20)} & 60.0 \\
+       U_{R_1}\;[\unit{\volt}] & \num{6.590(0.014)} & 6.9 & \num{0.310(0.014)} & \num{4.70(0.21)} & 24.0 \\
+       U_{R_2}\;[\unit{\volt}] & \num{8.380(0.015)} & 8.1 & \num{0.280(0.015)} & \num{3.34(0.17)} & 20.0 \\
+\bottomrule
+\end{tabularx}
+\label{table:Vergleich_kollektor} 
+\end{table}
+\(I_E\) wurde analog zu \cref{eq:Stromstärke_fehler} berechnet. 
+
 
 
 
