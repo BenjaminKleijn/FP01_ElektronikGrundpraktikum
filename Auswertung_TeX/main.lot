@@ -1,6 +1,8 @@
 \babel@toc {ngerman}{}\relax 
 \contentsline {table}{\numberline {3.1}{\ignorespaces Vergleich der experimentellen und berechneten Messwerte an der Emitterschaltung}}{7}{table.caption.15}%
-\contentsline {table}{\numberline {B.1}{\ignorespaces Dimensionierung der Widerstände und Kapazitäten der Emitterschaltung}}{16}{table.caption.24}%
-\contentsline {table}{\numberline {B.2}{\ignorespaces Dimensionierung der Widerstände und Kapazitäten der Kollektorschaltung}}{16}{table.caption.25}%
-\contentsline {table}{\numberline {B.3}{\ignorespaces Dimensionierung der Widerstände und Kapazitäten der PID-Schaltung}}{16}{table.caption.26}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Vergleich von $R_{\text {exp}}$ und $R_{\text {calc.}}$ für \(R_{\text {EIN, AUS}}\)}}{9}{table.caption.24}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Vergleich der experimentellen und berechneten Messwerte an der Kollektorschaltung}}{9}{table.caption.25}%
+\contentsline {table}{\numberline {B.1}{\ignorespaces Dimensionierung der Widerstände und Kapazitäten der Emitterschaltung}}{17}{table.caption.34}%
+\contentsline {table}{\numberline {B.2}{\ignorespaces Dimensionierung der Widerstände und Kapazitäten der Kollektorschaltung}}{17}{table.caption.35}%
+\contentsline {table}{\numberline {B.3}{\ignorespaces Dimensionierung der Widerstände und Kapazitäten der PID-Schaltung}}{17}{table.caption.36}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
