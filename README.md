@@ -1,5 +1,7 @@
 local main = main 
+
 remote main = origin/main
+
 local branch = Benjamin 
 remote branch = origin/Benjamin  dient nur als Cloud Backup für die lokalen Änderungen
 
