@@ -1,15 +1,15 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1787164216.88768 -1
-  "../../latex_class/lit.bib" 1786999656 26347 8fd5122f4537f18f5d321ef73f856a52 ""
-  "main.bcf" 1787164216 108746 30d5041ac03739ee27890c2895c6e7d0 "pdflatex"
+["biber main"] 1787220208.41114 "main.bcf" "main.bbl" "main" 1787220250.525 0
+  "../latex_class/lit.bib" 1786999656 26347 8fd5122f4537f18f5d321ef73f856a52 ""
+  "main.bcf" 1787220249 108743 07bc2f58c1f14d6efa031fe461ea9a6f "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1787164206.71858 "c:/Users/samue/OneDrive/Dokumente/FP/01_Elektronik/Auswertung_TeX/main.tex" "main.pdf" "main" 1787164216.88973 0
-  "../../latex_class/PAPclass.cls" 1787162609 14435 3f64bc75d45d5a344bbd84d05e33ef1e ""
-  "../../latex_class/Statistik.tex" 1787157065 3251 30022409d4fcc975512db2076e87f8e1 ""
-  "../../latex_class/cmds.tex" 1786623839 5908 22d51d30871b17de9e9144e6c5a442cd ""
+["pdflatex"] 1787220238.24437 "c:/Users/samue/OneDrive/Dokumente/FP01/Auswertung_TeX/main.tex" "main.pdf" "main" 1787220250.52712 0
+  "../latex_class/PAPclass.cls" 1787162609 14435 3f64bc75d45d5a344bbd84d05e33ef1e ""
+  "../latex_class/Statistik.tex" 1787157065 3251 30022409d4fcc975512db2076e87f8e1 ""
+  "../latex_class/cmds.tex" 1786623839 5908 22d51d30871b17de9e9144e6c5a442cd ""
   "C:/Users/samue/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1785676760 82870 ad3ba9618e357d4c249e3b039d4094b9 ""
   "C:/Users/samue/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1774448279 13257343 aabf5b22af3a829df39e99d22d3e3797 ""
   "C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -340,19 +340,19 @@
   "C:/Users/samue/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "a_content/1_einleitung.tex" 1787037529 23 6a27c945d34bc505b7428682c421a5ee ""
   "a_content/2_durchfuehrung.tex" 1787161060 1147 e51ee83be470dd944e4479592bb8cbf0 ""
-  "a_content/3_auswertung.tex" 1787164205 2975 19889949263f24bfe443e87a6367633d ""
+  "a_content/3_auswertung.tex" 1787220003 2989 bab4f7003e2f232fc49d0b5ccfae7166 ""
   "a_content/4_diskussion.tex" 1786976957 0 d41d8cd98f00b204e9800998ecf8427e ""
   "a_content/Anhang.tex" 1787160592 14667 ddc92e04b6857d6ce880e35b11242e0a ""
   "a_content/titlepage.tex" 1786977049 878 af8e6a4ca3b08e27309210187b46fd39 ""
-  "c:/Users/samue/OneDrive/Dokumente/FP/01_Elektronik/Auswertung_TeX/main.tex" 1787142001 4309 3c9b4874cb66927857dfee75bea08e48 ""
+  "c:/Users/samue/OneDrive/Dokumente/FP01/Auswertung_TeX/main.tex" 1787220194 4297 713cd9f3d68ae963ec07592135dfe2dc ""
   "images/Memefilled.png" 1783767074 24595 2804e45d035d87d3bb672302b6b12efe ""
-  "main.aux" 1787164215 12696 42e00c7d08002c63befa27459b12f0a7 "pdflatex"
-  "main.bbl" 1787161955 3311 542a76c8b1b0321bab171b4ea19bda7c "biber main"
-  "main.lof" 1787164216 198 982bbd351c33ba6ef2b1f1117afe33cc "pdflatex"
-  "main.lot" 1787164216 702 884ecb885d6e0860d96034e4d7043137 "pdflatex"
-  "main.run.xml" 1787164216 2471 3813c479821486891c58a6be4a086b05 "pdflatex"
-  "main.tex" 1787142001 4309 3c9b4874cb66927857dfee75bea08e48 ""
-  "main.toc" 1787164216 1474 b5e0539f090f297754af0168aa7fbf83 "pdflatex"
+  "main.aux" 1787220249 12696 42e00c7d08002c63befa27459b12f0a7 "pdflatex"
+  "main.bbl" 1787220213 3311 542a76c8b1b0321bab171b4ea19bda7c "biber main"
+  "main.lof" 1787220249 198 982bbd351c33ba6ef2b1f1117afe33cc "pdflatex"
+  "main.lot" 1787220249 702 884ecb885d6e0860d96034e4d7043137 "pdflatex"
+  "main.run.xml" 1787220249 2468 d40aeaf4888649b652c7b8a69120f1d6 "pdflatex"
+  "main.tex" 1787220194 4297 713cd9f3d68ae963ec07592135dfe2dc ""
+  "main.toc" 1787220249 1474 b5e0539f090f297754af0168aa7fbf83 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"
