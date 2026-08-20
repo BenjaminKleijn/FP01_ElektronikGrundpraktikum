@@ -1,13 +1,17 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.3.25)  19 AUG 2026 20:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.3.25)  20 AUG 2026 12:03
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/samue/OneDrive/Dokumente/FP/01_Elektronik/Auswertung_TeX/main.tex
-(c:/Users/samue/OneDrive/Dokumente/FP/01_Elektronik/Auswertung_TeX/main.tex
+**c:/Users/samue/OneDrive/Dokumente/FP01/Auswertung_TeX/main.tex
+(c:/Users/samue/OneDrive/Dokumente/FP01/Auswertung_TeX/main.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
-(../../latex_class/PAPclass.cls
+(../latex_class/PAPclass.cls
+
+LaTeX Warning: You have requested document class `../latex_class/PAPclass',
+               but the document class provides `../../latex_class/PAPclass'.
+
 Document Class: ../../latex_class/PAPclass Stand 2.08.2026
 (C:\Users\samue\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrartcl.cls
 Document Class: scrartcl 2025/08/28 v3.47 KOMA-Script document class (article)
@@ -1366,7 +1370,7 @@ Package: todonotes 2024/01/05
 File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 \c@@todonotes@numberoftodonotes=\count542
-)) (../../latex_class/cmds.tex)
+)) (../latex_class/cmds.tex)
 Package scrkbase Info: You've told me to redefine the font selection of the
 (scrkbase)             element `pagination' that is an alias of element
 (scrkbase)             `pagenumber' on input line 31.
@@ -1627,7 +1631,7 @@ Package cleveref Info: loaded `ngerman' language definitions on input line 72.
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 74.
- (../../latex_class/Statistik.tex
+ (../latex_class/Statistik.tex
 
 Package cleveref Info: loaded `ngerman' language definitions on input line 26.
 [6
@@ -1722,17 +1726,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54161 strings out of 468133
- 1156859 string characters out of 5430712
- 2265728 words of memory out of 5000000
+ 54162 strings out of 468133
+ 1156611 string characters out of 5430712
+ 2265701 words of memory out of 5000000
  81695 multiletter control sequences out of 15000+600000
  761675 words of font info for 237 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 122i,21n,121p,11393b,2540s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,21n,121p,11378b,2540s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (17 pages, 437751 bytes).
+Output written on main.pdf (17 pages, 437899 bytes).
 PDF statistics:
- 333 PDF objects out of 1000 (max. 8388607)
- 71 named destinations out of 1000 (max. 500000)
+ 334 PDF objects out of 1000 (max. 8388607)
+ 72 named destinations out of 1000 (max. 500000)
  81538 words of extra memory for PDF output out of 89155 (max. 10000000)
 

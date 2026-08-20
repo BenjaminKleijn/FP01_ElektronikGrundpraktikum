@@ -84,7 +84,7 @@
       <file>main.bcf</file>
     </requires>
     <requires type="editable">
-      <file>../../latex_class/lit.bib</file>
+      <file>../latex_class/lit.bib</file>
     </requires>
   </external>
 </requests>
