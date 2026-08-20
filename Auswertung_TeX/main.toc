@@ -8,13 +8,18 @@
 \contentsline {paragraph}{\nonumberline Ergebnissignifikanz:}{6}{paragraph*.12}%
 \contentsline {paragraph}{\nonumberline Fitgüte:}{7}{paragraph*.14}%
 \contentsline {subsection}{\numberline {3.I}Messungen an der Emitterschaltung}{7}{subsection.3.1}%
-\contentsline {section}{\numberline {4}Diskussion}{9}{section.4}%
-\contentsline {section}{\nonumberline Literaturquellen}{10}{section*.17}%
-\contentsline {section}{\nonumberline Abbildungsquellen}{10}{section*.19}%
-\contentsline {section}{\numberline {A}Dimensionierungsberechnung}{11}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Emitterschaltung}{11}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Kollektorschaltung}{13}{subsection.A.2}%
-\contentsline {subsection}{\numberline {A.3}PID-Regler}{14}{subsection.A.3}%
-\contentsline {section}{\numberline {B}Bauteilergebnisse}{16}{appendix.B}%
-\contentsline {section}{\numberline {C}Widerstandsnormreihe E12}{17}{appendix.C}%
+\contentsline {paragraph}{\nonumberline Verstärkung}{8}{paragraph*.17}%
+\contentsline {paragraph}{\nonumberline Phasenverschiebung:}{8}{paragraph*.20}%
+\contentsline {paragraph}{\nonumberline Ansteuerbereich:}{9}{paragraph*.22}%
+\contentsline {subsubsection}{\numberline {3.I.1}Untersuchung des Eingangs- und Ausgangswiderstand}{9}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.II}Messungen an der Kollektorschaltung}{9}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Diskussion}{10}{section.4}%
+\contentsline {section}{\nonumberline Literaturquellen}{11}{section*.27}%
+\contentsline {section}{\nonumberline Abbildungsquellen}{11}{section*.29}%
+\contentsline {section}{\numberline {A}Dimensionierungsberechnung}{12}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Emitterschaltung}{12}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Kollektorschaltung}{14}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}PID-Regler}{15}{subsection.A.3}%
+\contentsline {section}{\numberline {B}Bauteilergebnisse}{17}{appendix.B}%
+\contentsline {section}{\numberline {C}Widerstandsnormreihe E12}{18}{appendix.C}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

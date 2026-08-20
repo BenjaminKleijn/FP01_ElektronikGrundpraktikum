@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.3.25)  20 AUG 2026 12:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.3.25)  20 AUG 2026 17:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1616,7 +1616,7 @@ Package cleveref Info: loaded `ngerman' language definitions on input line 1.
 Package cleveref Info: loaded `ngerman' language definitions on input line 66.
 [3
 
-] (a_content/1_einleitung.tex)
+{C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}] (a_content/1_einleitung.tex)
 
 Package cleveref Info: loaded `ngerman' language definitions on input line 69.
 [4
@@ -1636,7 +1636,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 Package cleveref Info: loaded `ngerman' language definitions on input line 26.
 [6
 
-{C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
+{C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 34.
  (C:\Users\samue\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1646,66 +1646,103 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 ) (a_content/3_auswertung.tex
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.30 \end{align}
+                
 
-Package cleveref Info: loaded `ngerman' language definitions on input line 27.
-[7])
+Package cleveref Info: loaded `ngerman' language definitions on input line 33.
+[7]
+<../Bilder/Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg, id=138, 4111.36pt x 2312.64pt>
+File: ../Bilder/Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg Graphic file (type jpg)
+<use ../Bilder/Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg>
+Package pdftex.def Info: ../Bilder/Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg  used on input line 37.
+(pdftex.def)             Requested size: 313.69029pt x 176.43999pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.42 \end{align}
+                
+
+Package cleveref Info: loaded `ngerman' language definitions on input line 44.
+[8 <../Bilder/Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg>]
+Overfull \hbox (76.14368pt too wide) in paragraph at lines 46--46
+[][][]\T1/lmr/m/n/10.95 (-10) Phasenverschiebungsfehler 
+ []
+
+
+Overfull \hbox (76.14368pt too wide) in paragraph at lines 46--46
+[][][]\T1/lmr/m/n/10.95 (-10) Phasenverschiebungsfehler 
+ []
+
+
+LaTeX Warning: Reference `Messprotokoll' on page 9 undefined on input line 49.
+
+
+Overfull \hbox (35.93744pt too wide) in paragraph at lines 49--62
+\T1/lmr/m/n/10.95 (-10) und Aus-gangs-wi-der-stand be-stimmt und dann mit-hil-fe der in Ab-schnitt [][]A[][].([][]Dimensionierungsberechnung[][])
+ []
+
+)
 
 Package cleveref Info: loaded `ngerman' language definitions on input line 77.
-[8] (a_content/4_diskussion.tex)
+[9] (a_content/4_diskussion.tex)
 
 Package cleveref Info: loaded `ngerman' language definitions on input line 80.
-[9]
+[10]
 
 Package cleveref Info: loaded `ngerman' language definitions on input line 87.
-[10
+[11
 
 ] (a_content/Anhang.tex
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 17.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 18.
  (C:\Users\samue\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 Package microtype Warning: I cannot find a spacing list for font
 (microtype)                `TS1/lmr/m/n/10.95' (context: `nonfrench'). Switching off
-(microtype)                spacing for this font on input line 17.
+(microtype)                spacing for this font on input line 18.
 
 
 
-Package cleveref Info: loaded `ngerman' language definitions on input line 59.
-[11
+Package cleveref Info: loaded `ngerman' language definitions on input line 60.
+[12
 
 {C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 
-Package cleveref Info: loaded `ngerman' language definitions on input line 59.
-[12]
-
-
-
-
-
-
-
-Package cleveref Info: loaded `ngerman' language definitions on input line 98.
+Package cleveref Info: loaded `ngerman' language definitions on input line 60.
 [13]
-Overfull \hbox (16.15717pt too wide) detected at line 134
+
+
+
+
+
+
+
+Package cleveref Info: loaded `ngerman' language definitions on input line 99.
+[14]
+Overfull \hbox (16.15717pt too wide) detected at line 135
 []
  []
 
 
-Overfull \hbox (10.95pt too wide) in paragraph at lines 134--134
+Overfull \hbox (10.95pt too wide) in paragraph at lines 135--135
 [] 
  []
 
 
 
-Package cleveref Info: loaded `ngerman' language definitions on input line 134.
-[14]
-
-Package cleveref Info: loaded `ngerman' language definitions on input line 160.
+Package cleveref Info: loaded `ngerman' language definitions on input line 135.
 [15]
 
-Package cleveref Info: loaded `ngerman' language definitions on input line 204.
-[16])
+Package cleveref Info: loaded `ngerman' language definitions on input line 161.
+[16]
+
+Package cleveref Info: loaded `ngerman' language definitions on input line 205.
+[17])
 
 Package caption Warning: Unused \captionsetup[wrapfigure] on input line 13.
 See the caption package documentation for explanation.
@@ -1714,29 +1751,33 @@ No complaints by nag.
 
 
 Package cleveref Info: loaded `ngerman' language definitions on input line 90.
-[17] (main.aux
+[18] (main.aux
 Package cleveref Info: loaded `ngerman' language definitions on input line 17.
 )
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54162 strings out of 468133
- 1156611 string characters out of 5430712
- 2265701 words of memory out of 5000000
- 81695 multiletter control sequences out of 15000+600000
- 761675 words of font info for 237 fonts, out of 8000000 for 9000
+ 54265 strings out of 468133
+ 1159127 string characters out of 5430712
+ 2268472 words of memory out of 5000000
+ 81771 multiletter control sequences out of 15000+600000
+ 765213 words of font info for 245 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  122i,21n,121p,11378b,2540s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (17 pages, 437899 bytes).
+Output written on main.pdf (18 pages, 2870650 bytes).
 PDF statistics:
- 334 PDF objects out of 1000 (max. 8388607)
- 72 named destinations out of 1000 (max. 500000)
- 81538 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 369 PDF objects out of 1000 (max. 8388607)
+ 84 named destinations out of 1000 (max. 500000)
+ 83607 words of extra memory for PDF output out of 89155 (max. 10000000)
 

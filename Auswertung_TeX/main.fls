@@ -616,7 +616,9 @@ OUTPUT main.lof
 INPUT .\main.lot
 INPUT .\main.lot
 INPUT main.lot
+INPUT C:\Users\samue\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr6.tfm
 OUTPUT main.lot
+INPUT C:\Users\samue\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT .\a_content\1_einleitung.tex
 INPUT .\a_content\1_einleitung.tex
 INPUT .\a_content\1_einleitung.tex
@@ -641,8 +643,6 @@ INPUT C:\Users\samue\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmssbx
 INPUT ..\latex_class\Statistik.tex
 INPUT ..\latex_class\Statistik.tex
 INPUT ..\latex_class\Statistik.tex
-INPUT C:\Users\samue\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr6.tfm
-INPUT C:\Users\samue\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT C:\Users\samue\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT C:\Users\samue\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT C:\Users\samue\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathex.enc
@@ -657,6 +657,13 @@ INPUT .\a_content\3_auswertung.tex
 INPUT .\a_content\3_auswertung.tex
 INPUT .\a_content\3_auswertung.tex
 INPUT a_content\3_auswertung.tex
+INPUT ..\Bilder\Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg
+INPUT ..\Bilder\Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg
+INPUT ..\Bilder\Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg
+INPUT ..\Bilder\Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg
+INPUT ..\Bilder\Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg
+INPUT ..\Bilder\Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg
+INPUT C:\Users\samue\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr5.tfm
 INPUT .\a_content\4_diskussion.tex
 INPUT .\a_content\4_diskussion.tex
 INPUT .\a_content\4_diskussion.tex

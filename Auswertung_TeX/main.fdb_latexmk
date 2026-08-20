@@ -1,12 +1,13 @@
 # Fdb version 4
-["biber main"] 1787220208.41114 "main.bcf" "main.bbl" "main" 1787220250.525 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1787240314.4594 -1
   "../latex_class/lit.bib" 1786999656 26347 8fd5122f4537f18f5d321ef73f856a52 ""
-  "main.bcf" 1787220249 108743 07bc2f58c1f14d6efa031fe461ea9a6f "pdflatex"
+  "main.bcf" 1787240313 108743 07bc2f58c1f14d6efa031fe461ea9a6f "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1787220238.24437 "c:/Users/samue/OneDrive/Dokumente/FP01/Auswertung_TeX/main.tex" "main.pdf" "main" 1787220250.52712 0
+["pdflatex"] 1787240302.88647 "c:/Users/samue/OneDrive/Dokumente/FP01/Auswertung_TeX/main.tex" "main.pdf" "main" 1787240314.46137 0
+  "../Bilder/Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg" 1787226185 2410144 78d8189b6564a0857d4efbceecf58200 ""
   "../latex_class/PAPclass.cls" 1787162609 14435 3f64bc75d45d5a344bbd84d05e33ef1e ""
   "../latex_class/Statistik.tex" 1787157065 3251 30022409d4fcc975512db2076e87f8e1 ""
   "../latex_class/cmds.tex" 1786623839 5908 22d51d30871b17de9e9144e6c5a442cd ""
@@ -36,6 +37,7 @@
   "C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr10.tfm" 1256929440 12056 7e13df7fe4cbce21b072ba7c4f4deb6e ""
   "C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr12.tfm" 1256929440 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
   "C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr17.tfm" 1256929440 12156 ca1ae6a3c8564e89597f1f993fba1608 ""
+  "C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr5.tfm" 1256929440 12020 46464c854bf317de2a7a0bbe4a1160ca ""
   "C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr6.tfm" 1256929440 12048 c1068d0f4772be9b0ec447692e1d6d82 ""
   "C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr7.tfm" 1256929440 12064 09aa3eeac96bf141d673bb1b0385ce55 ""
   "C:/Users/samue/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr8.tfm" 1256929440 12064 9b9ade9f64cb32ce1d9a88d21fbd5c2d ""
@@ -340,19 +342,19 @@
   "C:/Users/samue/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "a_content/1_einleitung.tex" 1787037529 23 6a27c945d34bc505b7428682c421a5ee ""
   "a_content/2_durchfuehrung.tex" 1787161060 1147 e51ee83be470dd944e4479592bb8cbf0 ""
-  "a_content/3_auswertung.tex" 1787220003 2989 bab4f7003e2f232fc49d0b5ccfae7166 ""
+  "a_content/3_auswertung.tex" 1787240291 7488 3178a836efc0a5664f2f8f77a059de6c ""
   "a_content/4_diskussion.tex" 1786976957 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "a_content/Anhang.tex" 1787160592 14667 ddc92e04b6857d6ce880e35b11242e0a ""
+  "a_content/Anhang.tex" 1787240289 14696 51fef712c4c75dfb0e44c5a73d3416be ""
   "a_content/titlepage.tex" 1786977049 878 af8e6a4ca3b08e27309210187b46fd39 ""
-  "c:/Users/samue/OneDrive/Dokumente/FP01/Auswertung_TeX/main.tex" 1787220194 4297 713cd9f3d68ae963ec07592135dfe2dc ""
+  "c:/Users/samue/OneDrive/Dokumente/FP01/Auswertung_TeX/main.tex" 1787238894 4399 8cb0b1bb9d33873322fb4b4a4cc1cb30 ""
   "images/Memefilled.png" 1783767074 24595 2804e45d035d87d3bb672302b6b12efe ""
-  "main.aux" 1787220249 12696 42e00c7d08002c63befa27459b12f0a7 "pdflatex"
-  "main.bbl" 1787220213 3311 542a76c8b1b0321bab171b4ea19bda7c "biber main"
-  "main.lof" 1787220249 198 982bbd351c33ba6ef2b1f1117afe33cc "pdflatex"
-  "main.lot" 1787220249 702 884ecb885d6e0860d96034e4d7043137 "pdflatex"
-  "main.run.xml" 1787220249 2468 d40aeaf4888649b652c7b8a69120f1d6 "pdflatex"
-  "main.tex" 1787220194 4297 713cd9f3d68ae963ec07592135dfe2dc ""
-  "main.toc" 1787220249 1474 b5e0539f090f297754af0168aa7fbf83 "pdflatex"
+  "main.aux" 1787240313 16520 17c0f291748cdb77e869d397c319c9b4 "pdflatex"
+  "main.bbl" 1787239213 3311 542a76c8b1b0321bab171b4ea19bda7c "biber main"
+  "main.lof" 1787240313 332 5e069f3bb4d23d6330d6400e49edc5be "pdflatex"
+  "main.lot" 1787240313 1026 316ed31d18c90a230d74072c845cfe68 "pdflatex"
+  "main.run.xml" 1787240313 2468 d40aeaf4888649b652c7b8a69120f1d6 "pdflatex"
+  "main.tex" 1787238894 4399 8cb0b1bb9d33873322fb4b4a4cc1cb30 ""
+  "main.toc" 1787240313 1932 6c90c18fa7ef786e620bdba01a13436e "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"
