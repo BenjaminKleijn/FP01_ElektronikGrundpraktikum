@@ -16,7 +16,7 @@
 
 \NeedsTeXFormat{LaTeX2e} 
 % initialisiert Namen der Klasse, damit dieser von der main.tex gefunden werden kann
-\ProvidesClass{../../latex_class/PAPclass}[Stand 2.08.2026]
+\ProvidesClass{../latex_class/PAPclass}[Stand 2.08.2026]
 
 % lädt Koma-Script Klasse scrartcl mit Einstellungen. Siehe in Latex-Wissen->Documentclasses weitere Möglichkeiten
 \LoadClass{scrartcl}
