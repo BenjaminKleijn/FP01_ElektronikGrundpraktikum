@@ -1,13 +1,15 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1787240314.4594 -1
+["biber main"] 1787240774.80683 "main.bcf" "main.bbl" "main" 1787240831.48572 0
   "../latex_class/lit.bib" 1786999656 26347 8fd5122f4537f18f5d321ef73f856a52 ""
-  "main.bcf" 1787240313 108743 07bc2f58c1f14d6efa031fe461ea9a6f "pdflatex"
+  "main.bcf" 1787240830 108743 07bc2f58c1f14d6efa031fe461ea9a6f "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1787240302.88647 "c:/Users/samue/OneDrive/Dokumente/FP01/Auswertung_TeX/main.tex" "main.pdf" "main" 1787240314.46137 0
+["pdflatex"] 1787240818.57794 "c:/Users/samue/OneDrive/Dokumente/FP01/Auswertung_TeX/main.tex" "main.pdf" "main" 1787240831.48807 0
   "../Bilder/Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg" 1787226185 2410144 78d8189b6564a0857d4efbceecf58200 ""
+  "../Diagramme/Frequenzgang_Fit_Emitterschaltung.png" 1787240620 31448 ccf7d6be673c32bfb54665e99f2fbc35 ""
+  "../Diagramme/Frequenzgang_Fit_Kollektorschaltung.png" 1787240620 25894 b8c082d4c2f7098f2d950912c2bf16a9 ""
   "../latex_class/PAPclass.cls" 1787162609 14435 3f64bc75d45d5a344bbd84d05e33ef1e ""
   "../latex_class/Statistik.tex" 1787157065 3251 30022409d4fcc975512db2076e87f8e1 ""
   "../latex_class/cmds.tex" 1786623839 5908 22d51d30871b17de9e9144e6c5a442cd ""
@@ -341,20 +343,21 @@
   "C:/Users/samue/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/samue/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "a_content/1_einleitung.tex" 1787037529 23 6a27c945d34bc505b7428682c421a5ee ""
-  "a_content/2_durchfuehrung.tex" 1787161060 1147 e51ee83be470dd944e4479592bb8cbf0 ""
-  "a_content/3_auswertung.tex" 1787240291 7488 3178a836efc0a5664f2f8f77a059de6c ""
+  "a_content/2_durchfuehrung.tex" 1787240619 1290 abf63aded479e31854f9e4a4333e5fd2 ""
+  "a_content/3_auswertung.tex" 1787240619 9635 7ab38e0f4c4a94457d4ebf3bee105b7c ""
   "a_content/4_diskussion.tex" 1786976957 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "a_content/Anhang.tex" 1787240289 14696 51fef712c4c75dfb0e44c5a73d3416be ""
+  "a_content/Anhang.tex" 1787240574 14696 51fef712c4c75dfb0e44c5a73d3416be ""
   "a_content/titlepage.tex" 1786977049 878 af8e6a4ca3b08e27309210187b46fd39 ""
-  "c:/Users/samue/OneDrive/Dokumente/FP01/Auswertung_TeX/main.tex" 1787238894 4399 8cb0b1bb9d33873322fb4b4a4cc1cb30 ""
+  "c:/Users/samue/OneDrive/Dokumente/FP01/Auswertung_TeX/main.tex" 1787240769 4399 8cb0b1bb9d33873322fb4b4a4cc1cb30 ""
+  "images/../../Elektronik Grundpraktikum.pdf" 1787225133 7920846 734aeec7991f1ec0b1651e1c3c4676b8 ""
   "images/Memefilled.png" 1783767074 24595 2804e45d035d87d3bb672302b6b12efe ""
-  "main.aux" 1787240313 16520 17c0f291748cdb77e869d397c319c9b4 "pdflatex"
-  "main.bbl" 1787239213 3311 542a76c8b1b0321bab171b4ea19bda7c "biber main"
-  "main.lof" 1787240313 332 5e069f3bb4d23d6330d6400e49edc5be "pdflatex"
-  "main.lot" 1787240313 1026 316ed31d18c90a230d74072c845cfe68 "pdflatex"
-  "main.run.xml" 1787240313 2468 d40aeaf4888649b652c7b8a69120f1d6 "pdflatex"
-  "main.tex" 1787238894 4399 8cb0b1bb9d33873322fb4b4a4cc1cb30 ""
-  "main.toc" 1787240313 1932 6c90c18fa7ef786e620bdba01a13436e "pdflatex"
+  "main.aux" 1787240830 20016 3b950060d8755c8ab4c1c9f757ee86de "pdflatex"
+  "main.bbl" 1787240779 3311 542a76c8b1b0321bab171b4ea19bda7c "biber main"
+  "main.lof" 1787240830 649 8e9ad6cc00af9e1cde8a0118850d7cd7 "pdflatex"
+  "main.lot" 1787240830 1029 a84e2341e503efd852a4375c3957f311 "pdflatex"
+  "main.run.xml" 1787240830 2468 d40aeaf4888649b652c7b8a69120f1d6 "pdflatex"
+  "main.tex" 1787240769 4399 8cb0b1bb9d33873322fb4b4a4cc1cb30 ""
+  "main.toc" 1787240830 2480 ed0d6d819466f7c9e36c624d19a6cb07 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

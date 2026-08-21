@@ -31,6 +31,19 @@ Die Stromstärke \(I_C\) wurde folgend berechnet:
 
 Offensichtlicherweise basieren die berechneten Werte auf Annahmen, die nur ungefähr getroffen wurden: \(\beta=400\) und \(U_{\text{BE}}=\qty{0.6}{\volt}\) aus der Berechnung entsprechen nicht den realen Werten aus dem Datasheet. Es gibt für diese beiden Werte keine exakten Angaben (\(U_{\text{CE}}\) und \(I_C\) abhängig, temperaturabhängig), die absolute Abweichung zwischen gewollter und experimentell vorliegender Kapazität ist auch unbekannt. Dadurch können die berechneten Werte gar nicht exakt dem untersuchten System entsprechen, was eine größere absolute Abweichung zwischen calc und exp Werten zur Folge hat. Diese Abweichung ist jedoch in der Interpreation der Sigma-Abweichungen zu vernachlässigen, denn die absoluten Abweichungen sind stets gering, die Größenordnung der berechneten Werte ist natürlich richtig. Der weitaus dominierende Grund für die hohen Sigma-Abweichungen ist der winzige Fehler, der sich bisher nur aus dem Messfehler des Multimeters zusammensetzt. Faktoren wie Temperatur,  
 
+\paragraph{Frequenzgang}
+Die gemessenen Werte des Frequenzgangs aus Tabelle 1.2 des \href{Messprotokoll}{Messprotokolls} werden nun in ein doppelt-logarithmisches Diagramm aufgetragen. Anschließend wird eine Funktion der Form
+\begin{equation}
+  f (V, f, W_1, W_2, n_1, n_2) = \frac{V}{\sqrt{1 + \left(\frac{f}{W_1}\right)^{2n_1}} \sqrt{1 + \left(\frac{f}{W_2}\right)^{2n_2}}}
+\end{equation}
+über die Messwerte gefittet. Aus dem Fit kann schließlich die untere Grenzfrequenz $f_\text{ug}$ bestimmt werden.
+
+\xfigure{htbp}{width=0.8\textwidth}{Frequenzgang_Fit_Emitterschaltung.png}{Frequenzgang der Emitterschaltung mit Fit und eingezeichneter Grenzfrequenz}{Frequenzgang der Emitterschaltung mit Fit und eingezeichneter Grenzfrequenz}
+Aus dem Diagramm erhalten wir die Grenzfrequenz $\boxed{f_\text{ug}=31.2 \, \text{Hz}}$.
+
+\subsubsection{Gleichstromgegenkopplung}
+siehe \href{Messprotokoll}{Messprotokoll}.
+
 
 \paragraph{Verstärkung}
 Mithilfe folgender Abbildung konnte die Verstärkung der Emitterschaltung bei einer beliebigen, sinusförmigen Wechselspannungsfrequenz \(f =\qty{5}{\kilo\hertz}\gg f_{ug}\) mit einer Spitzen-Spitzen Spannung von \(V_{pp}=\qty{500}{\milli\volt}\) bestimmt werden. Hierbei liegt an Channel 1 (gelb) der Ausgang der Emitterschaltung, und an Channel 2 (blau) der Ausgang des Frequenzgenerators an. 
@@ -82,6 +95,21 @@ Mithilfe des Potentiometerkastens und diverser Verkabelungen (siehe \nameref{Mes
 \(I_E\) wurde analog zu \cref{eq:Stromstärke_fehler} berechnet. 
 
 
+
+
+
+\paragraph{Frequenzgang}
+Nun werden die Messwerte des Frequenzgangs der Kollektorschaltung aus Tabelle 2.2 des \href{Messprotokoll}{Messprotokolls} geplottet. Für die Fitfunktion wird ein Zusammenhang der Form
+\begin{equation}
+  g (V, f, W_1, n_1) = \frac{V}{\sqrt{1 + \left( \frac{W_1}{f} \right)^{2 \cdot n_1}}}
+\end{equation}
+verwendet. Schließlich kann man wieder die untere Grenzfrequenz $f_\text{ug}$ aus dem Fit bestimmen, indem untersucht, wann der Fit auf das $\frac{1}{\sqrt{2}}$-Fache gesunken ist.
+\xfigure{htbp}{width=0.8\textwidth}{Frequenzgang_Fit_Kollektorschaltung.png}{Frequenzgang der Kollektorschaltung mit Fit und eingezeichneter Grenzfrequenz}{Frequenzgang der Kollektorschaltung mit Fit und eingezeichneter Grenzfrequenz}
+
+Für die Grenzfrequenz ergibt sich somit $\boxed{f_\text{ug}=30.5 \, \text{Hz}}$.
+
+\subsection{Bestimmung der Länge des Koaxialkabels}
+Aus dem Protokoll entnehmen wir die berechnete Länge des verwendeten Kabels $l=\qty{13.54(28)}{\meter}$. Der angegebene Wert ist $l_\text{ang}= \qty{13.5}{\meter}$. Die Abweichung beträgt somit $S=0.14 \sigma$.
 % \begin{table}[htb]
 %   \centering
 %   \caption{}
