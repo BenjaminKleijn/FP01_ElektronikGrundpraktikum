@@ -56,7 +56,8 @@ Berechnung des erforderlichen Basisstroms:
   \intertext{Dimensionierung der Ausgangskapazität $C_{\text{AUS}}$ für die untere Grenzfrequenz $f_{ug}$ und Überdimensionierung aus Sicherheitsgründen:}
   &\hspace*{1.5cm} C_{\text{AUS}} = \frac{1}{2 \cdot \pi \cdot R_{\text{AUS}} \cdot f_{ug}} &&&& = \qty{1.00}{\micro\farad} \quad (\qty{222.82}{\nano\farad})\\
   \intertext{erneutes Berechnen der unteren Grenzfrequenz mit neu gewählter Kapazität:}
-  &\hspace*{1.5cm} f_{ug}=(2\pi\cdot R_{\text{EIN}} \cdot C_{\text{EIN}})^{-1} &&&& =\qty{37.40}{\hertz}
+  &\hspace*{1.5cm} f_{ug}=(2\pi\cdot R_{\text{EIN}} \cdot C_{\text{EIN}})^{-1} &&&& =\qty{37.40}{\hertz} \tag{1}
+  \label{eq:f_ug_theo_emitter}
 \end{flalign*}
 
 % ==============================================================================
@@ -95,7 +96,7 @@ Berechnung des erforderlichen Basisstroms:
   \intertext{Dimensionierung der Ausgangskapazität $C_{\text{AUS}}$ für die untere Grenzfrequenz $f_{ug}$ und Überdimensionierung aus Sicherheitsgründen:}
   &\hspace*{1.5cm} C_{\text{AUS}} = \frac{1}{2 \cdot \pi \cdot R_{\text{AUS}} \cdot f_{ug}} &&&& = \qty{10.00}{\micro\farad} \quad (\qty{3.18}{\micro\farad})
   \intertext{erneutes Berechnen der unteren Grenzfrequenz mit neu gewählter Kapazität:}
-  &\hspace*{1.5cm} f_{ug}=(2\pi\cdot R_{\text{EIN}}\cdot C_{\text{EIN}})^{-1}&&&&=\qty{49.10}{\hertz}
+  &\hspace*{1.5cm} f_{ug}=(2\pi\cdot R_{\text{EIN}}\cdot C_{\text{EIN}})^{-1}&&&&=\qty{49.10}{\hertz} \tag{2} \label{eq:f_ug_theo_kollektor}
 \end{flalign*}
 
 % ==============================================================================

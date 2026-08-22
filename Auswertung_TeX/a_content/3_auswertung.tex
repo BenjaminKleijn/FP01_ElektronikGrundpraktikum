@@ -55,8 +55,18 @@ Die gemessenen Werte des Frequenzgangs aus Tabelle 1.2 des \nameref{Messprotokol
 
 \xfigure{htbp}{width=0.8\textwidth}{Frequenzgang_Fit_Emitterschaltung.png}{Frequenzgang der Emitterschaltung mit Fit und eingezeichneter Grenzfrequenz}{Frequenzgang der Emitterschaltung mit Fit und eingezeichneter Grenzfrequenz}
 \FloatBarrier
-Aus dem Diagramm ergibt sich die Grenzfrequenz \(\tcbhighmath{f_\text{ug}=\qty{31.2}{\hertz}}\).
-
+Aus dem Diagramm ergibt sich die Grenzfrequenz \(\tcbhighmath{f_\text{ug}=\qty{31.2}{\hertz}}\), und damit folgende Abweichungen zur theoretischen Frequenz aus \cref{eq:f_ug_theo_emitter}:
+\begin{table}[htbp]
+\centering
+\caption{Vergleich von $f_{\text{ug}}^{\text{exp}}$ und $f_{\text{ug}}^{\text{exp}}$ am Emitter}
+\begin{tabularx}{\textwidth}{ZZZZx}
+    \toprule
+        f_{\text{ug}}^{\text{exp}}[\unit{\hertz}]&f_{\text{ug}}^{\text{exp}}[\unit{\hertz}]&\text{abs. Abw.}[\unit{\hertz}]&\text{proz. Abw.}[\unit{\percent}]&S[\sigma]\\\midrule
+        \num{31.2(2.5)}&37.4&\num{6.2(2.5)}&\num{20(9)}&\num{2.5}\\
+    \bottomrule
+\end{tabularx}
+\label{table:Vergleich_f_ug_Emitter} 
+\end{table}
 
 \subsubsection{Gleichstromgegenkopplung}
 siehe \nameref{Messprotokoll}.
@@ -110,11 +120,21 @@ Nun werden die Messwerte des Frequenzgangs der Kollektorschaltung aus Tabelle 2.
 verwendet. Schließlich kann man wieder die untere Grenzfrequenz $f_\text{ug}$ aus dem Fit bestimmen, indem untersucht, wann der Fit auf das $\frac{1}{\sqrt{2}}$-Fache gesunken ist.
 \xfigure{htbp}{width=0.8\textwidth}{Frequenzgang_Fit_Kollektorschaltung.png}{Frequenzgang der Kollektorschaltung mit Fit und eingezeichneter Grenzfrequenz}{Frequenzgang der Kollektorschaltung mit Fit und eingezeichneter Grenzfrequenz}
 \FloatBarrier
-Für die Grenzfrequenz ergibt sich somit $\tcbhighmath{f_\text{ug}=\qty{30.5}{\hertz}}$
-
+Für die Grenzfrequenz ergibt sich somit $\tcbhighmath{f_\text{ug}=\qty{30.5}{\hertz}}$ und damit folgende Abweichung zur theoretisch in \cref{eq:f_ug_theo_kollektor} berechneten Grenzfrequenz:
+\begin{table}[htbp]
+\centering
+\caption{Vergleich von $f_{\text{ug}}^{\text{exp}}$ und $f_{\text{ug}}^{\text{exp}}$ am Kollektor}
+\begin{tabularx}{\textwidth}{ZZZZx}
+    \toprule
+        f_{\text{ug}}^{\text{exp}}[\unit{\hertz}]&f_{\text{ug}}^{\text{exp}}[\unit{\hertz}]&\text{abs. Abw.}[\unit{\hertz}]&\text{proz. Abw.}[\unit{\percent}]&S[\sigma]\\\midrule
+        \num{30.5(2.5)}&49.1&\num{18.6(2.5)}&\num{61(10)}&\num{8}\\
+    \bottomrule
+\end{tabularx}
+\label{table:Vergleich_f_ug_kollektor} 
+\end{table}
 
 \subsubsection{Bestimmung der Länge des Koaxialkabels}
-Das Signal des Frequenzgenerators wurde an CH1 des Oszis angeschlossen und gleichzeitig durch ein BNC T-Stück ein Koaxialkabel an diesen Eingang des Oszis gesteckt und dessen Ende wiederum an CH2 angeschlossen. Dies bedeutet, dass in \cref{fig:Koaxialkabel_Reflexion_CH1_FreqGen_CH2_Kabelausgang.jpg} die erste gelbe Rechteckstufe das Eingangssignal des Frequenzgenerators darstellt. Das Signal wird durch den hohen Innenwiderstand des Oszilloskops reflektiert (oder durch das T-Stück gleichzeitig an Oszi und in Koaxialkabel geschickt) und breitet sich somit auch innerhalb des Koaxialkabels aus, dieses Signal sieht man nun an der blauen Rechteckstufe. Am CH2 Eingang wird es am Oszi reflektiert und wandert also wieder zurück, ist folglich als zweite gelbe Rechteckstufe an CH1 zu sehen. Die Zeit \(t\)zwischen initialer Stufe und Reflektionsstufe wurde mit Cursorn bestimmt, deren Fehler sich durch \(\Delta t=\sqrt{2}\qty{2}{\nano\s}\) bestimmt. Damit ergibt sich die (einfache) Länge des Kabels durch 
+Das Signal des Frequenzgenerators wurde an CH1 des Oszis angeschlossen und gleichzeitig durch ein BNC T-Stück ein Koaxialkabel an diesen Eingang des Oszis gesteckt und dessen Ende wiederum an CH2 angeschlossen. Dies bedeutet, dass in \cref{fig:Koaxialkabel_Reflexion_CH1_FreqGen_CH2_Kabelausgang} die erste gelbe Rechteckstufe das Eingangssignal des Frequenzgenerators darstellt. Das Signal wird durch den hohen Innenwiderstand des Oszilloskops reflektiert (oder durch das T-Stück gleichzeitig an Oszi und in Koaxialkabel geschickt) und breitet sich somit auch innerhalb des Koaxialkabels aus, dieses Signal sieht man nun an der blauen Rechteckstufe. Am CH2 Eingang wird es am Oszi reflektiert und wandert also wieder zurück, ist folglich als zweite gelbe Rechteckstufe an CH1 zu sehen. Die Zeit \(t\)zwischen initialer Stufe und Reflektionsstufe wurde mit Cursorn bestimmt, deren Fehler sich durch \(\Delta t=\sqrt{2}\cdot\qty{2}{\nano\s}\) bestimmt. Damit ergibt sich die (einfache) Länge des Kabels durch 
 \begin{align}
   l=v\frac{t}{2}=\tfrac{2}{3}c\;\frac{t}{2}&&\Delta l=\tfrac{2}{3}c\;\frac{t}{\Delta 2}&&\tcbhighmath{l=\qty{13.54(28)}{\meter}}
 \end{align}
