@@ -129,6 +129,7 @@ In \cref{fig:p=5_ist-soll} ist zudem die Differenz \verb|ist|-\verb|soll| angeze
     \caption{PI-Regler mit unterschiedlichen $K_P$ und $K_I$ Kombinationen, in (f): Ist-Soll}
     \label{fig:PI-Regler}
 \end{figure}
+\FloatBarrier
 Wie im ersten Bild erkennbar sorgt selbst minimale (\(K_I=\qty{0}{\Skt}\)) PI-Regelung dafür, dass die Überschwingungen das Signal dominieren, die stationäre Genauigkeit ist praktisch nicht existent. Wie auch bei der P-Regelung steigen die Frequenz, Amplitude und Dauer der Überschwingungen mit wachsendem \(K_I\)-Wert (\cref{fig:p=0_i=0,fig:p=0_i=5,fig:p=0_i=50}). Kernbeobachtung ist, dass die I-Regelung (bei P minimal) die instabilste von allen Regelungen ist und das System sehr schnell in Schwingung versetzt. \\
 Wird die P-Regelung dazugeschaltet bzw. erhöht (\cref{fig:p=0_i=5,fig:p=50_i=5}), so können die Überschwingungen bei kleinem Integrierbeiwert kompensiert bzw. ausgeglichen und unterdrückt werden, \cref{fig:p=100_i=50} zeigt jedoch, dass selbst hohe P-Werte einen Integrierbeiwert von \(K_I>\qty{10}{\Skt}\) nicht ausgleichen können.  
 
@@ -154,8 +155,7 @@ Als wichtige Beobachtung wird noch festgehalten, dass auch wenn \(K_I\) mininal 
     \end{subfigure}
 
     \vspace{0.5cm}
-    
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.7\textwidth}
     \centering
     \includegraphics[width=\textwidth]{PD_300}
     \caption{$K_P=300$ Skt, $K_D=300$ Skt}
@@ -166,5 +166,62 @@ Als wichtige Beobachtung wird noch festgehalten, dass auch wenn \(K_I\) mininal 
 \end{figure}
 
 
-\paragraph{PID-Regler} Nun werden alle drei Regler aktiviert. Dabei wird versucht die Regelung zu optimieren.
+\paragraph{PID-Regler} Nun werden alle drei Regler aktiviert. Aus den vorherigen Beobachtungen wurde die minimale Einstellung des I-Reglers übernommen, da dieser im Vergleich zu \cref{fig:p=300_d=300} (selbe P- und D-Einstellung) dennoch für Überschwingungen sorgt, wurde der D-Regler ordentlich aufgedreht. Das PI-Stellglied sorgt für schnellen Flankenanstieg (hohe Regelgeschwindigkeit) und verschwindende stationäre Abweichung, das D-Stellglied für die Entfernung der I-Überschwingungen. Eine optimalere Regelung wurde trotz langen Probierens nicht gefunden.
 \xfigure{htbp}{width=0.8\textwidth}{PID_optimal}{Bestmögliche Einstellung des PID-Reglers}{Bestmögliche Einstellung des PID-Reglers bei \(K_P=300\) Skt, \(K_I=0\) Skt (minimal) und \(K_D=300\) Skt}
+\FloatBarrier
+
+\subsection{PID-Regelung unter Last, geringe Drehzahlen, periodischen Sollwerten,etc}
+\paragraph{Lastschwankung:} Nachdem die zumindest unter gegebenen Umständen optimale PID-Regelung eingestellt wurde, wird beobachtet, welche Auswirkung das Anschließen einer Last (Glühbirne wird durch Generator, der die Motorenergie in elektrische Energie umwandelt, angetrieben) auf den Regelkreis hat. Dieser läuft nun wieder unter Einstellung eines internen \verb|soll|-Wertes. \\
+Der Effekt auf den Regelkreis ist nicht sichtbar, die Regelung ist so gut, dass die Schwankung des \verb|ist|-Signals aufgrund der Last direkt durch die Regelung kompensiert wird, sodass wie in \cref{fig:CH1Sollwert_mit_Poti;CH2Istwert;VerzögerungvonSollundIstLinie.jpg} nur zwei auf gleichem Niveau liegende Linien zu sehen sind. 
+
+Deutlich interessanter ist die die Beobachtung bei ausgeschalteter Regelung: 
+\xfigure{htbp}{width=0.7\textwidth}{Gluehbirne_an_aus_A3.5.jpg}{Glühbirnenlast am Motor bei ausgeschalteter Regelung}{Glühbirnenlast am Motor bei ausgeschalteter Regelung}
+\FloatBarrier
+Das Abfallen der blauen \verb|ist|-Linie kennzeichnet das Anschalten der Glühbirne. Das Niveau stabilisiert sich, sobald die Glühbirne maximal leuchtet und ab diesem Zeitpunkt einen konstanten Strom zieht. Bei Entfernen der Last steigt die Drehzahl des Motors wieder auf das vorherige Niveau, was jedoch durch fehlende Regelung weiterhin nicht an den \verb|soll|-Wert heranreicht.
+
+\paragraph{geringe Drehzahlen:} Eine weitere qualitative Untersuchung erfolgte bei Einstellen geringer Sollspannungen. Da der Regelkreis dafür sorgt, dass konsant \verb|ist|=\verb|soll|, und dadurch Reibungseffekte stetig ausgeglichen werden, kann sich der Motor auch bei geringer Drehzahl bewegen, dies sieht man an der linken Hälfte in \cref{fig:mit_und_ohne_Regelung_kleiner_sollwert.jpg}. Wird die Regelung ausgeschaltet, bedeutet dies wie oben schon beschrieben (dort war die Regelung schlicht zu schwach), dass der Motor abgwürgt wird, da die \verb|ist| Spannung nicht ausreicht, um Verlusteffekte auszugleichen und den Motor zu starten bzw.\ ins Rollen zu bringen. Dies sieht man in der rechten Seite von \cref{fig:mit_und_ohne_Regelung_kleiner_sollwert.jpg}: Die Sollspannung wurde zuvor auf den minimalsten Wert gesetzt, bei der sich der Motor ohne Regelung aufhört zu drehen (\(U_{\texttt{soll}}<\)Einsatzspannung), dann wurde bei dieser Spannung die Regelung eingeschaltet, sodass zu sehen ist, dass der Regelkreis dieses Abwürgeproblem umgeht, und anschließend der Jumper auf \enquote{Regelung aus} umgesteckt. Das Oszilloskop zeigt also das Abfallen der \verb|ist|-Spannung auf \(\qty{0}{\volt}\). 
+
+\xfigure{htbp}{width=0.7\textwidth}{mit_und_ohne_Regelung_kleiner_sollwert.jpg}{Geringe Drehzahlen mit und ohne Regelung}{Geringe Drehzahlen mit und ohne Regelung}
+\FloatBarrier
+
+\paragraph{Sinus- und Sägezahnspannnungen:} Stellt man im externen \verb|soll|-Modus eine sinusförmige Wechselspannung ein, so ist das Verhalten des Regelkreises und die Genauigkeit frequenzabhängig:
+\begin{figure}[htbp]
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Regelung_an_sinus_1,2,3Hz.jpeg}
+    \caption{PID-Regelung an}
+    \label{fig:sinusPID_an}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Regelung_aus_1,2,3Hz.jpeg}
+    \caption{PID-Regelung aus}
+    \label{fig:sinusPID_aus}
+    \end{subfigure}
+    \caption{PID-Regelung bei Sinusspannung der Frequenz \(f=\qtylist{1;2;3}{\hertz}\)}
+    \label{fig:sinusPID}
+\end{figure}
+\FloatBarrier
+Schon eine Frequenz von \(\qty{3}{\hertz}\) reicht aus, sodass eine sichtbare Latenz zwischen \verb|ist| und \verb|soll| auftritt, niedrige Frequenzen werden vom Regelkreis jedoch problemlos übernommen und auf den Motor übertragen. Eine ausgeschaltete Regelung reicht aufgrund des periodischen Unterschreitens der Einsatzspannung und des sehr kurzen Zeitraums, indem diese Überschritten wird, nicht aus, um den Motor nennenswerte zum Laufen zu bekommen. 
+
+Auch für eine Sägezahnspannnung ist das Verhalten frequenzabhängig:
+\begin{figure}[htbp]
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{1_2_4_Hz_mit_Regelung_A3.5.jpg}
+    \caption{PID-Regelung an bei \(f=\qtylist{1;2;3}{\hertz}\)}
+    \label{fig:sägePID_an}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ohne_Regelung_1Hz_A3.5.jpg}
+    \caption{PID-Regelung aus bei \(f=\qty{1}{\hertz}\)}
+    \label{fig:sägePID_aus}
+    \end{subfigure}
+    \caption{PID-Regelung bei Sägezahnspannung}
+    \label{fig:sägezahnPID}
+\end{figure}
+\FloatBarrier
+in \cref{fig:sägePID_an} ist links noch ganz kurz \(f=\qty{1}{\hertz}\) zu erkennen, im Gegensatz zur ausgeschalteten Regelung, ist die PID-Regelung dazu in der Lage der Sägezahnspannung bis zu einer Frequenz von \(\qty{2}{\hertz}\) zu folgen.
