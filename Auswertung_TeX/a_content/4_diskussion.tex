@@ -96,7 +96,9 @@ In \cref{fig:p=5_ist-soll} ist zudem die Differenz \verb|ist|-\verb|soll| angeze
     \caption{$K_p=0$ Skt, $K_I=5$ Skt}
     \label{fig:p=0_i=5}
     \end{subfigure}
+
     \vspace{0.5cm}
+    
     \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{P_0_I_50.jpg}
@@ -131,3 +133,38 @@ Wie im ersten Bild erkennbar sorgt selbst minimale (\(K_I=\qty{0}{\Skt}\)) PI-Re
 Wird die P-Regelung dazugeschaltet bzw. erhöht (\cref{fig:p=0_i=5,fig:p=50_i=5}), so können die Überschwingungen bei kleinem Integrierbeiwert kompensiert bzw. ausgeglichen und unterdrückt werden, \cref{fig:p=100_i=50} zeigt jedoch, dass selbst hohe P-Werte einen Integrierbeiwert von \(K_I>\qty{10}{\Skt}\) nicht ausgleichen können.  
 
 Als wichtige Beobachtung wird noch festgehalten, dass auch wenn \(K_I\) mininal gewählt werden muss, um Überschwingungen zu vermeiden, die I-Regelung dennoch ausreicht, um die stationäre Abweichung auf null zu ziehen.
+
+
+
+\paragraph{PD-Regelung} Hierbei ist der P- und D-Regler aktiviert und der I-Regler ausgeschaltet.
+
+\begin{figure}[htbp]
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{P_0_D_300}
+    \caption{$K_P=0$ Skt, $K_D=300$ Skt}
+    \label{fig:p=0_d=300}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{P_50_D_300}
+    \caption{$K_P=50$ Skt, $K_D=300$ Skt}
+    \label{fig:p=50_d=300}
+    \end{subfigure}
+
+    \vspace{0.5cm}
+    
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{PD_300}
+    \caption{$K_P=300$ Skt, $K_D=300$ Skt}
+    \label{fig:p=300_d=300}
+    \end{subfigure}
+    \caption{PD-Regler mit unterschiedlichen $K_P$ und $K_D$ Kombinationen, in (f): Ist-Soll}
+    \label{fig:PD-Regler}
+\end{figure}
+
+
+\paragraph{PID-Regler} Nun werden alle drei Regler aktiviert. Dabei wird versucht die Regelung zu optimieren.
+\xfigure{htbp}{width=0.8\textwidth}{PID_optimal}{Bestmögliche Einstellung des PID-Reglers}{Bestmögliche Einstellung des PID-Reglers bei \(K_P=300\) Skt, \(K_I=0\) Skt (minimal) und \(K_D=300\) Skt}
