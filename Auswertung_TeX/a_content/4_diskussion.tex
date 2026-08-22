@@ -12,3 +12,114 @@ Die bestimmte Länge und angegebene Länge haben mit $S=0.14\sigma$ eine sehr ge
 
 
 \subsection{PID-Regler}
+
+\subsubsection{Interner Sollwert} Die Anpassung des Motors an den eingestellten Sollwert erfolgt, wie erwartet, schneller, wenn die P-Regelung aktiviert ist. Wenn sie deaktiviert ist, dann passiert die  Anpassung etwas verzögert, aber trotzdem recht schnell.
+Wenn man nun zusätzlich noch I- und D-Anteil hinzuschaltet, wird die Regelung weiter optimiert.
+
+\subsubsection{Externer Sollwert}
+
+Nun steuert ein Funktionsgenerator den Sollwert über ein eingestelltes Rechteck-Signal. Dabei werden nun die Regelungen getrennt für die P-Regelung, die PI-Regelung und für die PD-Regelung untersucht und schließlich mit der PID-Regelung optimiert.
+\paragraph{P-Regelung}
+Hier ist der I- und der P-Anteil ausgeschaltet.
+\begin{figure}[htbp]
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{p_0_skt.jpg}
+    \caption{$K_p=0$ Skt}
+    \label{fig:p=0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{p_10_skt.jpg}
+    \caption{$K_p=10$ Skt}
+    \label{fig:p=10}
+    \end{subfigure}
+
+    \vspace{0.5cm}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{p_50_skt.jpg}
+    \caption{$K_p=50$ Skt}
+    \label{fig:p=50}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{p_100_skt.jpg}
+    \caption{$K_p=100$ Skt}
+    \label{fig:p=100}
+    \end{subfigure}
+
+    \vspace{0.5cm}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{p_300_skt.jpg}
+    \caption{$K_p=300$ Skt}
+    \label{fig:p=300}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{p_klein_5_skt.jpg}
+    \caption{$K_p=5$ Skt, in Blau: Ist-Soll}
+    \label{fig:p=5_ist-soll}
+    \end{subfigure}
+    \caption{P-Regler mit unterschiedlichen $K_p$, in (f) ist zusätzlich ist-soll abgebildet für $K_p=5$ Skt}
+    \label{fig:K_p-Regler}
+\end{figure}
+
+Man erkennt in \Cref{fig:K_p-Regler} die Anpassung des Motors an das Rechtecksignal (in Blau, Rechtecksignal in Gelb) für unterschiedliche Proportionalbeiwerte $K_p$. In \Cref{fig:p=0} sieht man die Einstellung mit minimalem $K_p$. Dabei ist die Motordrehzahl stets kleiner als das Soll. Bei kleinen \(K_p\) erkennt man, dass das Soll bei der kleineren Amplitude auf Null sinkt und somit der Motor stehen bleibt. Beim Sprung im Rechtecksignal auf die höhere Amplitude wird auch der 
+Motor hochgeregelt. Dabei gibt es zunächst einen Peak, der immer höher ist, als das anschließend erreichte Niveau der P-Regelung. Diese Überschwingungen werden größer, mit zunehmendem \(K_p\). Außerdem werden bei steigendem \(K_p\) auch mehr Amplituden der Überschwingung sichtbar. Folglich wird ein stabiler Wert erst später erreicht. Die stationäre Genauigkeit betreffend erkennt man in den Aufnahmen gut, dass diese bei steigendem $K_p$ verbessert wird. Genau erreicht wird das Niveau jedoch nicht, wie man auch bei hohen $K_p$ erkennen kann, aber es nähert sich schon gut an.
+Keinen Unterschied sieht man bei der Regelgeschwindigkeit, also der Zeitdauer nach einer Sollwert-Änderung bis zu einer Regel-Anpassung durch den P-Regler.
+In \Cref{fig:p=5_ist-soll} erkennt man zusätzlich noch den Ist-Soll-Verlauf. Hierbei wurde die Null auf die Mitte der Anzeige verschoben. Man sieht, dass die Abweichung direkt nach der Sollwert-Anpassung maximal wird, weil der P-Regler natürlich nicht instantan regelt. Ansonsten lässt sich dem Oszilloskop-Bild entnehmen, dass der Soll-Wert sonst immer größer als der Ist-Wert ist.
+
+\paragraph{PI-Regelung} Hier ist nun der P- und der I-Anteil aktiviert, der D-Anteil bleibt weiterhin ausgeschaltet.
+
+\begin{figure}[htbp]
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{P_I_0.jpg}
+    \caption{$K_p=0$ Skt, $K_I=0$ Skt}
+    \label{fig:p=0_i=0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{P_0_I_5.jpg}
+    \caption{$K_p=0$ Skt, $K_I=5$ Skt}
+    \label{fig:p=0_i=5}
+    \end{subfigure}
+    \vspace{0.5cm}
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{P_0_I_50.jpg}
+    \caption{$K_p=0$ Skt, $K_I=50$ Skt}
+    \label{fig:p=0_i=50}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{P_50_I_5.jpg}
+    \caption{$K_p=50$ Skt, $K_I=5$ Skt}
+    \label{fig:p=50_i=5}
+    \end{subfigure}
+    \vspace{0.5cm}
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{P_100_I_50}
+    \caption{$K_p=100$ Skt, $K_I=50$ Skt}
+    \label{fig:p=100_i=50}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{P_100_I_10_ist-soll}
+    \caption{$K_p=100$ Skt, $K_I=10$ Skt, blau: Ist-Soll}
+    \label{fig:p=100_i=50_ist-soll}
+    \end{subfigure}
+    \caption{PI-Regler mit unterschiedlichen $K_P$ und $K_I$ Kombinationen, in (f): Ist-Soll}
+    \label{fig:PI-Regler}
+\end{figure}
