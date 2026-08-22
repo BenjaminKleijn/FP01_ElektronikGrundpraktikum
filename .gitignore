@@ -15,3 +15,6 @@
 **/*.blg
 **/*.run.xml
 **/*-SAVE-ERROR
+
+# PDF
+**/main.pdf
