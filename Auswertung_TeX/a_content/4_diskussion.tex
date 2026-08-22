@@ -1,26 +1,28 @@
 \subsection{Emitterschaltung}
 
 
-
-
-
 \subsection{Kollektorschaltung}
 \paragraph{Länge des Koaxialkabels}
-Die bestimmte Länge und angegebene Länge haben mit $S=0.14\sigma$ eine sehr geringe Abweichung. Jedoch sei hier angemerkt, dass die Abschätzung der Signalgeschwindigkeit auf 2/3 der Lichtgeschwindigkeit recht ungenau ist, in der Berechnung aber als perfekt angenommen wurde.
+Die bestimmte Länge und angegebene Länge haben mit $S=0.14\sigma$ eine sehr geringe Abweichung. Jedoch sei hier angemerkt, dass die Abschätzung der Signalgeschwindigkeit in einem BNC-Kabel auf \(\nicefrac{2}{3}\) der Lichtgeschwindigkeit recht ungenau ist, und nicht die exakte Ausbreitungsgeschwindigkeit darstellt.
 
-\paragraph{Impedanz des Koaxialkabels} Im Versuch wurde die Impedanz des verwendeten Koaxialkabels zu $R=54.60(21)$ bestimmt. Dies entspricht den typischen Werte für Koaxialkabel, die laut Wikipedia \autocite{Koaxialkabel} bei \(50-75 \, \Omega\) liegen.
-
+\paragraph{Impedanz des Koaxialkabels} Im Versuch wurde die Impedanz des verwendeten Koaxialkabels zu $R=\qty{54.60(21)}{\ohm}$ bestimmt. Dies entspricht den typischen Werten für Koaxialkabel, die laut Wikipedia \autocite{Koaxialkabel} bei \(\qtyrange{50}{75}{\ohm}\) liegen.
 
 \subsection{PID-Regler}
-
-\subsubsection{Interner Sollwert} Die Anpassung des Motors an den eingestellten Sollwert erfolgt, wie erwartet, schneller, wenn die P-Regelung aktiviert ist. Wenn sie deaktiviert ist, dann passiert die  Anpassung etwas verzögert, aber trotzdem recht schnell.
-Wenn man nun zusätzlich noch I- und D-Anteil hinzuschaltet, wird die Regelung weiter optimiert.
+\subsubsection{Interner Sollwert} Die Anpassung des Motors (\verb|ist| CH2) an den eingestellten Sollwert (\verb|soll| CH1) erfolgt, wie erwartet, schneller, wenn die P-Regelung aktiviert ist. Dies äußerte sich am Oszilloskop durch eine schnelle Wanderung der blauen Gleichspannungslinie, die der gelben Linie folgt, welche durch das Drehen eines Potentiometers variiert werden konnte. Wenn die Regelung deaktiviert ist, passiert die  Anpassung etwas verzögert, \verb|ist| erreicht aber das volle Niveau der eingestellten \verb|soll|-Amplitude. 
+Wenn man nun zusätzlich noch I- und D-Anteil hinzuschaltet, wird die Regelung weiter optimiert, egal wie schnell die Einstellungen am Potentiometer durch wildes Drehen geändert wurden - die Linien haben sich unverzögert und gemeinsam wie best buddies\autocite{spongebob} bewegt.
+\xfigure{htbp}{width=0.7\textwidth}{CH1Sollwert_mit_Poti;CH2Istwert;VerzögerungvonSollundIstLinie.jpg}{Interner Sollwert}{Interner Sollwert}
+% --- RECHTES BILD ---
+\tikz[remember picture, overlay] {
+  \node[anchor=north east, opacity=1] at ([xshift=-0.5cm, yshift=-18cm]current page.north east) {
+    \includegraphics[width=4cm]{bestbuddies.png}
+  };
+}
+\FloatBarrier
 
 \subsubsection{Externer Sollwert}
-
 Nun steuert ein Funktionsgenerator den Sollwert über ein eingestelltes Rechteck-Signal. Dabei werden nun die Regelungen getrennt für die P-Regelung, die PI-Regelung und für die PD-Regelung untersucht und schließlich mit der PID-Regelung optimiert.
 \paragraph{P-Regelung}
-Hier ist der I- und der D-Anteil ausgeschaltet.
+Hier ist der I- und der D-Anteil ausgeschaltet. In den folgenden Abbildungen ist an CH1 (gelb) das Referenzsignal des Frequenzgenerators, also \verb|soll| zu sehen, an CH2 (blau) liegt das vom Tacho erzeugte Signal an, welches die aktuelle Motordrehzahl \verb|ist|, beschreibt. Die Ausprägungen und der Vergleich der Signale für unterschiedliche Proportionalbeiwerte $K_p$ werden folgend diskutiert.
 \begin{figure}[htbp]
     \begin{subfigure}[b]{0.48\textwidth}
     \centering
@@ -67,16 +69,18 @@ Hier ist der I- und der D-Anteil ausgeschaltet.
     \caption{$K_p=5$ Skt, in Blau: Ist-Soll}
     \label{fig:p=5_ist-soll}
     \end{subfigure}
-    \caption{P-Regler mit unterschiedlichen $K_p$, in (f) ist zusätzlich ist-soll abgebildet für $K_p=5$ Skt}
+    \caption{P-Regler: Ist- und Soll-Signale bei unterschiedlichen $K_p$, in (f) ist zusätzlich ist-soll abgebildet für $K_p=5$ Skt}
     \label{fig:K_p-Regler}
 \end{figure}
+\FloatBarrier
 
-Man erkennt in \Cref{fig:K_p-Regler} die Anpassung des Motors an das Rechtecksignal (in Blau, Rechtecksignal in Gelb) für unterschiedliche Proportionalbeiwerte $K_p$. In \Cref{fig:p=0} sieht man die Einstellung mit minimalem $K_p$. Dabei ist die Motordrehzahl stets kleiner als das Soll. Bei kleinen \(K_p\) erkennt man, dass das Soll bei der kleineren Amplitude auf Null sinkt und somit der Motor stehen bleibt. Beim Sprung im Rechtecksignal auf die höhere Amplitude wird auch der 
-Motor hochgeregelt. Dabei gibt es zunächst einen Peak, der immer höher ist, als das anschließend erreichte Niveau der P-Regelung. Diese Überschwingungen werden größer, mit zunehmendem \(K_p\). Außerdem werden bei steigendem \(K_p\) auch mehr Amplituden der Überschwingung sichtbar. Folglich wird ein stabiler Wert erst später erreicht. Die stationäre Genauigkeit betreffend erkennt man in den Aufnahmen gut, dass diese bei steigendem $K_p$ verbessert wird. Genau erreicht wird das Niveau jedoch nicht, wie man auch bei hohen $K_p$ erkennen kann, aber es nähert sich schon gut an.
-Keinen Unterschied sieht man bei der Regelgeschwindigkeit, also der Zeitdauer nach einer Sollwert-Änderung bis zu einer Regel-Anpassung durch den P-Regler.
-In \Cref{fig:p=5_ist-soll} erkennt man zusätzlich noch den Ist-Soll-Verlauf. Hierbei wurde die Null auf die Mitte der Anzeige verschoben. Man sieht, dass die Abweichung direkt nach der Sollwert-Anpassung maximal wird, weil der P-Regler natürlich nicht instantan regelt. Ansonsten lässt sich dem Oszilloskop-Bild entnehmen, dass der Soll-Wert sonst immer größer als der Ist-Wert ist.
+In \Cref{fig:p=0} sieht man die Einstellung mit minimalem $K_p$. Dabei ist die Motordrehzahl stets kleiner als das gewünschte \verb|soll|. Generell gilt: Bei kleinen \(K_p\geq\qty{10}{\Skt}\) scheitert die Regelung daran, \verb|ist| auf das untere \verb|soll|-Niveau anzupassen, anstattdessen sinkt das Signal auf \(\approx\qty{0}{\volt}\), ergo der Motor bleibt stehen. Verlusteffekte wie Reibung zwingen den Motor zum Abwürgen und die versuchte (jedoch schwache) Regelung auf \(\qty{1}{\volt}\) reicht nicht aus, um die das Starten des Motors aus der Ruheposition zu ermöglichen. Erst beim Sprung des Rechtecksignals auf das höhere Niveau wird auch der Motor hochgeregelt.
 
-\paragraph{PI-Regelung} Hier ist nun der P- und der I-Anteil aktiviert, der D-Anteil bleibt weiterhin ausgeschaltet.
+Es sind bei jedem Flankenanstieg sogenannte \enquote{overshoots} (damit wird hier die von den Cursorn eingestellte Differenz zwischen \(\texttt{ist}_{\text{max}}\) und dem danach erreichten, eingependelten Niveau bezeichnet) zu sehen, mit steigendem \(K_p\) steigen diese halbwegs konsistent. Diese sogenannten Überschwingungen wachsen nicht nur in der Amplitude, sondern auch in der Frequenz und Dauer (mehr Perioden der Überschwingung sind sichtbar). Die Differenz, bezeichnet als stationäre Abweichung, zwischen stabilem \verb|ist|-Niveau und dem Referenzsignal charakterisiert die stationäre Genauigkeit, welche bei steigendem $K_p$ deutlich verbessert wird. Genau erreicht wird das Niveau jedoch nicht, wie man auch bei hohen $K_p$ erkennen kann, aber es nähert sich schon gut an. Keinen Unterschied sieht man bei der Regelgeschwindigkeit, also der Zeitdauer zwischen Sollwert-Änderung bis zu einer Regel-Anpassung durch den P-Regler (Flankenanstieg).
+
+In \cref{fig:p=5_ist-soll} ist zudem die Differenz \verb|ist|-\verb|soll| angezeigt, die Nulllinie wurde auf die Mitte der Anzeige verschoben, die blauen Niveaus zeigen also die konstante, (betragsmäßig) hohe stationäre Abweichung \(<0\) (bis auf die Überschwingung). Für das untere Eingangsniveau wird der Motor abgewürgt und das obere Niveau wird auch bei weitem nicht erreicht. Noch mehr Fotos würden ein wenig den (Bild-)Rahmen sprengen und wurden aus diesem Grund nicht eingefügt, jedoch bei diesen weiteren \verb|ist|-\verb|soll| Bildern beobachtet werden, dass selbst bei hohen \(K_p\)-Werten die stationäre Abweichung nicht null erreicht.
+
+\paragraph{PI-Regelung} Hier ist nun der P- und I-Anteil aktiviert, der D-Anteil bleibt weiterhin ausgeschaltet.
 
 \begin{figure}[htbp]
     \begin{subfigure}[b]{0.48\textwidth}
@@ -125,67 +129,14 @@ In \Cref{fig:p=5_ist-soll} erkennt man zusätzlich noch den Ist-Soll-Verlauf. Hi
     \caption{PI-Regler mit unterschiedlichen $K_P$ und $K_I$ Kombinationen, in (f): Ist-Soll}
     \label{fig:PI-Regler}
 \end{figure}
+Wie im ersten Bild erkennbar sorgt selbst minimale (\(K_I=\qty{0}{\Skt}\)) PI-Regelung dafür, dass die Überschwingungen das Signal dominieren, die stationäre Genauigkeit ist praktisch nicht existent. Wie auch bei der P-Regelung steigen die Frequenz, Amplitude und Dauer der Überschwingungen mit wachsendem \(K_I\)-Wert (\cref{fig:p=0_i=0,fig:p=0_i=5,fig:p=0_i=50}). Kernbeobachtung ist, dass die I-Regelung (bei P minimal) die instabilste von allen Regelungen ist und das System sehr schnell in Schwingung versetzt. \\
+Wird die P-Regelung dazugeschaltet bzw. erhöht (\cref{fig:p=0_i=5,fig:p=50_i=5}), so können die Überschwingungen bei kleinem Integrierbeiwert kompensiert bzw. ausgeglichen und unterdrückt werden, \cref{fig:p=100_i=50} zeigt jedoch, dass selbst hohe P-Werte einen Integrierbeiwert von \(K_I>\qty{10}{\Skt}\) nicht ausgleichen können.  
+
+Als wichtige Beobachtung wird noch festgehalten, dass auch wenn \(K_I\) mininal gewählt werden muss, um Überschwingungen zu vermeiden, die I-Regelung dennoch ausreicht, um die stationäre Abweichung auf null zu ziehen.
 
 
 
 \paragraph{PD-Regelung} Hierbei ist der P- und D-Regler aktiviert und der I-Regler ausgeschaltet.
-
-\begin{figure}[htbp]
-    \begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{p_0_skt.jpg}
-    \caption{$K_p=0$ Skt}
-    \label{fig:p=0}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{p_10_skt.jpg}
-    \caption{$K_p=10$ Skt}
-    \label{fig:p=10}
-    \end{subfigure}
-
-    \vspace{0.5cm}
-
-    \begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{p_50_skt.jpg}
-    \caption{$K_p=50$ Skt}
-    \label{fig:p=50}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{p_100_skt.jpg}
-    \caption{$K_p=100$ Skt}
-    \label{fig:p=100}
-    \end{subfigure}
-
-    \vspace{0.5cm}
-
-    \begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{p_300_skt.jpg}
-    \caption{$K_p=300$ Skt}
-    \label{fig:p=300}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{p_klein_5_skt.jpg}
-    \caption{$K_p=5$ Skt, in Blau: Ist-Soll}
-    \label{fig:p=5_ist-soll}
-    \end{subfigure}
-    \caption{P-Regler mit unterschiedlichen $K_p$, in (f) ist zusätzlich ist-soll abgebildet für $K_p=5$ Skt}
-    \label{fig:K_p-Regler}
-\end{figure}
-
-Man erkennt in \Cref{fig:K_p-Regler} die Anpassung des Motors an das Rechtecksignal (in Blau, Rechtecksignal in Gelb) für unterschiedliche Proportionalbeiwerte $K_p$. In \Cref{fig:p=0} sieht man die Einstellung mit minimalem $K_p$. Dabei ist die Motordrehzahl stets kleiner als das Soll. Bei kleinen \(K_p\) erkennt man, dass das Soll bei der kleineren Amplitude auf Null sinkt und somit der Motor stehen bleibt. Beim Sprung im Rechtecksignal auf die höhere Amplitude wird auch der 
-Motor hochgeregelt. Dabei gibt es zunächst einen Peak, der immer höher ist, als das anschließend erreichte Niveau der P-Regelung. Diese Überschwingungen werden größer, mit zunehmendem \(K_p\). Außerdem werden bei steigendem \(K_p\) auch mehr Amplituden der Überschwingung sichtbar. Folglich wird ein stabiler Wert erst später erreicht. Die stationäre Genauigkeit betreffend erkennt man in den Aufnahmen gut, dass diese bei steigendem $K_p$ verbessert wird. Genau erreicht wird das Niveau jedoch nicht, wie man auch bei hohen $K_p$ erkennen kann, aber es nähert sich schon gut an.
-Keinen Unterschied sieht man bei der Regelgeschwindigkeit, also der Zeitdauer nach einer Sollwert-Änderung bis zu einer Regel-Anpassung durch den P-Regler.
-In \Cref{fig:p=5_ist-soll} erkennt man zusätzlich noch den Ist-Soll-Verlauf. Hierbei wurde die Null auf die Mitte der Anzeige verschoben. Man sieht, dass die Abweichung direkt nach der Sollwert-Anpassung maximal wird, weil der P-Regler natürlich nicht instantan regelt. Ansonsten lässt sich dem Oszilloskop-Bild entnehmen, dass der Soll-Wert sonst immer größer als der Ist-Wert ist.
-
-\paragraph{PI-Regelung} Hier ist nun der P- und der I-Anteil aktiviert, der D-Anteil bleibt weiterhin ausgeschaltet.
 
 \begin{figure}[htbp]
     \begin{subfigure}[b]{0.48\textwidth}

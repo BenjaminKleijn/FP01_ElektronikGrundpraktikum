@@ -91,6 +91,8 @@
 \DeclareSIUnit{\rpm}{rpm}
 \DeclareSIUnit\jahr{a}
 \DeclareSIUnit\pixel{pixel}
+\DeclareSIUnit\Skt{Skt}
+
 \DeclareSIPrefix\twentythree{10^{23}}{23}       % um die einheit der boltzmannkonstante zu texen: \unit{\twentythree\J\per\K}
 
 \usepackage[version=4]{mhchem}                  % to nicely write chemcial elements (e.g. \ce{^{227}_{90}Th+})
