@@ -1,32 +1,91 @@
 \subsection{Emitterschaltung}
-\paragraph{Messgrößen}
-In der Auswertung wurden die gemessenen Messgrößen mit den theoretischen Werten verglichen. Letztere wurden dabei als fehlerfrei angenommen. Die Abweichungen liegen zwischen \(0.7 \) und \(80\sigma\). Diese gigantischen Abweichungen lassen sich dadurch rechtfertigen, dass einerseits der Fehler der experimentell gemessenen Werte sehr klein ist, dabei wurde der angegebene Fehler des Multimeters verwendet und andererseits sind die theoretischen Werte nicht perfekt. Diese wurden zwar recht genau berechnet, aber die ausgewählten Widerstände wichen teilweise deutlich von den Werten ab. Dadurch verändern sich natürlich auch die Spannungen. Bei manchen Fehlern handelt es sich auch um die Fortpflanzung der großen Abweichungen, wie bei der Größe \(U_\text{CE}\), die direkt aus \(U_C\) berechnet wurde.
-\paragraph{Verstärkung, Phasenverschiebung, Ansteuerbereich}
-Die Verstärkung wurde zu \(V=19.40(13)\) bestimmt. Hier ist die Abweichung vom theoretischen Wert 20 ebenso wie zuvor zu begründen. Die Phasenabweichung hat eine Abweichung von \(0.4\sigma\), wobei der recht große Fehler schon anzeigt, dass es hier bei der Messung starke Fluktuation gab. Die maximale Amplitude bevor der Verstärker in Sättigung geht wurde als \(U_\text{E,max}=800\) mV bestimmt. 
+\paragraph{Messgrößen:}
+In der Auswertung wurden die gemessenen Größen mit den theoretischen Werten verglichen, letztere wurden dabei als fehlerfrei angenommen. Die Abweichungen liegen zwischen \(0.7 \) und \(80\sigma\). Diese gigantischen Abweichungen lassen sich dadurch rechtfertigen, dass einerseits die Fehler der experimentell gemessenen Werte durch Verwenden des angegebenen Fehlers des Multimeters\autocite{Fluke_Mulitmeter} sehr gering sind und andererseits die theoretischen Werte nicht perfekt sind. Diese wurden zwar recht genau auf Basis der genormten Widerständsgrößen berechnet, aber die ausgewählten Widerstände weichen teilweise deutlich von diesen Werten ab. Zudem muss sich der als Parameter gesetzte Strom \(I_C\) verändern, wenn der Widerstand \(R_C\) nicht dem theoretisch eingesetzten entspricht, denn \cref{eq:R_C} zeigt deutlich, dass \(I_C\propto R_C\). Folglich verändern sich natürlich auch alle weiteren Größen und damit auch Spannungen, es handelt sich also um die Fortpflanzung der großen Abweichungen, wie bei der Größe \(U_\text{CE}\), die direkt aus \(U_C\) berechnet wurde.
 
-\paragraph{Frequenzgang}
+\paragraph{Verstärkung, Phasenverschiebung, Ansteuerbereich: }
+\begin{table}[htbp]
+\centering
+\caption{Vergleich von Verstärkung und Phase am Emitter}
+\begin{tabularx}{\textwidth}{LZZZZS}
+    \toprule
+         \text{Messreihe} & x_{\text{exp}} & x_{\text{calc/lit}} & \text{abs. Abw.} & \text{proz. Abw.}[\unit{\percent}] & {\(S[\sigma]\)} \\\midrule
+       V & \num{19.40(0.13)} & 20 & \num{0.60(0.13)} & \num{3.1(0.7)} & 5.0 \\
+       \phi\;[\unit{\degree}] & \num{177(8)} & 180 & \num{3(8)} & \num{2(5)} & 0.4 \\
+\bottomrule
+\end{tabularx}
+\label{table:Vergleich_V_Phi} 
+\end{table}
+Hier ist die Abweichung von \(5\sigma\) vom vorgegebenen Parameterwert \(V_{\text{lit}}\) ebenso wie zuvor zu begründen, die absolute Abweichung ist jedoch sehr gering. Die Phasenabweichung beträgt \(0.4\sigma\), wobei der recht große Fehler schon anzeigt, dass es hier bei der Messung starke Fluktuation gab, jedoch weitaus weniger als bei der sehr empfindlichen Kollektorschaltung. Der Ansteuerbereich von \(U_{E,\text{max}}=\qty{800}{\milli\volt}\) wurde in späteren Aufgaben genutzt, um eine passende Amplitudenspannung einzustellen.
 
-Für den Frequenzgang wurden die Messreihe des Messprotokolls geplottet und dann mit einer passenden Funktion angenähert. Aus dem gut passenden Fit wurde dann die Grenzfrequenz bestimmt: \(f_\text{ug}=31.2(2.5)\) Hz. \todo{Vergleich mit theoretischen Wert} 
+\paragraph{Frequenzgang: }
+Für den Frequenzgang wurden die Messreihe des Messprotokolls geplottet und dann mit einer passenden Funktion angenähert. Aus dem gut passenden Fit wurde die Grenzfrequenz bestimmt und kann mit der theoretischen Frequenz aus \cref{eq:f_ug_theo_emitter} verglichen werden:
+\begin{table}[htbp]
+\centering
+\caption{Vergleich von $f_{\text{ug}}^{\text{exp}}$ und $f_{\text{ug}}^{\text{exp}}$ am Emitter}
+\begin{tabularx}{0.8\textwidth}{LZZZx}
+    \toprule
+        f_{\text{ug}}^{\text{exp}}[\unit{\hertz}]&f_{\text{ug}}^{\text{exp}}[\unit{\hertz}]&\text{abs. Abw.}[\unit{\hertz}]&\text{proz. Abw.}[\unit{\percent}]&S[\sigma]\\\midrule
+        \num{31.2(2.5)}&37.4&\num{6.2(2.5)}&\num{20(9)}&\num{2.5}\\
+    \bottomrule
+\end{tabularx}
+\label{table:Vergleich_f_ug_Emitter} 
+\end{table}
+\FloatBarrier
+Der Fehler der Fitfrequenz wurde pauschal abgeschätzt.
 
-\paragraph{Eingangs- und Ausgangswiderstand}
+\paragraph{Eingangs- und Ausgangswiderstand: }
 Die mithilfe des Potentiometers gemessenen Eingangs- und Ausgangswiderstände stimmen mit einer Abweichung von \(0.01\sigma\) beziehungsweise \(0.4\sigma\) gut mit den berechneten Widerständen überein.
 
 \subsection{Kollektorschaltung}
-\paragraph{Messgrößen}
-Hier wurden die charakteristischen Größen der Kollektorschaltung mit den berechneten Werten verglichen. Auch hier traten besonders bei den Spannungen wieder hohe Fehler auf, was vor allem auf den geringen Fehler der gemessenen Größen und die ungenaue Wahl der realen Widerstände zurückzuführen ist. Hier weichen bereits die Widerstände selbst mit bis zu \(7\sigma\) stark von den Herstellerangaben ab.
+\paragraph{Messgrößen: }
+Hier wurden die charakteristischen Größen der Kollektorschaltung mit den berechneten Werten verglichen. Auch hier traten besonders bei den Spannungen wieder hohe Fehler auf, was vor allem auf den geringen Fehler der gemessenen Größen und die Diskrepanz der Berechnungsparameter zu realen Größen zurückzuführen ist. Hier weichen bereits die Widerstände selbst mit bis zu \(7\sigma\) stark von den Herstellerangaben ab.
 
-\paragraph{Frequenzgang}
-Der Frequenzgang bei er Kollektorschaltung wurde wiederum aus der Messreihe des Protokolls geplottet und anschließend wieder durch einen Fit angenähert. Dieses Mal ist der Fit etwas ungenauer: Einerseits hat- aufgrund der Schaltung- die Messung sehr geschwankt (siehe hierzu auch \Cref{fig:Oszi_hat_eigenstaendigen_Willen}), andererseits wurden auch deutlich weniger Messwerte im Anstiegsbereich aufgenommen. Dennoch kann man wiederum daraus die untere Grenzfrequenz bestimmen: \(f_\text{ug}=30.5(2.5)\) Hz. \todo{Vergleich mit Theorie} Damit liegt sie im selben Bereich, wie die bei der Emitterschaltung.
+\paragraph{Verstärkung und Phasenverschiebung:} Beide Werte stimmen mit den Erwartungen überein. Zum Vergleich wurde für die Phasenverschiebung ein Fehler von \(\Delta \phi=\ang{2}\) geschätzt.
+\begin{table}[htbp]
+\centering
+\caption{Vergleich von Verstärkung und Phase am Kollektor}
+\begin{tabularx}{\textwidth}{LZZZZS}
+    \toprule
+         \text{Messreihe} & x_{\text{exp}}& x_{\text{ber}} & \text{abs. Abw.} & \text{proz. Abw.}[\unit{\percent}] & {\(S[\sigma]\)} \\\midrule
+       V & \num{0.99(0.11)} & 1 & \num{0.01(0.11)} & \num{1(12)} & 0.1 \\
+       \phi\;[\unit{\degree}] & \num{2.0(2.0)} & 0 & \num{2.0(2.0)} & \num{100(150)} & 1.0 \\
+\bottomrule
+\end{tabularx}
+\label{table:Vergleich_V_phi_kollektor} 
+\end{table}
+\FloatBarrier
 
-\paragraph{Länge des Koaxialkabels}
-Die bestimmte Länge und angegebene Länge haben mit $S=0.14\sigma$ eine sehr geringe Abweichung. Jedoch sei hier angemerkt, dass die Abschätzung der Signalgeschwindigkeit in einem BNC-Kabel auf \(\nicefrac{2}{3}\) der Lichtgeschwindigkeit recht ungenau ist, und nicht die exakte Ausbreitungsgeschwindigkeit darstellt.
+\paragraph{Frequenzgang: }
+Der Frequenzgang der Kollektorschaltung wurde wiederum aus der Messreihe des Protokolls geplottet und anschließend durch einen Fit angenähert. Dieses Mal ist der Fit etwas ungenauer: Einerseits ist die Schaltung nach empirischen Belegen sehr emppfindlich und liefert selbst bei opimal eingestellter Signalausgabe stark schwankende Ergebnisse - schon bei kleinsten Veränderungen an den Kabelpositionen sind die Ergebnisse sehr verrauscht (siehe hierzu auch \cref{fig:Oszi_hat_eigenstaendigen_Willen}). Andererseits wurden auch deutlich weniger Messwerte im Anstiegsbereich aufgenommen. Dennoch kann man wiederum daraus die untere Grenzfrequenz bestimmen und mit der aus \cref{eq:f_ug_theo_kollektor} berechneten Grenzfrequenz vergleichen:
+\begin{table}[htbp]
+\centering
+\caption{Vergleich von $f_{\text{ug}}^{\text{exp}}$ und $f_{\text{ug}}^{\text{exp}}$ am Kollektor}
+\begin{tabularx}{0.8\textwidth}{LZZZx}
+    \toprule
+        f_{\text{ug}}^{\text{exp}}[\unit{\hertz}]&f_{\text{ug}}^{\text{exp}}[\unit{\hertz}]&\text{abs. Abw.}[\unit{\hertz}]&\text{proz. Abw.}[\unit{\percent}]&S[\sigma]\\\midrule
+        \num{30.5(2.5)}&49.1&\num{18.6(2.5)}&\num{61(10)}&\num{8}\\
+    \bottomrule
+\end{tabularx}
+\label{table:Vergleich_f_ug_kollektor} 
+\end{table}
 
-\paragraph{Impedanz des Koaxialkabels} Im Versuch wurde die Impedanz des verwendeten Koaxialkabels zu $R=\qty{54.60(21)}{\ohm}$ bestimmt. Dies entspricht den typischen Werten für Koaxialkabel, die laut Wikipedia \autocite{Koaxialkabel} bei \(\qtyrange{50}{75}{\ohm}\) liegen.
+Die über den Fit bestimmte Frequenz weicht signifikant von der theoretischen Frequenz ab. Neben den Fitungenauigkeiten und den starken Schwankungen beim Aufnehmen des Frequenzganges spielt hier natürlich in großem Maße die Toleranz des verwendeten Kondensators eine Rolle. Dessen Kapazität kann in der Realität stark vom in der Rechnung verwendeten Wert abweichen. Leider haben wir nicht bemerkt, dass das Multimeter auch eine Kapazitätsmessfunktion besitzt - tja pech gehabt\autocite{liloandstitch}, dann bleibt offen, ob die Frequenzgangmessung wirklich so ungenau war. % --- RECHTES BILD ---
+\tikz[remember picture, overlay] {
+  \node[anchor=north east, opacity=1] at ([xshift=-0.2cm, yshift=-18cm]current page.north east) {
+    \includegraphics[width=2cm]{liloandstitch.png}
+  };
+}
 
+\paragraph{Länge des Koaxialkabels: }
+Die bestimmte Länge und angegebene Länge haben mit $S=0.14\sigma$ eine sehr geringe Abweichung. Jedoch sei hier angemerkt, dass die Abschätzung der Signalgeschwindigkeit in einem BNC-Kabel auf \(\nicefrac{2}{3}\) der Lichtgeschwindigkeit recht ungenau ist, und nicht die exakte Ausbreitungsgeschwindigkeit darstellt. Im Gegensatz zur Versuchsanleitung wurde aufgrund der hohen Empfindlichkeit ergo erwartbaren Korrumption der Messergebnisse keine Kollektorschaltung als Treiberstufe für das Signal gewählt, sondern der Frequenzgenerator direkt an das Kabel angeschlossen.
+
+\paragraph{Impedanz des Koaxialkabels:} Im Versuch wurde die Impedanz des verwendeten Koaxialkabels zu $R=\qty{54.60(21)}{\ohm}$ bestimmt. Dies entspricht den typischen Werten für Koaxialkabel, die laut Wikipedia \autocite{Koaxialkabel} bei \(\qtyrange{50}{75}{\ohm}\) liegen.
+
+\clearpage
 \subsection{PID-Regler}
 \subsubsection{Interner Sollwert} Die Anpassung des Motors (\verb|ist| CH2) an den eingestellten Sollwert (\verb|soll| CH1) erfolgt, wie erwartet, schneller, wenn die P-Regelung aktiviert ist. Dies äußerte sich am Oszilloskop durch eine schnelle Wanderung der blauen Gleichspannungslinie, die der gelben Linie folgt, welche durch das Drehen eines Potentiometers variiert werden konnte. Wenn die Regelung deaktiviert ist, passiert die  Anpassung etwas verzögert, \verb|ist| erreicht aber das volle Niveau der eingestellten \verb|soll|-Amplitude. 
 Wenn man nun zusätzlich noch I- und D-Anteil hinzuschaltet, wird die Regelung weiter optimiert, egal wie schnell die Einstellungen am Potentiometer durch wildes Drehen geändert wurden - die Linien haben sich unverzögert und gemeinsam wie best buddies\autocite{spongebob} bewegt.
-\xfigure{htbp}{width=0.7\textwidth}{CH1Sollwert_mit_Poti;CH2Istwert;VerzögerungvonSollundIstLinie.jpg}{Interner Sollwert}{Interner Sollwert}
+\xfigure{htbp}{width=0.7\textwidth}{CH1Sollwert_mit_Poti;CH2Istwert;VerzögerungvonSollundIstLinie.jpg}{Regelung: Anpassung an internen Sollwert}{Anpassung an internen Sollwert}
 % --- RECHTES BILD ---
 \tikz[remember picture, overlay] {
   \node[anchor=north east, opacity=1] at ([xshift=-0.5cm, yshift=-18cm]current page.north east) {
@@ -35,9 +94,9 @@ Wenn man nun zusätzlich noch I- und D-Anteil hinzuschaltet, wird die Regelung w
 }
 \FloatBarrier
 
-\subsubsection{Externer Sollwert}
+\subsubsection{Regelkreise bei externem Sollwert}
 Nun steuert ein Funktionsgenerator den Sollwert über ein eingestelltes Rechteck-Signal. Dabei werden nun die Regelungen getrennt für die P-Regelung, die PI-Regelung und für die PD-Regelung untersucht und schließlich mit der PID-Regelung optimiert.
-\paragraph{P-Regelung}
+\paragraph{P-Regelung: }
 Hier ist der I- und der D-Anteil ausgeschaltet. In den folgenden Abbildungen ist an CH1 (gelb) das Referenzsignal des Frequenzgenerators, also \verb|soll| zu sehen, an CH2 (blau) liegt das vom Tacho erzeugte Signal an, welches die aktuelle Motordrehzahl \verb|ist|, beschreibt. Die Ausprägungen und der Vergleich der Signale für unterschiedliche Proportionalbeiwerte $K_p$ werden folgend diskutiert.
 \begin{figure}[htbp]
     \begin{subfigure}[b]{0.48\textwidth}
@@ -96,7 +155,7 @@ Es sind bei jedem Flankenanstieg sogenannte \enquote{overshoots} (damit wird hie
 
 In \cref{fig:p=5_ist-soll} ist zudem die Differenz \verb|ist|-\verb|soll| angezeigt, die Nulllinie wurde auf die Mitte der Anzeige verschoben, die blauen Niveaus zeigen also die konstante, (betragsmäßig) hohe stationäre Abweichung \(<0\) (bis auf die Überschwingung). Für das untere Eingangsniveau wird der Motor abgewürgt und das obere Niveau wird auch bei weitem nicht erreicht. Noch mehr Fotos würden ein wenig den (Bild-)Rahmen sprengen und wurden aus diesem Grund nicht eingefügt, jedoch bei diesen weiteren \verb|ist|-\verb|soll| Bildern beobachtet werden, dass selbst bei hohen \(K_p\)-Werten die stationäre Abweichung nicht null erreicht.
 
-\paragraph{PI-Regelung} Hier ist nun der P- und I-Anteil aktiviert, der D-Anteil bleibt weiterhin ausgeschaltet.
+\paragraph{PI-Regelung:} Hier ist nun der P- und I-Anteil aktiviert, der D-Anteil bleibt weiterhin ausgeschaltet.
 
 \begin{figure}[htbp]
     \begin{subfigure}[b]{0.48\textwidth}
@@ -153,7 +212,7 @@ Als wichtige Beobachtung wird noch festgehalten, dass auch wenn \(K_I\) mininal 
 
 
 
-\paragraph{PD-Regelung} Hierbei ist der P- und D-Regler aktiviert und der I-Regler ausgeschaltet.
+\paragraph{PD-Regelung:} Hierbei ist der P- und D-Regler aktiviert und der I-Regler ausgeschaltet.
 
 \begin{figure}[htbp]
     \begin{subfigure}[b]{0.48\textwidth}
@@ -184,11 +243,11 @@ Als wichtige Beobachtung wird noch festgehalten, dass auch wenn \(K_I\) mininal 
 
 Beim PD-Regler erkennt man zwei Phänomene: mit der Einstellung des P-Regelanteils entscheidet sich, wie genau das Niveau des Soll-Werts erreicht wird und wie schnell. Ein höherer P-Anteil führt hier zu besseren Ergebnissen, wie in \Cref{fig:PD-Regler} zu erkennen ist. Des weiteren sorgt der D-Anteil dafür, dass es keine Überschwingungen gibt und somit das Plateau eben ist. Wenn man beide hoch einstellt z.B. 300 Skt (\Cref{fig:p=300_d=300}) dann erhält man eine recht gute Regelung. Zuletzt sei noch angemerkt, dass es nach der spontanen Änderung des Soll-Werts eine nicht verschwindende Zeit braucht, damit der PD-Regler das neue Soll erreicht.
 
-\paragraph{PID-Regler} Nun werden alle drei Regler aktiviert. Aus den vorherigen Beobachtungen wurde die minimale Einstellung des I-Reglers übernommen, da dieser im Vergleich zu \cref{fig:p=300_d=300} (selbe P- und D-Einstellung) dennoch für Überschwingungen sorgt, wurde der D-Regler ordentlich aufgedreht. Das PI-Stellglied sorgt für schnellen Flankenanstieg (hohe Regelgeschwindigkeit) und verschwindende stationäre Abweichung, das D-Stellglied für die Entfernung der I-Überschwingungen. Eine optimalere Regelung wurde trotz langen Probierens nicht gefunden.
+\paragraph{PID-Regler:} Nun werden alle drei Regler aktiviert. Aus den vorherigen Beobachtungen wurde die minimale Einstellung des I-Reglers übernommen, da dieser im Vergleich zu \cref{fig:p=300_d=300} (selbe P- und D-Einstellung) dennoch für Überschwingungen sorgt, wurde der D-Regler ordentlich aufgedreht. Das PI-Stellglied sorgt für schnellen Flankenanstieg (hohe Regelgeschwindigkeit) und verschwindende stationäre Abweichung, das D-Stellglied für die Entfernung der I-Überschwingungen. Eine optimalere Regelung wurde trotz langen Probierens nicht gefunden.
 \xfigure{htbp}{width=0.8\textwidth}{PID_optimal}{Bestmögliche Einstellung des PID-Reglers}{Bestmögliche Einstellung des PID-Reglers bei \(K_P=300\) Skt, \(K_I=0\) Skt (minimal) und \(K_D=300\) Skt}
 \FloatBarrier
 
-\subsection{PID-Regelung unter Last, geringe Drehzahlen, periodischen Sollwerten,etc}
+\subsubsection{PID-Regelung in Anwendung}
 \paragraph{Lastschwankung:} Nachdem die zumindest unter gegebenen Umständen optimale PID-Regelung eingestellt wurde, wird beobachtet, welche Auswirkung das Anschließen einer Last (Glühbirne wird durch Generator, der die Motorenergie in elektrische Energie umwandelt, angetrieben) auf den Regelkreis hat. Dieser läuft nun wieder unter Einstellung eines internen \verb|soll|-Wertes. \\
 Der Effekt auf den Regelkreis ist nicht sichtbar, die Regelung ist so gut, dass die Schwankung des \verb|ist|-Signals aufgrund der Last direkt durch die Regelung kompensiert wird, sodass wie in \cref{fig:CH1Sollwert_mit_Poti;CH2Istwert;VerzögerungvonSollundIstLinie.jpg} nur zwei auf gleichem Niveau liegende Linien zu sehen sind. 
 
