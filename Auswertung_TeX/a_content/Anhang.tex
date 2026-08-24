@@ -5,7 +5,7 @@
 % ==============================================================================
 \section{Dimensionierungsberechnung}
 \label{sec:Dimensionierung}
-Anhand vorgegebener Parameter und den theoretischen Erläuterungen sowie Gleichungen im Skript\autocite{Skript_01} wurden die Größen der zu verwendenden Bauteile sowie die anschließend im Experiment zu messenden Größen berechnet. Die Widerstände und Kondensatoren wurden hierzu an die Normreihe E12 angepasst. Alle mit \enquote{Norm} indizierten Werte (also Spannungen, etc) wurden dann sukzessive mit den genormten Bauteilgrößen berechnet. 
+Anhand vorgegebener Parameter und den theoretischen Erläuterungen sowie Gleichungen im Skript\autocite{Skript_01} wurden die Größen der zu verwendenden Bauteile sowie die anschließend im Experiment zu messenden Größen berechnet (siehe \secref{sec:python_Dimensionierung}).Die Widerstände und Kondensatoren wurden hierzu an die Normreihe E12 angepasst. Alle mit \enquote{Norm} indizierten Werte (also Spannungen, etc) wurden dann sukzessive mit den genormten Bauteilgrößen berechnet. 
 Die Größen werden in diesem Format angegeben:
 \begin{flalign*}
   \hspace*{1.5cm} X_i = f(x_i) &&&& = X_{\mathrm{Norm}}\text{[a.u.]} \quad (X_{\mathrm{theo}}\text{[a.u.]})
@@ -204,6 +204,8 @@ Hier werden noch einmal kurz übersichtlich nur bauteilspezifische Größen aufg
 Nach Skript\autocite{Skript_01} sind \enquote{Widerstände [\dots] in internationalen Normreihen klassifiziert.} Die theoretisch berechneten Werte werden also an die zur Verfügung stehenden Normwerte angepasst, indem der Normwert mit der kleinsten Abweichung verwendet wurde. Es steht für Widerstände die Normreihe E12 zur Verfügung:
 \[(\numlist{1.0;1.2;1.5;1.8;2.2;2.7;3.3;3.9;4.7;5.6;6.8;8.2})\cdot 10^{0}-10^{5}\;\unit{\ohm}\]
 
-% \section{Code-Anhang}
-% Bei den Funktionen habe ich teilweise Dinge von verschiedenen Altprotokollen zusammengesucht, und auf meine Bedürfnisse umgeschrieben. Die konkreten Berechnung sind dann eigenständig.
-% \includepdf[pages=-]{../Code/241/241.pdf}
+\includepdf[pages=-,addtotoc={1, section, 1, Plot Code,sec:python_plots}]{../Plots.pdf}
+
+\includepdf[pages=-,addtotoc={1, section, 1, Tabellen Code,sec:python_tabelle}]{../Tabellen.pdf}
+
+\includepdf[pages=-,addtotoc={1, section, 1, Dimensionierung Code,sec:python_Dimensionierung}]{../Dimensionierung.pdf}

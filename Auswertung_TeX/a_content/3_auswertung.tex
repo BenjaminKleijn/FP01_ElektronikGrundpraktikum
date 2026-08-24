@@ -31,14 +31,14 @@ Die Stromstärke \(I_C\) wurde folgend berechnet:
   I_C=\frac{U_C}{R_C}&&\Delta I_C=I_C\sqrt{\frac{\Delta{R_C}^{2}}{R_C^{2}} + \frac{\Delta{U_C}^{2}}{U_C^{2}}}
   \label{eq:Stromstärke_fehler}
 \end{align}
-Offensichtlicherweise basieren die berechneten Werte auf Annahmen, die nur ungefähr getroffen wurden: \(\beta=400\) und \(U_{\text{BE}}=\qty{0.6}{\volt}\) aus der Berechnung entsprechen nicht den realen Werten aus dem Datasheet. Es gibt für diese beiden Werte keine exakten Angaben (\(U_{\text{CE}}\) und \(I_C\) abhängig, temperaturabhängig), die absolute Abweichung zwischen gewollter und experimentell vorliegender Kapazität ist auch unbekannt. Dadurch können die berechneten Werte gar nicht exakt dem untersuchten System entsprechen, was eine größere absolute Abweichung zwischen calc und exp Werten zur Folge hat. Diese Abweichung ist jedoch in der Interpretation der Sigma-Abweichungen zu vernachlässigen, denn die absoluten Abweichungen sind meistens gering, die Größenordnung der berechneten Werte ist richtig. Der weitaus dominierende Grund für die hohen Sigma-Abweichungen ist der winzige Fehler, der sich bisher nur aus dem Messfehler des Multimeters zusammensetzt. Warum die absolute Abweichung für \(U_C\) und \(U_{\text{CE}}\) \(\qty{1}{\volt}\) beträgt, wird in der \todo{diskussion label an entsprechende stelle} erörtert. % \secref{sec:Diskussion}
+Offensichtlicherweise basieren die berechneten Werte auf Annahmen, die nur ungefähr getroffen wurden: \(\beta=400\) und \(U_{\text{BE}}=\qty{0.6}{\volt}\) aus der Berechnung entsprechen nicht den realen Werten aus dem Datasheet. Es gibt für diese beiden Werte keine exakten Angaben (\(U_{\text{CE}}\) und \(I_C\) abhängig, temperaturabhängig), die absolute Abweichung zwischen gewollter und experimentell vorliegender Kapazität ist auch unbekannt. Dadurch können die berechneten Werte gar nicht exakt dem untersuchten System entsprechen, was eine größere absolute Abweichung zwischen calc und exp Werten zur Folge hat. Diese Abweichung ist jedoch in der Interpretation der Sigma-Abweichungen zu vernachlässigen, denn die absoluten Abweichungen sind meistens gering, die Größenordnung der berechneten Werte ist richtig. Der weitaus dominierende Grund für die hohen Sigma-Abweichungen ist der winzige Fehler, der sich bisher nur aus dem Messfehler des Multimeters zusammensetzt. Warum die absolute Abweichung für \(U_C\) und \(U_{\text{CE}}\) \(\qty{1}{\volt}\) beträgt, wird in \secref{sec:Diskussion_Emitter} erörtert. 
 
 \subsubsection{Verstärkung, Phasenverschiebung, Ansteuerbereich} 
-\paragraph{Verstärkung:} Mithilfe folgender Abbildung konnte die Verstärkung der Emitterschaltung bei einer beliebigen, sinusförmigen Wechselspannungsfrequenz \(f =\qty{5}{\kilo\hertz}\gg f_{ug}\) mit einer Spitzen-Spitzen Spannung von \(V_{pp}=\qty{500}{\milli\volt}\) bestimmt werden. Hierbei liegt an Channel 1 (gelb) der Ausgang der Emitterschaltung, und an Channel 2 (blau) der Ausgang des Frequenzgenerators an. 
+\paragraph{Verstärkung:} Mithilfe folgender Abbildung konnte die Verstärkung der Emitterschaltung bei einer beliebigen, sinusförmigen Wechselspannungsfrequenz \(f =\qty{5}{\kilo\hertz}\gg f_{\text{ug}}\) mit einer Spitzen-Spitzen Spannung von \(V_{pp}=\qty{500}{\milli\volt}\) bestimmt werden. Hierbei liegt an Channel 1 (gelb) der Ausgang der Emitterschaltung, und an Channel 2 (blau) der Ausgang des Frequenzgenerators an. 
 \xfigure{htbp}{width=0.7\textwidth}{Emitterschaltung_Verstaerkung_Phasenverschiebung.jpg}{Emitterschaltung: Verstärkung und Phasenverschiebung}{Emitterschaltung: Verstärkung und Phasenverschiebung}
 \FloatBarrier
 
-Die vom Oszilloskop gemittelten (\enquote{Mean}) Amplitudenwerte (= Spitzen-Spitzen Spannungen der detektierten Wechselspannungen) werden folgend als Ein (CH2)- und Ausgangsspannung (CH1) \(U_E,\;U_A\) bezeichnet. Die Fehler \(\Delta U_{E,A}\) werden den durch das Oszilloskop berechneten Standardabweichungen (\enquote{Std Dev}) entnommen.
+Die vom Oszilloskop gemittelten (\enquote{Mean}) Amplitudenwerte (= Spitzen-Spitzen Spannungen der detektierten Wechselspannungen) werden folgend als Ein- (CH2) und Ausgangsspannung (CH1) \(U_E,\;U_A\) bezeichnet. Die Fehler \(\Delta U_{E,A}\) werden den durch das Oszilloskop berechneten Standardabweichungen (\enquote{Std Dev}) entnommen.
 \begin{align}
   V=\frac{U_A}{U_E}&&\Delta V=V\sqrt{\left(\frac{\Delta U_A}{U_A}\right)^2+\left(\frac{\Delta U_E}{U_E}\right)^2}&&\tcbhighmath{V_{\qty{5}{\kilo\hertz}}=\num{19.40(0.13)}}
 \end{align}
@@ -47,18 +47,18 @@ Die vom Oszilloskop gemittelten (\enquote{Mean}) Amplitudenwerte (= Spitzen-Spit
 
 \subsubsection{Frequenzgang}
 Analog zur Berechnung der obigen, beispielhaften Verstärkung, wurde nun der Frequenzgang \(V(f)\) aufgenommen. 
-Die gemessenen Werte des Frequenzgangs aus Tabelle 1.2 des \nameref{Messprotokoll}s werden nun in ein doppelt-logarithmisches Diagramm aufgetragen. Anschließend wird eine Funktion der Form
+Die gemessenen Werte des Frequenzgangs aus Tabelle 1.2 des \nameref{Messprotokoll}s werden nun in ein doppelt-logarithmisches Diagramm aufgetragen, dabei ist der \(\Delta V\) für eine Frequenz bestimmt worden und als globaler Fehler gesetzt worden. Anschließend wird eine Funktion der Form
 \begin{equation}
   g (f; V_\text{{max}}, \Omega_1, \Omega_2, n_1, n_2) = \frac{V_\text{max}}{\sqrt{1 + \left(\frac{f}{\Omega_1}\right)^{2n_1}} \sqrt{1 + \left(\frac{f}{\Omega_2}\right)^{2n_2}}}
 \end{equation}
-über die Messwerte gefittet. Diese beschreibt den \enquote{Frequenzgang eines Verstärkers sowie eines Hochpassfilters mit nachgeschaltetem Tiefpassfilter n-ter Ordnung} \cite[vgl.][42]{Skript_2.2}, hierbei stehen \(\Omega_1, \Omega_2\) für die Grenzfrequenzen des Hoch- bzw.\ Tiefpassfilters und \(n_1,n_2\) für die jeweiligen Filterordnungen. Aus dem Fit kann schließlich die untere Grenzfrequenz $f_\text{ug}=f\left(\tfrac{1}{\sqrt{2}}V_{\text{max}}\right)$ (also die Frequenz beim entsprechend abgesunkenen Verstärkungsniveau) bestimmt werden. Diese Gleichung folgt indirekt aus der Definition der Grenzfrequenz: \enquote{das Absinken der Ausgangsspannung auf \(\qty{-3}{\decibel}\)}: Dieser Pegel \(Q\) entspricht \(Q=\defeq 10\log\left(\frac{U_A^2}{U_A^2}\right)=\qty{-3}{\decibel}\Leftrightarrow \frac{U_A}{U_E}=\frac{1}{\sqrt{2}}\).
+über die Messwerte gefittet. Diese beschreibt den \enquote{Frequenzgang eines Verstärkers sowie eines Hochpassfilters mit nachgeschaltetem Tiefpassfilter n-ter Ordnung} \cite[vgl.][42]{Skript_2.2}, hierbei stehen \(\Omega_1, \Omega_2\) für die Grenzfrequenzen des Hoch- bzw.\ Tiefpassfilters und \(n_1,n_2\) für die jeweiligen Filterordnungen. Aus dem Fit kann schließlich die untere Grenzfrequenz $f_\text{ug}=f\left(\tfrac{1}{\sqrt{2}}V_{\text{max}}\right)$ (also die Frequenz beim entsprechend abgesunkenen Verstärkungsniveau) bestimmt werden. Diese Gleichung folgt indirekt aus der Definition der Grenzfrequenz: \enquote{das Absinken der Ausgangsspannung auf \(\qty{-3}{\decibel}\)}: Dieser Pegel \(Q\) entspricht \(Q\defeq 10\log\left(\frac{U_A^2}{U_A^2}\right)=\qty{-3}{\decibel}\Leftrightarrow \frac{U_A}{U_E}=\frac{1}{\sqrt{2}}\).
 
-\xfigure{htbp}{width=0.8\textwidth}{Frequenzgang_Fit_Emitterschaltung.png}{Frequenzgang der Emitterschaltung mit Fit und eingezeichneter Grenzfrequenz}{Frequenzgang der Emitterschaltung mit Fit und eingezeichneter Grenzfrequenz}
+\xfigure{htbp}{width=0.8\textwidth}{Frequenzgang_Fit_Emitterschaltung.png}{Frequenzgang der Emitterschaltung}{Frequenzgang der Emitterschaltung mit Fit und eingezeichneter Grenzfrequenz}
 \FloatBarrier
 Aus dem Diagramm ergibt sich die Grenzfrequenz \(\tcbhighmath{f_\text{ug}=\qty{31.2(2.5)}{\hertz}}\).
 
 \subsubsection{Gleichstromgegenkopplung}
-Wie im \nameref{Messprotokoll} beschrieben steigt die Verstärkung für Wechselspannungen stark an, da die Gegenkopplung nur noch für Gleichstrom aktiv bleibt.
+Wie im \nameref{Messprotokoll} beschrieben, steigt die Verstärkung für Wechselspannungen stark an, da die Gegenkopplung nur noch für Gleichstrom aktiv bleibt.
 
 \subsubsection{Untersuchung des Eingangs- und Ausgangswiderstand}
 Mithilfe des Potentiometerkastens und diverser Verkabelungen (siehe \nameref{Messprotokoll}) konnten der Eingangs- und Ausgangswiderstand bestimmt und dann mithilfe der in \secref{sec:Dimensionierung} berechneten Werte verglichen werden:
@@ -75,7 +75,7 @@ Mithilfe des Potentiometerkastens und diverser Verkabelungen (siehe \nameref{Mes
 \label{table:Vergleich_emitter_R_EIN} 
 \end{table}
 \FloatBarrier
-
+\clearpage
 \subsection{Messungen an der Kollektorschaltung}
 \subsubsection{Messgrößen}
 \begin{table}[htbp]
@@ -87,6 +87,7 @@ Mithilfe des Potentiometerkastens und diverser Verkabelungen (siehe \nameref{Mes
        R_E\;[\unit{\ohm}] & \num{471.9(1.1)} & 470.0 & \num{1.9(1.1)} & \num{0.40(0.23)} & 1.9 \\
        R_1\;[\unit{\kilo\ohm}]  & \num{26.94(7)} & 27.0 & \num{0.06(7)} & \num{0.22(0.24)} & 1.0 \\
        R_2 \;[\unit{\kilo\ohm}] & \num{38.40(9)} & 39.0 & \num{0.60(9)} & \num{1.56(0.23)} & 7.0 \\
+       \midrule
        U_{\text{E}}\;[\unit{\volt}] & \num{7.700(0.014)} & 7.05 & \num{0.650(0.014)} & \num{8.44(0.19)} & 50.0 \\
        I_{\text{E}}\;[\unit{\milli\ampere}] & \num{16.32(5)} & 15 & \num{1.32(5)} & \num{8.1(0.4)} & 30.0 \\
        U_{\text{BE}}\;[\unit{\volt}] & \num{0.6790(0.0014)} & 0.6 & \num{0.0790(0.0014)} & \num{11.63(0.20)} & 60.0 \\
@@ -100,7 +101,7 @@ Mithilfe des Potentiometerkastens und diverser Verkabelungen (siehe \nameref{Mes
 \(I_E\) wurde analog zu \cref{eq:Stromstärke_fehler} berechnet. 
 
 \paragraph{Phasenverschiebung:} Analog zur Emitterschaltung wurden Verstärkung und Phasenverschiebung bei einer Frequenz von \(f=\qty{5}{\kilo\hertz}\) bestimmt. Da die Schaltung jedoch unglaublich empfindlich ist und stark schwankte, wurden einige Bilder gemacht, der Wert  \(\tcbhighmath{V=\num{0.99(11)}}\) basiert auf den Zahlen aus \cref{fig:Kollektorschaltung_Verstaerkung_Phasenverschiebung}.\(\Phi=\ang{2}\) hat wie am Oszi zu sehen, eine exorbitante Standardabweichung (Messung schwankte stark). 
-\xfigure{htbp}{width=0.8\textwidth}{Kollektorschaltung_Verstaerkung_Phasenverschiebung}{Verstärkung und Phasenverschiebung der Kollektorschaltung}{Verstärkung und Phasenverschiebung der Kollektorschaltung}
+\xfigure{htbp}{width=0.7\textwidth}{Kollektorschaltung_Verstaerkung_Phasenverschiebung}{Verstärkung und Phasenverschiebung der Kollektorschaltung}{Verstärkung und Phasenverschiebung der Kollektorschaltung}
 \FloatBarrier
 
 \subsubsection{Frequenzgang}
@@ -108,25 +109,25 @@ Nun werden die Messwerte des Frequenzgangs der Kollektorschaltung aus Tabelle 2.
 \begin{equation}
   V (f; V_\text{max}, W_1, n_1) = \frac{V_\text{max}}{\sqrt{1 + \left( \frac{W_1}{f} \right)^{2 \cdot n_1}}}
 \end{equation}
-verwendet. Schließlich kann man wieder die untere Grenzfrequenz $f_\text{ug}$ aus dem Fit bestimmen, indem untersucht, wann der Fit auf $\frac{1}{\sqrt{2}}V_\text{max}$ gesunken ist.
-\xfigure{htbp}{width=0.8\textwidth}{Frequenzgang_Fit_Kollektorschaltung.png}{Frequenzgang der Kollektorschaltung mit Fit und eingezeichneter Grenzfrequenz}{Frequenzgang der Kollektorschaltung mit Fit und eingezeichneter Grenzfrequenz}
+verwendet. Schließlich kann man wieder die untere Grenzfrequenz $f_\text{ug}$ aus dem Fit bestimmen, wann der Fit auf $\frac{1}{\sqrt{2}}V_\text{max}$ gesunken ist.
+\xfigure{htbp}{width=0.8\textwidth}{Frequenzgang_Fit_Kollektorschaltung.png}{Frequenzgang der Kollektorschaltung}{Frequenzgang der Kollektorschaltung mit Fit und eingezeichneter Grenzfrequenz}
 \FloatBarrier
 Für die Grenzfrequenz ergibt sich $\tcbhighmath{f_\text{ug}=\qty{30.5(2.5)}{\hertz}}$.
 
 \subsubsection{Bestimmung der Länge des Koaxialkabels}
-Das Signal des Frequenzgenerators wurde an CH1 des Oszis angeschlossen und gleichzeitig durch ein BNC T-Stück ein Koaxialkabel an diesen Eingang des Oszis gesteckt und dessen Ende wiederum an CH2 angeschlossen. Dies bedeutet, dass in \cref{fig:Koaxialkabel_Reflexion_CH1_FreqGen_CH2_Kabelausgang} die erste gelbe Rechteckstufe das Eingangssignal des Frequenzgenerators darstellt. Das Signal wird durch den hohen Innenwiderstand des Oszilloskops reflektiert (oder durch das T-Stück gleichzeitig an Oszi und in Koaxialkabel geschickt) und breitet sich somit auch innerhalb des Koaxialkabels aus, dieses Signal sieht man nun an der blauen Rechteckstufe. Am CH2 Eingang wird es am Oszi reflektiert und wandert also wieder zurück, ist folglich als zweite gelbe Rechteckstufe an CH1 zu sehen. Die Zeit \(t\) zwischen initialer Stufe und Reflektionsstufe wurde mit Cursorn bestimmt, deren Fehler sich durch \(\Delta t=\sqrt{2}\cdot\qty{2}{\nano\s}\) bestimmt (linkes und rechtes Markieren). Damit ergibt sich die (einfache) Länge des Kabels durch 
+Das Signal des Frequenzgenerators wurde an CH1 des Oszis angeschlossen und gleichzeitig durch ein BNC T-Stück ein Koaxialkabel an diesen Eingang des Oszis gesteckt und dessen Ende wiederum an CH2 angeschlossen. Dies bedeutet, dass in \cref{fig:Koaxialkabel_Reflexion_CH1_FreqGen_CH2_Kabelausgang} die erste gelbe Rechteckstufe das Eingangssignal des Frequenzgenerators darstellt. Das Signal wird durch den hohen Innenwiderstand des Oszilloskops reflektiert (oder durch das T-Stück gleichzeitig an Oszi und in Koaxialkabel geschickt - ?) und breitet sich somit auch innerhalb des Koaxialkabels aus, dieses Signal sieht man nun an der blauen Rechteckstufe. Am CH2 Eingang wird es am Oszi reflektiert und wandert also wieder zurück, ist folglich als zweite gelbe Rechteckstufe an CH1 zu sehen. Die Zeit \(t\) zwischen initialer Stufe und Reflektionsstufe wurde mit Cursorn bestimmt, deren Fehler sich durch \(\Delta t=\sqrt{2}\cdot\qty{2}{\nano\s}\) bestimmt (linkes und rechtes Markieren). Damit ergibt sich die (einfache) Länge des Kabels durch 
 \begin{align}
   l=v\frac{t}{2}=\tfrac{2}{3}c\;\frac{t}{2}&&\Delta l=\tfrac{2}{3}c\;\frac{t}{\Delta 2}&&\tcbhighmath{l=\qty{13.54(28)}{\meter}}
 \end{align}
-Der am Kabel angegebene Wert beträgt $l_\text{lit}= \qty{13.5}{\meter}$, damit beträgt die Abweichung $S=0.14 \sigma$.
-\xfigure{htbp}{width=0.8\textwidth}{Koaxialkabel_Reflexion_CH1_FreqGen_CH2_Kabelausgang}{Messung der Länge des Koaxialkabels anhand der Reflexion}{Messung der Länge des Koaxialkabels anhand der Reflexion\\ Bem: Der markierte Abschnitt ist die Zeit, in der das Signal das Kabel zwei Mal durchlaufen hat}
+Der am Kabel angegebene Wert beträgt $l_\text{lit}= \qty{13.5}{\meter}$, somit ist die Abweichung $S=0.14 \sigma$.
+\xfigure{htbp}{width=0.7\textwidth}{Koaxialkabel_Reflexion_CH1_FreqGen_CH2_Kabelausgang}{Messung der Länge des Koaxialkabels anhand der Reflexion}{Messung der Länge des Koaxialkabels anhand der Reflexion\\ Bem: Der markierte Abschnitt ist die Zeit, in der das Signal das Kabel zwei Mal durchlaufen hat}
 \FloatBarrier
 
 \subsubsection{Bestimmung der Impedanz des Koaxialkabels}
-In der Messung wurde durch Minimieren des Reflektionssignals die Impedanz $R$ des Koaxialkabels zu $R=\qty{54.60(21)}{\ohm}$ bestimmt. Diese Messmethode (es wurde eine von der Anleitung abweichende Methode benutzt) beruht auf der Tatsache, dass wenn am Ausgang des Koaxialkabels ein Widerstand angeschlossen ist, der dem Wellenwiderstand der Leitung entspricht \cite[vgl.][73]{Skript_1}, keine Reflektionen auftreten. Da das Minimieren des Signals am Oszilloskopbildschirm verständlicherweise nur per Augenmaß erfolgte, ist der Multimeter \(\Delta R\) wsl. zu klein angesetzt, das ist aus mangelndem Literaturwert aber sowieso irrelevant.
+In der Messung wurde durch Minimieren des Reflektionssignals die Impedanz $R$ des Koaxialkabels zu $R=\qty{54.60(21)}{\ohm}$ bestimmt. Diese Messmethode (es wurde eine von der Anleitung abweichende Methode benutzt) beruht auf der Tatsache, dass wenn am Ausgang des Koaxialkabels ein Widerstand angeschlossen ist, der dem Wellenwiderstand der Leitung entspricht \cite[vgl.][73]{Skript_1}, keine Reflektionen auftreten. 
 
 \subsection{PID-Regelung}
-Die (da qualitative) Auswertung der Beobachtungen an den Regelkreises wird in der Diskussion durchgeführt.
+Die (da qualitative) Auswertung der Beobachtungen an den Regelkreisen wird in der Diskussion durchgeführt.
 
 % \begin{table}[htb]
 %   \centering
