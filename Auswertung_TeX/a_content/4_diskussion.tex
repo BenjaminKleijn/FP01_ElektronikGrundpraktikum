@@ -1,8 +1,10 @@
 \subsection{Emitterschaltung}
+\label{sec:Diskussion_Emitter}
 \paragraph{Messgrößen:}
-In der Auswertung wurden die gemessenen Größen mit den theoretischen Werten verglichen, letztere wurden dabei als fehlerfrei angenommen. Die Abweichungen liegen zwischen \(0.7 \) und \(80\sigma\). Diese gigantischen Abweichungen lassen sich dadurch rechtfertigen, dass einerseits die Fehler der experimentell gemessenen Werte durch Verwenden des angegebenen Fehlers des Multimeters\autocite{Fluke_Mulitmeter} sehr gering sind und andererseits die theoretischen Werte nicht perfekt sind. Diese wurden zwar recht genau auf Basis der genormten Widerständsgrößen berechnet, aber die ausgewählten Widerstände weichen teilweise deutlich von diesen Werten ab. Zudem muss sich der als Parameter gesetzte Strom \(I_C\) verändern, wenn der Widerstand \(R_C\) nicht dem theoretisch eingesetzten entspricht, denn \cref{eq:R_C} zeigt deutlich, dass \(I_C\propto R_C\). Folglich verändern sich natürlich auch alle weiteren Größen und damit auch Spannungen, es handelt sich also um die Fortpflanzung der großen Abweichungen, wie bei der Größe \(U_\text{CE}\), die direkt aus \(U_C\) berechnet wurde.
+In der Auswertung wurden die gemessenen Größen mit den theoretischen Werten verglichen, letztere wurden dabei als fehlerfrei angenommen (unter Einbeziehung der Toleranz der Kondensatoren wären die Sigma-Abweichungen deutlich besser). Die Abweichungen liegen zwischen \(0.7 \) und \(80\sigma\). Diese gigantischen Abweichungen lassen sich dadurch rechtfertigen, dass einerseits die Fehler der experimentell gemessenen Werte durch Verwenden des angegebenen Fehlers des Multimeters\autocite{Fluke_Mulitmeter} sehr gering sind und andererseits die theoretischen Werte nicht perfekt sind. Diese wurden zwar recht genau auf Basis der genormten Widerstandsgrößen berechnet, aber die ausgewählten Widerstände weichen teilweise deutlich von diesen Werten ab. Zudem muss sich der als Parameter gesetzte Strom \(I_C\) verändern, wenn der Widerstand \(R_C\) nicht dem theoretisch eingesetzten entspricht, denn \cref{eq:R_C} zeigt deutlich, dass \(I_C\propto R_C\). Folglich verändern sich natürlich auch alle weiteren Größen und damit auch Spannungen, es handelt sich also um die Fortpflanzung der großen Abweichungen, wie bei der Größe \(U_\text{CE}\), die direkt aus \(U_C\) berechnet wurde.
 
 \paragraph{Verstärkung, Phasenverschiebung, Ansteuerbereich: }
+Hier ist die Abweichung von \(5\sigma\) vom vorgegebenen Parameterwert \(V_{\text{lit}}\) ebenso wie zuvor zu begründen, die absolute Abweichung ist jedoch sehr gering. Die Phasenabweichung beträgt \(0.4\sigma\), wobei der recht große Fehler schon anzeigt, dass es hier bei der Messung starke Fluktuation gab, jedoch weitaus weniger als bei der sehr empfindlichen Kollektorschaltung. Der Ansteuerbereich von \(U_{E,\text{max}}=\qty{800}{\milli\volt}\) wurde in späteren Aufgaben genutzt, um eine passende Amplitudenspannung einzustellen.
 \begin{table}[htbp]
 \centering
 \caption{Vergleich von Verstärkung und Phase am Emitter}
@@ -15,14 +17,13 @@ In der Auswertung wurden die gemessenen Größen mit den theoretischen Werten ve
 \end{tabularx}
 \label{table:Vergleich_V_Phi} 
 \end{table}
-Hier ist die Abweichung von \(5\sigma\) vom vorgegebenen Parameterwert \(V_{\text{lit}}\) ebenso wie zuvor zu begründen, die absolute Abweichung ist jedoch sehr gering. Die Phasenabweichung beträgt \(0.4\sigma\), wobei der recht große Fehler schon anzeigt, dass es hier bei der Messung starke Fluktuation gab, jedoch weitaus weniger als bei der sehr empfindlichen Kollektorschaltung. Der Ansteuerbereich von \(U_{E,\text{max}}=\qty{800}{\milli\volt}\) wurde in späteren Aufgaben genutzt, um eine passende Amplitudenspannung einzustellen.
 
-\paragraph{Frequenzgang: }
-Für den Frequenzgang wurden die Messreihe des Messprotokolls geplottet und dann mit einer passenden Funktion angenähert. Aus dem gut passenden Fit wurde die Grenzfrequenz bestimmt und kann mit der theoretischen Frequenz aus \cref{eq:f_ug_theo_emitter} verglichen werden:
+\paragraph{Frequenzgang:}
+Für den Frequenzgang wurde die Messreihe des Messprotokolls geplottet und dann mit einer passenden Funktion angenähert. Aus dem gut passenden Fit wurde die Grenzfrequenz bestimmt (der Fehler wurde pauschal abgeschätzt) und kann mit der theoretischen Frequenz aus \cref{eq:f_ug_theo_emitter} verglichen werden:
 \begin{table}[htbp]
 \centering
 \caption{Vergleich von $f_{\text{ug}}^{\text{exp}}$ und $f_{\text{ug}}^{\text{exp}}$ am Emitter}
-\begin{tabularx}{0.8\textwidth}{LZZZx}
+\begin{tabularx}{\textwidth}{LZZZx}
     \toprule
         f_{\text{ug}}^{\text{exp}}[\unit{\hertz}]&f_{\text{ug}}^{\text{exp}}[\unit{\hertz}]&\text{abs. Abw.}[\unit{\hertz}]&\text{proz. Abw.}[\unit{\percent}]&S[\sigma]\\\midrule
         \num{31.2(2.5)}&37.4&\num{6.2(2.5)}&\num{20(9)}&\num{2.5}\\
@@ -31,13 +32,12 @@ Für den Frequenzgang wurden die Messreihe des Messprotokolls geplottet und dann
 \label{table:Vergleich_f_ug_Emitter} 
 \end{table}
 \FloatBarrier
-Der Fehler der Fitfrequenz wurde pauschal abgeschätzt.
 
-\paragraph{Eingangs- und Ausgangswiderstand: }
+\paragraph{Eingangs- und Ausgangswiderstand:}
 Die mithilfe des Potentiometers gemessenen Eingangs- und Ausgangswiderstände stimmen mit einer Abweichung von \(0.01\sigma\) beziehungsweise \(0.4\sigma\) gut mit den berechneten Widerständen überein.
 
 \subsection{Kollektorschaltung}
-\paragraph{Messgrößen: }
+\paragraph{Messgrößen:}
 Hier wurden die charakteristischen Größen der Kollektorschaltung mit den berechneten Werten verglichen. Auch hier traten besonders bei den Spannungen wieder hohe Fehler auf, was vor allem auf den geringen Fehler der gemessenen Größen und die Diskrepanz der Berechnungsparameter zu realen Größen zurückzuführen ist. Hier weichen bereits die Widerstände selbst mit bis zu \(7\sigma\) stark von den Herstellerangaben ab.
 
 \paragraph{Verstärkung und Phasenverschiebung:} Beide Werte stimmen mit den Erwartungen überein. Zum Vergleich wurde für die Phasenverschiebung ein Fehler von \(\Delta \phi=\ang{2}\) geschätzt.
@@ -55,12 +55,12 @@ Hier wurden die charakteristischen Größen der Kollektorschaltung mit den berec
 \end{table}
 \FloatBarrier
 
-\paragraph{Frequenzgang: }
-Der Frequenzgang der Kollektorschaltung wurde wiederum aus der Messreihe des Protokolls geplottet und anschließend durch einen Fit angenähert. Dieses Mal ist der Fit etwas ungenauer: Einerseits ist die Schaltung nach empirischen Belegen sehr emppfindlich und liefert selbst bei opimal eingestellter Signalausgabe stark schwankende Ergebnisse - schon bei kleinsten Veränderungen an den Kabelpositionen sind die Ergebnisse sehr verrauscht (siehe hierzu auch \cref{fig:Oszi_hat_eigenstaendigen_Willen}). Andererseits wurden auch deutlich weniger Messwerte im Anstiegsbereich aufgenommen. Dennoch kann man wiederum daraus die untere Grenzfrequenz bestimmen und mit der aus \cref{eq:f_ug_theo_kollektor} berechneten Grenzfrequenz vergleichen:
+\paragraph{Frequenzgang:}
+Der Frequenzgang der Kollektorschaltung wurde wiederum aus der Messreihe des Protokolls geplottet und anschließend durch einen Fit angenähert. Dieses Mal ist der Fit etwas ungenauer: Einerseits ist die Schaltung nach empirischen Belegen sehr empfindlich und liefert selbst bei optimal eingestellter Signalausgabe stark schwankende Ergebnisse - schon bei kleinsten Veränderungen an den Kabelpositionen sind die Ergebnisse sehr verrauscht (siehe hierzu auch \cref{fig:Oszi_hat_eigenstaendigen_Willen}). Andererseits wurden auch deutlich weniger Messwerte im Anstiegsbereich aufgenommen. Dennoch kann man wiederum die untere Grenzfrequenz bestimmen und mit der aus \cref{eq:f_ug_theo_kollektor} berechneten Grenzfrequenz vergleichen:
 \begin{table}[htbp]
 \centering
 \caption{Vergleich von $f_{\text{ug}}^{\text{exp}}$ und $f_{\text{ug}}^{\text{exp}}$ am Kollektor}
-\begin{tabularx}{0.8\textwidth}{LZZZx}
+\begin{tabularx}{\textwidth}{LZZZx}
     \toprule
         f_{\text{ug}}^{\text{exp}}[\unit{\hertz}]&f_{\text{ug}}^{\text{exp}}[\unit{\hertz}]&\text{abs. Abw.}[\unit{\hertz}]&\text{proz. Abw.}[\unit{\percent}]&S[\sigma]\\\midrule
         \num{30.5(2.5)}&49.1&\num{18.6(2.5)}&\num{61(10)}&\num{8}\\
@@ -71,33 +71,41 @@ Der Frequenzgang der Kollektorschaltung wurde wiederum aus der Messreihe des Pro
 
 Die über den Fit bestimmte Frequenz weicht signifikant von der theoretischen Frequenz ab. Neben den Fitungenauigkeiten und den starken Schwankungen beim Aufnehmen des Frequenzganges spielt hier natürlich in großem Maße die Toleranz des verwendeten Kondensators eine Rolle. Dessen Kapazität kann in der Realität stark vom in der Rechnung verwendeten Wert abweichen. Leider haben wir nicht bemerkt, dass das Multimeter auch eine Kapazitätsmessfunktion besitzt - tja pech gehabt\autocite{liloandstitch}, dann bleibt offen, ob die Frequenzgangmessung wirklich so ungenau war. % --- RECHTES BILD ---
 \tikz[remember picture, overlay] {
-  \node[anchor=north east, opacity=1] at ([xshift=-0.2cm, yshift=-18cm]current page.north east) {
-    \includegraphics[width=2cm]{liloandstitch.png}
+  \node[anchor=north west, opacity=1] at ([xshift=0.2cm, yshift=-2.2cm]current page.north west) {
+    \begin{minipage}{2cm}
+      \includegraphics[width=2cm]{liloandstitch.png}
+      \captionsetup{labelformat=empty}
+      \captionof{figure}[\emph{Meme:} crying stitch\autocite{liloandstitch}]{\autocite{liloandstitch}}
+    \end{minipage}
   };
 }
 
-\paragraph{Länge des Koaxialkabels: }
+\paragraph{Länge des Koaxialkabels:}
 Die bestimmte Länge und angegebene Länge haben mit $S=0.14\sigma$ eine sehr geringe Abweichung. Jedoch sei hier angemerkt, dass die Abschätzung der Signalgeschwindigkeit in einem BNC-Kabel auf \(\nicefrac{2}{3}\) der Lichtgeschwindigkeit recht ungenau ist, und nicht die exakte Ausbreitungsgeschwindigkeit darstellt. Im Gegensatz zur Versuchsanleitung wurde aufgrund der hohen Empfindlichkeit ergo erwartbaren Korrumption der Messergebnisse keine Kollektorschaltung als Treiberstufe für das Signal gewählt, sondern der Frequenzgenerator direkt an das Kabel angeschlossen.
 
-\paragraph{Impedanz des Koaxialkabels:} Im Versuch wurde die Impedanz des verwendeten Koaxialkabels zu $R=\qty{54.60(21)}{\ohm}$ bestimmt. Dies entspricht den typischen Werten für Koaxialkabel, die laut Wikipedia \autocite{Koaxialkabel} bei \(\qtyrange{50}{75}{\ohm}\) liegen.
+\paragraph{Impedanz des Koaxialkabels:} Im Versuch wurde die Impedanz des verwendeten Koaxialkabels zu $R=\qty{54.60(21)}{\ohm}$ bestimmt. Dies entspricht den typischen Werten für Koaxialkabel, die laut Wikipedia \autocite{Koaxialkabel} bei \(\qtyrange{50}{75}{\ohm}\) liegen. Da das Minimieren des Signals am Oszilloskopbildschirm verständlicherweise nur per Augenmaß erfolgte, ist der Multimeter \(\Delta R\) wsl. zu klein angesetzt, das ist aus mangelndem exaktem Literaturwert aber sowieso irrelevant.
 
 \clearpage
-\subsection{PID-Regler}
-\subsubsection{Interner Sollwert} Die Anpassung des Motors (\verb|ist| CH2) an den eingestellten Sollwert (\verb|soll| CH1) erfolgt, wie erwartet, schneller, wenn die P-Regelung aktiviert ist. Dies äußerte sich am Oszilloskop durch eine schnelle Wanderung der blauen Gleichspannungslinie, die der gelben Linie folgt, welche durch das Drehen eines Potentiometers variiert werden konnte. Wenn die Regelung deaktiviert ist, passiert die  Anpassung etwas verzögert, \verb|ist| erreicht aber das volle Niveau der eingestellten \verb|soll|-Amplitude. 
+\subsection{Untersuchung von PID-Regelung}
+\subsubsection{Interner Sollwert} Die Anpassung des Motors (\verb|ist| CH2) an den eingestellten Sollwert (\verb|soll| CH1) erfolgt, wie erwartet, schneller, wenn die P-Regelung aktiviert ist. Dies äußerte sich am Oszilloskop durch eine schnelle Wanderung der blauen Gleichspannungslinie, die der gelben Linie folgt, welche durch das Drehen eines Potentiometers variiert werden konnte. Wenn die Regelung deaktiviert ist, passiert die  Anpassung etwas verzögert, \verb|ist| erreicht aber das volle Niveau der eingestellten \verb|soll|-Amplitude (solange \(\texttt{soll}>U_{\text{Einsatz}}\)). 
 Wenn man nun zusätzlich noch I- und D-Anteil hinzuschaltet, wird die Regelung weiter optimiert, egal wie schnell die Einstellungen am Potentiometer durch wildes Drehen geändert wurden - die Linien haben sich unverzögert und gemeinsam wie best buddies\autocite{spongebob} bewegt.
 \xfigure{htbp}{width=0.7\textwidth}{CH1Sollwert_mit_Poti;CH2Istwert;VerzögerungvonSollundIstLinie.jpg}{Regelung: Anpassung an internen Sollwert}{Anpassung an internen Sollwert}
+\FloatBarrier
 % --- RECHTES BILD ---
 \tikz[remember picture, overlay] {
-  \node[anchor=north east, opacity=1] at ([xshift=-0.5cm, yshift=-18cm]current page.north east) {
+  \node[anchor=north east, opacity=1] at ([xshift=-0.5cm, yshift=-10cm]current page.north east) {
+    \begin{minipage}{4cm}
     \includegraphics[width=4cm]{bestbuddies.png}
+      \captionsetup{labelformat=empty}
+      \captionof{figure}[\emph{Meme:} patrick \& spongebob\autocite{spongebob}]{\autocite{spongebob}}
+    \end{minipage}
   };
 }
-\FloatBarrier
 
+\clearpage
 \subsubsection{Regelkreise bei externem Sollwert}
-Nun steuert ein Funktionsgenerator den Sollwert über ein eingestelltes Rechteck-Signal. Dabei werden nun die Regelungen getrennt für die P-Regelung, die PI-Regelung und für die PD-Regelung untersucht und schließlich mit der PID-Regelung optimiert.
-\paragraph{P-Regelung: }
-Hier ist der I- und der D-Anteil ausgeschaltet. In den folgenden Abbildungen ist an CH1 (gelb) das Referenzsignal des Frequenzgenerators, also \verb|soll| zu sehen, an CH2 (blau) liegt das vom Tacho erzeugte Signal an, welches die aktuelle Motordrehzahl \verb|ist|, beschreibt. Die Ausprägungen und der Vergleich der Signale für unterschiedliche Proportionalbeiwerte $K_p$ werden folgend diskutiert.
+Nun steuert ein Funktionsgenerator den Sollwert über ein eingestelltes Rechteck-Signal. Dabei werden nun die Regelungen getrennt für die P-, PI- PD-Regelung untersucht und schließlich mit der PID-Regelung optimiert.
+\paragraph{P-Regelung:} Hier ist der I- und D-Anteil ausgeschaltet. In den folgenden Abbildungen ist an CH1 (gelb) das Referenzsignal des Frequenzgenerators, also \verb|soll| zu sehen, an CH2 (blau) liegt das vom Tacho (Generator) erzeugte Signal an, welches die aktuelle Motordrehzahl \verb|ist|, beschreibt.
 \begin{figure}[htbp]
     \begin{subfigure}[b]{0.48\textwidth}
     \centering
@@ -113,7 +121,7 @@ Hier ist der I- und der D-Anteil ausgeschaltet. In den folgenden Abbildungen ist
     \label{fig:p=10}
     \end{subfigure}
 
-    \vspace{0.5cm}
+    \vspace{0.3cm}
 
     \begin{subfigure}[b]{0.48\textwidth}
     \centering
@@ -129,7 +137,7 @@ Hier ist der I- und der D-Anteil ausgeschaltet. In den folgenden Abbildungen ist
     \label{fig:p=100}
     \end{subfigure}
 
-    \vspace{0.5cm}
+    \vspace{0.3cm}
 
     \begin{subfigure}[b]{0.48\textwidth}
     \centering
@@ -141,20 +149,21 @@ Hier ist der I- und der D-Anteil ausgeschaltet. In den folgenden Abbildungen ist
     \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{p_klein_5_skt.jpg}
-    \caption{$K_p=5$ Skt, in Blau: Ist-Soll}
+    \caption{$K_p=5$ Skt, in blau: \texttt{ist-soll}}
     \label{fig:p=5_ist-soll}
     \end{subfigure}
-    \caption{P-Regler: Ist- und Soll-Signale bei unterschiedlichen $K_p$, in (f) ist zusätzlich ist-soll abgebildet für $K_p=5$ Skt}
+    \caption[P-Regler: unterschiedliche $K_p$]{P-Regler: \texttt{ist}- und \texttt{soll}-Signale bei unterschiedlichen $K_p$, in (f) ist zusätzlich \texttt{ist-soll} abgebildet für $K_p=5$ Skt}
     \label{fig:K_p-Regler}
 \end{figure}
 \FloatBarrier
+Die Ausprägungen und der Vergleich der Signale für unterschiedliche Proportionalbeiwerte $K_p$ werden folgend diskutiert.\\
+In \Cref{fig:p=0} sieht man die Einstellung mit minimalem $K_p$. Dabei ist die Motordrehzahl stets kleiner als das gewünschte \verb|soll|. Generell gilt: Bei kleinen \(K_p\geq\qty{10}{\Skt}\) scheitert die Regelung daran, \verb|ist| auf das untere \verb|soll|-Niveau anzupassen, anstattdessen sinkt das Signal auf \(\approx\qty{0}{\volt}\), ergo der Motor bleibt stehen. Verlusteffekte wie Reibung zwingen den Motor zum Abwürgen und die versuchte (jedoch schwache) Regelung auf \(\qty{1}{\volt}\) reicht nicht aus, um das Starten des Motors aus der Ruheposition zu ermöglichen. Erst beim Sprung des Rechtecksignals auf das höhere Niveau wird auch der Motor hochgeregelt.
 
-In \Cref{fig:p=0} sieht man die Einstellung mit minimalem $K_p$. Dabei ist die Motordrehzahl stets kleiner als das gewünschte \verb|soll|. Generell gilt: Bei kleinen \(K_p\geq\qty{10}{\Skt}\) scheitert die Regelung daran, \verb|ist| auf das untere \verb|soll|-Niveau anzupassen, anstattdessen sinkt das Signal auf \(\approx\qty{0}{\volt}\), ergo der Motor bleibt stehen. Verlusteffekte wie Reibung zwingen den Motor zum Abwürgen und die versuchte (jedoch schwache) Regelung auf \(\qty{1}{\volt}\) reicht nicht aus, um die das Starten des Motors aus der Ruheposition zu ermöglichen. Erst beim Sprung des Rechtecksignals auf das höhere Niveau wird auch der Motor hochgeregelt.
+Es sind bei jedem Flankenanstieg sogenannte \enquote{overshoots} (damit wird hier die von den Cursorn eingestellte Differenz zwischen \(\texttt{ist}_{\text{max}}\) und dem danach erreichten, eingependelten Niveau bezeichnet) zu sehen, mit steigendem \(K_p\) steigen diese halbwegs konsistent. Diese sogenannten Überschwingungen wachsen nicht nur in der Amplitude, sondern auch in der Frequenz und Dauer (mehr Perioden der Überschwingung sind sichtbar). Die Differenz, bezeichnet als stationäre Abweichung, zwischen stabilem \verb|ist|-Niveau und dem Referenzsignal charakterisiert die stationäre Genauigkeit, welche bei steigendem $K_p$ deutlich verbessert wird. Genau erreicht wird das Niveau jedoch nicht, wie man auch bei hohen $K_p$ erkennen kann, aber es nähert sich gut an. Keinen (mit dem Auge erkennbaren) Unterschied sieht man bei der Regelgeschwindigkeit, also der Zeitdauer zwischen Sollwert-Änderung bis zu einer Regel-Anpassung durch den P-Regler (Flankenanstieg). Diese Größe hätte effektiver untersucht werden können, indem mithilfe der Cursor die zeitliche Breite der Flanke ausgemessen wird.
 
-Es sind bei jedem Flankenanstieg sogenannte \enquote{overshoots} (damit wird hier die von den Cursorn eingestellte Differenz zwischen \(\texttt{ist}_{\text{max}}\) und dem danach erreichten, eingependelten Niveau bezeichnet) zu sehen, mit steigendem \(K_p\) steigen diese halbwegs konsistent. Diese sogenannten Überschwingungen wachsen nicht nur in der Amplitude, sondern auch in der Frequenz und Dauer (mehr Perioden der Überschwingung sind sichtbar). Die Differenz, bezeichnet als stationäre Abweichung, zwischen stabilem \verb|ist|-Niveau und dem Referenzsignal charakterisiert die stationäre Genauigkeit, welche bei steigendem $K_p$ deutlich verbessert wird. Genau erreicht wird das Niveau jedoch nicht, wie man auch bei hohen $K_p$ erkennen kann, aber es nähert sich schon gut an. Keinen Unterschied sieht man bei der Regelgeschwindigkeit, also der Zeitdauer zwischen Sollwert-Änderung bis zu einer Regel-Anpassung durch den P-Regler (Flankenanstieg).
+In \cref{fig:p=5_ist-soll} ist zudem die Differenz \verb|ist|-\verb|soll| angezeigt, die Nulllinie wurde auf die Mitte der Anzeige verschoben, die blauen Niveaus zeigen also die konstante, (betragsmäßig) hohe stationäre Abweichung \(<0\) (bis auf die Überschwingung). Für das untere Eingangsniveau wird der Motor abgewürgt und das obere Niveau wird auch bei weitem nicht erreicht. Noch mehr Fotos würden ein wenig den (Bild-)Rahmen sprengen und wurden aus diesem Grund nicht eingefügt, jedoch konnte bei diesen weiteren \verb|ist|-\verb|soll| Bildern beobachtet werden, dass selbst bei hohen \(K_p\)-Werten die stationäre Abweichung nicht null erreicht.
 
-In \cref{fig:p=5_ist-soll} ist zudem die Differenz \verb|ist|-\verb|soll| angezeigt, die Nulllinie wurde auf die Mitte der Anzeige verschoben, die blauen Niveaus zeigen also die konstante, (betragsmäßig) hohe stationäre Abweichung \(<0\) (bis auf die Überschwingung). Für das untere Eingangsniveau wird der Motor abgewürgt und das obere Niveau wird auch bei weitem nicht erreicht. Noch mehr Fotos würden ein wenig den (Bild-)Rahmen sprengen und wurden aus diesem Grund nicht eingefügt, jedoch bei diesen weiteren \verb|ist|-\verb|soll| Bildern beobachtet werden, dass selbst bei hohen \(K_p\)-Werten die stationäre Abweichung nicht null erreicht.
-
+\clearpage
 \paragraph{PI-Regelung:} Hier ist nun der P- und I-Anteil aktiviert, der D-Anteil bleibt weiterhin ausgeschaltet.
 
 \begin{figure}[htbp]
@@ -172,7 +181,7 @@ In \cref{fig:p=5_ist-soll} ist zudem die Differenz \verb|ist|-\verb|soll| angeze
     \label{fig:p=0_i=5}
     \end{subfigure}
 
-    \vspace{0.5cm}
+    \vspace{0.3cm}
     
     \begin{subfigure}[b]{0.48\textwidth}
     \centering
@@ -187,7 +196,9 @@ In \cref{fig:p=5_ist-soll} ist zudem die Differenz \verb|ist|-\verb|soll| angeze
     \caption{$K_p=50$ Skt, $K_I=5$ Skt}
     \label{fig:p=50_i=5}
     \end{subfigure}
-    \vspace{0.5cm}
+
+    \vspace{0.3cm}
+
     \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{P_100_I_50}
@@ -201,16 +212,14 @@ In \cref{fig:p=5_ist-soll} ist zudem die Differenz \verb|ist|-\verb|soll| angeze
     \caption{$K_p=100$ Skt, $K_I=10$ Skt, blau: Ist-Soll}
     \label{fig:p=100_i=50_ist-soll}
     \end{subfigure}
-    \caption{PI-Regler mit unterschiedlichen $K_P$ und $K_I$ Kombinationen, in (f): Ist-Soll}
+    \caption[PI-Regler: unterschiedliche $K_P$ und $K_I$ Kombinationen]{PI-Regler mit unterschiedlichen $K_P$ und $K_I$ Kombinationen, in (f): Ist-Soll}
     \label{fig:PI-Regler}
 \end{figure}
 \FloatBarrier
-Wie im ersten Bild erkennbar sorgt selbst minimale (\(K_I=\qty{0}{\Skt}\)) PI-Regelung dafür, dass die Überschwingungen das Signal dominieren, die stationäre Genauigkeit ist praktisch nicht existent. Wie auch bei der P-Regelung steigen die Frequenz, Amplitude und Dauer der Überschwingungen mit wachsendem \(K_I\)-Wert (\cref{fig:p=0_i=0,fig:p=0_i=5,fig:p=0_i=50}). Kernbeobachtung ist, dass die I-Regelung (bei P minimal) die instabilste von allen Regelungen ist und das System sehr schnell in Schwingung versetzt. \\
+Wie im ersten Bild erkennbar, sorgt selbst minimale (\(K_I=\qty{0}{\Skt}\)) PI-Regelung dafür, dass die Überschwingungen das Signal dominieren, die stationäre Genauigkeit ist praktisch nicht existent. Wie auch bei der P-Regelung steigen die Frequenz, Amplitude und Dauer der Überschwingungen mit wachsendem \(K_I\)-Wert (\cref{fig:p=0_i=0,fig:p=0_i=5,fig:p=0_i=50}). Kernbeobachtung ist, dass die I-Regelung (bei P minimal) die instabilste von allen Regelungen ist und das System sehr schnell in Schwingung versetzt. \\
 Wird die P-Regelung dazugeschaltet bzw. erhöht (\cref{fig:p=0_i=5,fig:p=50_i=5}), so können die Überschwingungen bei kleinem Integrierbeiwert kompensiert bzw. ausgeglichen und unterdrückt werden, \cref{fig:p=100_i=50} zeigt jedoch, dass selbst hohe P-Werte einen Integrierbeiwert von \(K_I>\qty{10}{\Skt}\) nicht ausgleichen können.  
 
-Als wichtige Beobachtung wird noch festgehalten, dass auch wenn \(K_I\) mininal gewählt werden muss, um Überschwingungen zu vermeiden, die I-Regelung dennoch ausreicht, um die stationäre Abweichung auf null zu ziehen.
-
-
+Als wichtige Beobachtung sei noch festgehalten, dass auch wenn \(K_I\) minimal gewählt werden muss, um Überschwingungen zu vermeiden, die I-Regelung dennoch ausreicht, um die stationäre Abweichung auf null zu ziehen.
 
 \paragraph{PD-Regelung:} Hierbei ist der P- und D-Regler aktiviert und der I-Regler ausgeschaltet.
 
@@ -229,7 +238,7 @@ Als wichtige Beobachtung wird noch festgehalten, dass auch wenn \(K_I\) mininal 
     \label{fig:p=50_d=300}
     \end{subfigure}
 
-    \vspace{0.5cm}
+    \vspace{0.3cm}
     
     \begin{subfigure}[b]{\textwidth}
     \centering
@@ -237,28 +246,39 @@ Als wichtige Beobachtung wird noch festgehalten, dass auch wenn \(K_I\) mininal 
     \caption{$K_P=300$ Skt, $K_D=300$ Skt}
     \label{fig:p=300_d=300}
     \end{subfigure}
-    \caption{PD-Regler mit unterschiedlichen $K_P$ und $K_D$ Kombinationen, in (f): Ist-Soll}
+    \caption[PD-Regler: unterschiedliche $K_P$ und $K_D$ Kombinationen]{PD-Regler mit unterschiedlichen $K_P$ und $K_D$ Kombinationen, in (f): Ist-Soll}
     \label{fig:PD-Regler}
 \end{figure}
 
-Beim PD-Regler erkennt man zwei Phänomene: mit der Einstellung des P-Regelanteils entscheidet sich, wie genau das Niveau des Soll-Werts erreicht wird und wie schnell. Ein höherer P-Anteil führt hier zu besseren Ergebnissen, wie in \Cref{fig:PD-Regler} zu erkennen ist. Des weiteren sorgt der D-Anteil dafür, dass es keine Überschwingungen gibt und somit das Plateau eben ist. Wenn man beide hoch einstellt z.B. 300 Skt (\Cref{fig:p=300_d=300}) dann erhält man eine recht gute Regelung. Zuletzt sei noch angemerkt, dass es nach der spontanen Änderung des Soll-Werts eine nicht verschwindende Zeit braucht, damit der PD-Regler das neue Soll erreicht.
+Beim PD-Regler erkennt man zwei Phänomene: mit der Einstellung des P-Regelanteils entscheidet sich, wie genau das Niveau des Soll-Werts erreicht wird und wie schnell. Ein höherer P-Anteil führt hier zu besseren Ergebnissen, wie in \Cref{fig:PD-Regler} zu erkennen ist. Des weiteren sorgt der D-Anteil dafür, dass es keine Überschwingungen gibt und somit das Plateau eben ist. Wenn man beide hoch einstellt, z.B. 300 Skt (\Cref{fig:p=300_d=300}), dann entwickelt sich eine recht gute Regelung. Zuletzt sei noch angemerkt, dass keine definite Aussage über die Regelgeschwindigkeit getroffen werden kann, außer dass diese augenscheinlich\autocite{not_sure_if} niedriger ist als beim P(I)-Regler. Dies ist sinnvoll, da der D-Regler nicht nur Überschwingungen (folgender Abschnitt), sondern auch die steile Flanke des P-Reglers dämpft.
+\tikz[remember picture, overlay] {
+  \node[anchor=north west, opacity=1] at ([xshift=4cm, yshift=-13cm]current page.north west) {
+    \begin{minipage}{2cm}
+    \includegraphics[width=2cm]{NOTSUREIF.jpg}
+      \captionsetup{labelformat=empty}
+      \captionof{figure}[\emph{Meme:} not quite sure\autocite{not_sure_if}]{\autocite{not_sure_if}}
+    \end{minipage}
+  };
+}
 
+\clearpage
 \paragraph{PID-Regler:} Nun werden alle drei Regler aktiviert. Aus den vorherigen Beobachtungen wurde die minimale Einstellung des I-Reglers übernommen, da dieser im Vergleich zu \cref{fig:p=300_d=300} (selbe P- und D-Einstellung) dennoch für Überschwingungen sorgt, wurde der D-Regler ordentlich aufgedreht. Das PI-Stellglied sorgt für schnellen Flankenanstieg (hohe Regelgeschwindigkeit) und verschwindende stationäre Abweichung, das D-Stellglied für die Entfernung der I-Überschwingungen. Eine optimalere Regelung wurde trotz langen Probierens nicht gefunden.
-\xfigure{htbp}{width=0.8\textwidth}{PID_optimal}{Bestmögliche Einstellung des PID-Reglers}{Bestmögliche Einstellung des PID-Reglers bei \(K_P=300\) Skt, \(K_I=0\) Skt (minimal) und \(K_D=300\) Skt}
+\xfigure{htbp}{width=0.7\textwidth}{PID_optimal}{PID-Regler: bestmögliche Einstellung}{Bestmögliche Einstellung des PID-Reglers bei \(K_P=300\) Skt, \(K_I=0\) Skt (minimal) und \(K_D=300\) Skt}
 \FloatBarrier
 
 \subsubsection{PID-Regelung in Anwendung}
 \paragraph{Lastschwankung:} Nachdem die zumindest unter gegebenen Umständen optimale PID-Regelung eingestellt wurde, wird beobachtet, welche Auswirkung das Anschließen einer Last (Glühbirne wird durch Generator, der die Motorenergie in elektrische Energie umwandelt, angetrieben) auf den Regelkreis hat. Dieser läuft nun wieder unter Einstellung eines internen \verb|soll|-Wertes. \\
 Der Effekt auf den Regelkreis ist nicht sichtbar, die Regelung ist so gut, dass die Schwankung des \verb|ist|-Signals aufgrund der Last direkt durch die Regelung kompensiert wird, sodass wie in \cref{fig:CH1Sollwert_mit_Poti;CH2Istwert;VerzögerungvonSollundIstLinie.jpg} nur zwei auf gleichem Niveau liegende Linien zu sehen sind. 
 
-Deutlich interessanter ist die die Beobachtung bei ausgeschalteter Regelung: 
+\clearpage
+Deutlich interessanter ist die Beobachtung bei ausgeschalteter Regelung: 
 \xfigure{htbp}{width=0.7\textwidth}{Gluehbirne_an_aus_A3.5.jpg}{Glühbirnenlast am Motor bei ausgeschalteter Regelung}{Glühbirnenlast am Motor bei ausgeschalteter Regelung}
 \FloatBarrier
 Das Abfallen der blauen \verb|ist|-Linie kennzeichnet das Anschalten der Glühbirne. Das Niveau stabilisiert sich, sobald die Glühbirne maximal leuchtet und ab diesem Zeitpunkt einen konstanten Strom zieht. Bei Entfernen der Last steigt die Drehzahl des Motors wieder auf das vorherige Niveau, was jedoch durch fehlende Regelung weiterhin nicht an den \verb|soll|-Wert heranreicht.
 
-\paragraph{geringe Drehzahlen:} Eine weitere qualitative Untersuchung erfolgte bei Einstellen geringer Sollspannungen. Da der Regelkreis dafür sorgt, dass konsant \verb|ist|=\verb|soll|, und dadurch Reibungseffekte stetig ausgeglichen werden, kann sich der Motor auch bei geringer Drehzahl bewegen, dies sieht man an der linken Hälfte in \cref{fig:mit_und_ohne_Regelung_kleiner_sollwert.jpg}. Wird die Regelung ausgeschaltet, bedeutet dies wie oben schon beschrieben (dort war die Regelung schlicht zu schwach), dass der Motor abgwürgt wird, da die \verb|ist| Spannung nicht ausreicht, um Verlusteffekte auszugleichen und den Motor zu starten bzw.\ ins Rollen zu bringen. Dies sieht man in der rechten Seite von \cref{fig:mit_und_ohne_Regelung_kleiner_sollwert.jpg}: Die Sollspannung wurde zuvor auf den minimalsten Wert gesetzt, bei der sich der Motor ohne Regelung aufhört zu drehen (\(U_{\texttt{soll}}<\)Einsatzspannung), dann wurde bei dieser Spannung die Regelung eingeschaltet, sodass zu sehen ist, dass der Regelkreis dieses Abwürgeproblem umgeht, und anschließend der Jumper auf \enquote{Regelung aus} umgesteckt. Das Oszilloskop zeigt also das Abfallen der \verb|ist|-Spannung auf \(\qty{0}{\volt}\). 
+\paragraph{geringe Drehzahlen:} Eine weitere qualitative Untersuchung erfolgte bei Einstellen geringer Sollspannungen. Da der Regelkreis dafür sorgt, dass konstant \verb|ist|=\verb|soll|, und dadurch Reibungseffekte stetig ausgeglichen werden, kann sich der Motor auch bei geringer Drehzahl bewegen, dies sieht man an der linken Hälfte in \cref{fig:mit_und_ohne_Regelung_kleiner_sollwert.png}. Wird die Regelung ausgeschaltet, bedeutet dies wie oben schon beschrieben (dort war die Regelung schlicht zu schwach), dass der Motor abgwürgt wird, da die \verb|ist| Spannung nicht ausreicht, um Verlusteffekte auszugleichen und den Motor zu starten bzw.\ ins Rollen zu bringen. Dies sieht man in der rechten Seite von \cref{fig:mit_und_ohne_Regelung_kleiner_sollwert.png}. In diesem Versuch wurde die Sollspannung zuvor auf den minimalsten Wert gesetzt, bei der sich der Motor ohne Regelung aufhört zu drehen (\(U_{\texttt{soll}}<\text{Einsatzspannung}\)). Anschließend wurde bei dieser Spannung die Regelung eingeschaltet, sodass der Regelkreis dieses Abwürgeproblem umgeht, und dann der Jumper auf \enquote{Regelung aus} umgesteckt. Das Oszilloskop zeigt also (da nun \(U_{\text{soll}}<U_{\text{Einsatz}}\)) das Abfallen der \verb|ist|-Spannung auf \(\qty{0}{\volt}\). 
 
-\xfigure{htbp}{width=0.7\textwidth}{mit_und_ohne_Regelung_kleiner_sollwert.jpg}{Geringe Drehzahlen mit und ohne Regelung}{Geringe Drehzahlen mit und ohne Regelung}
+\xfigure{htbp}{width=0.7\textwidth}{mit_und_ohne_Regelung_kleiner_sollwert.png}{Geringe Drehzahlen mit und ohne Regelung}{Geringe Drehzahlen mit und ohne Regelung}
 \FloatBarrier
 
 \paragraph{Sinus- und Sägezahnspannnungen:} Stellt man im externen \verb|soll|-Modus eine sinusförmige Wechselspannung ein, so ist das Verhalten des Regelkreises und die Genauigkeit frequenzabhängig:
@@ -280,8 +300,8 @@ Das Abfallen der blauen \verb|ist|-Linie kennzeichnet das Anschalten der Glühbi
     \label{fig:sinusPID}
 \end{figure}
 \FloatBarrier
-Schon eine Frequenz von \(\qty{3}{\hertz}\) reicht aus, sodass eine sichtbare Latenz zwischen \verb|ist| und \verb|soll| auftritt, niedrige Frequenzen werden vom Regelkreis jedoch problemlos übernommen und auf den Motor übertragen. Eine ausgeschaltete Regelung reicht aufgrund des periodischen Unterschreitens der Einsatzspannung und des sehr kurzen Zeitraums, indem diese Überschritten wird, nicht aus, um den Motor nennenswerte zum Laufen zu bekommen. 
-
+Schon eine Frequenz von \(\qty{3}{\hertz}\) reicht aus, sodass eine sichtbare Latenz zwischen \verb|ist| und \verb|soll| auftritt (aber wer betreibt auch einen Motor mit sinusförmig ändernder Wechselspannung?), niedrige Frequenzen werden vom Regelkreis jedoch problemlos übernommen und auf den Motor übertragen. Eine ausgeschaltete Regelung reicht aufgrund des periodischen Unterschreitens der Einsatzspannung und des sehr kurzen Zeitraums, indem diese Überschritten wird, nicht aus, um den Motor nennenswert zum Laufen zu bekommen. 
+\clearpage
 Auch für eine Sägezahnspannnung ist das Verhalten frequenzabhängig:
 \begin{figure}[htbp]
     \begin{subfigure}[b]{0.48\textwidth}
@@ -301,4 +321,9 @@ Auch für eine Sägezahnspannnung ist das Verhalten frequenzabhängig:
     \label{fig:sägezahnPID}
 \end{figure}
 \FloatBarrier
-in \cref{fig:sägePID_an} ist links noch ganz kurz \(f=\qty{1}{\hertz}\) zu erkennen, im Gegensatz zur ausgeschalteten Regelung, ist die PID-Regelung dazu in der Lage der Sägezahnspannung bis zu einer Frequenz von \(\qty{2}{\hertz}\) zu folgen.
+in \cref{fig:sägePID_an} ist links noch ganz kurz \(f=\qty{1}{\hertz}\) zu erkennen, im Gegensatz zur ausgeschalteten Regelung ist die PID-Regelung dazu in der Lage, der Sägezahnspannung bis zu einer Frequenz von \(\qty{2}{\hertz}\) zu folgen.
+
+\subsection{Fazit}
+Trotz der rein qualitativen Natur des letzten Abschnitts hat das Erstellen dieses ausführlichen \LaTeX-Dokuments mal wieder zu viel Zeit in Anspruch genommen. Der Versuch hingegen war ziemlich spannend (we've established: \emph{magic} rocks), kleine Empfehlung: Ein Hinweisen auf die Lagerorte der Kabel und auf die Funktionsweise der Potentiometerkastens erspart sicherlich ein wenig Zeit.
+
+Zudem hat sich die Aufnahme von Bildern per Smartphone in der Hinsicht als praktisch herausgestellt, da direkt Kommentare/Notizen zur späteren Identifikation des Bildes gemacht werden können. Deutlich schöner wäre natürlich das Speichern per USB-Stick.
