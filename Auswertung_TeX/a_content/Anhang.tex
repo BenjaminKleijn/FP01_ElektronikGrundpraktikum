@@ -15,45 +15,45 @@ Die Größen werden in diesem Format angegeben:
 \subsubsection*{Gesetzte Parameter}
 Randbedingungen (vom Aufbau vorgegebene Parameter):
 \begin{itemize}
-  \item Versorgungsspannung: $U_V = \qty{15}{\volt}$ (am Experiment eingestellt)
-  \item Stromverstärkungsfaktor: $\beta \approx 400$ (\(\defeq h_{\mathrm{FE}}\) in \cite[58]{Skript_01}, Eigenschaft des Transistors BC457C)
-  \item Basis-Emitter-Spannung: $U_{BE} \approx \qty{0.6}{\volt}$ (\(\defeq V_{\mathrm{BE}}(\mathrm{on})\) in \cite[58]{Skript_01}, Flussspannung der Silizium Diode des Transistors)
+  \item Versorgungsspannung: \(U_V = \qty{15}{\volt}\) (am Experiment eingestellt)
+  \item Stromverstärkungsfaktor: \(\beta \approx 400\) (\(\defeq h_{\mathrm{FE}}\) in \cite[58]{Skript_01}, Eigenschaft des Transistors BC457C)
+  \item Basis-Emitter-Spannung: \(U_{BE} \approx \qty{0.6}{\volt}\) (\(\defeq V_{\mathrm{BE}}(\mathrm{on})\) in \cite[58]{Skript_01}, Flussspannung der Silizium Diode des Transistors)
 \end{itemize}
 Gewünschte Parameter:
 \begin{itemize}
-  \item Kollektorstrom: $I_C = \qty{1}{\milli\ampere}$
-  \item Spannungsverstärkung: $V_U = 20$
-  \item Untere Grenzfrequenz: $f_{ug} = \qty{100}{\hertz}$
+  \item Kollektorstrom: \(I_C = \qty{1}{\milli\ampere}\)
+  \item Spannungsverstärkung: \(V_U = 20\)
+  \item Untere Grenzfrequenz: \(f_{ug} = \qty{100}{\hertz}\)
 \end{itemize}
 
 Berechnung des erforderlichen Basisstroms:
 \begin{flalign*}
   &\hspace*{1.5cm} I_B = \frac{I_C}{\beta} &&&& = \qty{2.50}{\micro\ampere} \\
-  \intertext{Dimensionierung des Kollektorwiderstandes $R_C$:}
+  \intertext{Dimensionierung des Kollektorwiderstandes \(R_C\):}
   &\hspace*{1.5cm} R_C = \frac{U_V}{2 \cdot I_C \cdot \left(1 + \frac{1}{V_U}\right)} &&&& = \qty{6.80}{\kilo\ohm} \quad (\qty{7.14}{\kilo\ohm}) \tag{B.RC}\label{eq:R_C} \\
-  \intertext{Berechnung der Kollektorspannung $U_C$:}
+  \intertext{Berechnung der Kollektorspannung \(U_C\):}
   &\hspace*{1.5cm} U_C = R_C \cdot I_C &&&& = \qty{6.80}{\volt} \quad (\qty{7.14}{\volt}) \\
-  \intertext{Dimensionierung des Emitterwiderstandes $R_E$:}
+  \intertext{Dimensionierung des Emitterwiderstandes \(R_E\):}
   &\hspace*{1.5cm} R_E = \frac{R_C}{V_U} &&&& = \qty{330.00}{\ohm} \quad (\qty{357.14}{\ohm}) \\
-  \intertext{Berechnung der Emitterspannung $U_E$:}
+  \intertext{Berechnung der Emitterspannung \(U_E\):}
   &\hspace*{1.5cm} U_E = R_E \cdot I_C &&&& = \qty{0.33}{\volt} \quad (\qty{0.36}{\volt}) \\
-  \intertext{Berechnung der Kollektor-Emitter-Spannung $U_{CE}$ im Arbeitspunkt:}
+  \intertext{Berechnung der Kollektor-Emitter-Spannung \(U_{CE}\) im Arbeitspunkt:}
   &\hspace*{1.5cm} U_{CE} = U_V - U_E - U_C &&&& = \qty{7.87}{\volt} \quad (\qty{7.50}{\volt}) \\
-  \intertext{Berechnung der Spannung $U_{R2}$ am unteren Widerstand des Basisspannungsteilers:}
+  \intertext{Berechnung der Spannung \(U_{R2}\) am unteren Widerstand des Basisspannungsteilers:}
   &\hspace*{1.5cm} U_{R2} = U_{BE} + U_E &&&& = \qty{0.93}{\volt} \quad (\qty{0.96}{\volt}) \\
-  \intertext{Dimensionierung des unteren Spannungsteilerwiderstandes $R_2$ ($I_{R_2} \geq 5 \cdot I_B$ nach Vorgabe):}
+  \intertext{Dimensionierung des unteren Spannungsteilerwiderstandes \(R_2\) (\(I_{R_2} \geq 5 \cdot I_B\) nach Vorgabe):}
   &\hspace*{1.5cm} R_2 = \frac{U_{R2}}{5 \cdot I_B} &&&& = \qty{68.00}{\kilo\ohm} \quad (\qty{74.39}{\kilo\ohm}) \\
-  \intertext{Dimensionierung des oberen Spannungsteilerwiderstandes $R_1$ ($I_{R_1} \geq 6 \cdot I_B$):}
+  \intertext{Dimensionierung des oberen Spannungsteilerwiderstandes \(R_1\) (\(I_{R_1} \geq 6 \cdot I_B\)):}
   &\hspace*{1.5cm} R_1 = \frac{U_V - U_{R2}}{6 \cdot I_B} &&&& = \qty{820.00}{\kilo\ohm} \quad (\qty{937.99}{\kilo\ohm}) \\
-  \intertext{Berechnung der Spannung $U_{R1}$ am oberen Widerstand des Basisspannungsteilers:}
+  \intertext{Berechnung der Spannung \(U_{R1}\) am oberen Widerstand des Basisspannungsteilers:}
   &\hspace*{1.5cm} U_{R1} = U_V - U_{R2} &&&& =\qty{14.07}{\volt} \quad (\qty{14.04}{\volt}) \\
-  \intertext{Berechnung des effektiven Gesamteingangswiderstandes $R_{\text{EIN}}$ der gesamten Schaltung:}
+  \intertext{Berechnung des effektiven Gesamteingangswiderstandes \(R_{\text{EIN}}\) der gesamten Schaltung:}
   &\hspace*{1.5cm} R_{\text{EIN}} = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{\beta \cdot R_E}} &&&& = \qty{42.55}{\kilo\ohm} \quad (\qty{47.33}{\kilo\ohm}) \\
-  \intertext{Bestimmung des effektiven Ausgangswiderstandes $R_{\text{AUS}}$ der gesamten Schaltung:}
+  \intertext{Bestimmung des effektiven Ausgangswiderstandes \(R_{\text{AUS}}\) der gesamten Schaltung:}
   &\hspace*{1.5cm} R_{\text{AUS}} = R_C &&&& = \qty{6.80}{\kilo\ohm} \quad (\qty{7.14}{\kilo\ohm}) \\
-  \intertext{Dimensionierung der Eingangskapazität $C_{\text{EIN}}$ für die untere Grenzfrequenz $f_{ug}$, anschließendes Verdreifachen aus Sicherheitsgründen:}
+  \intertext{Dimensionierung der Eingangskapazität \(C_{\text{EIN}}\) für die untere Grenzfrequenz \(f_{ug}\), anschließendes Verdreifachen aus Sicherheitsgründen:}
   &\hspace*{1.5cm} C_{\text{EIN}} = \frac{1}{2 \cdot \pi \cdot R_{\text{EIN}} \cdot f_{ug}} &&&& = \qty{100.00}{\nano\farad} \quad (\qty{33.63}{\nano\farad}) \\
-  \intertext{Dimensionierung der Ausgangskapazität $C_{\text{AUS}}$ für die untere Grenzfrequenz $f_{ug}$ und Überdimensionierung aus Sicherheitsgründen:}
+  \intertext{Dimensionierung der Ausgangskapazität \(C_{\text{AUS}}\) für die untere Grenzfrequenz \(f_{ug}\) und Überdimensionierung aus Sicherheitsgründen:}
   &\hspace*{1.5cm} C_{\text{AUS}} = \frac{1}{2 \cdot \pi \cdot R_{\text{AUS}} \cdot f_{ug}} &&&& = \qty{1.00}{\micro\farad} \quad (\qty{222.82}{\nano\farad})\\
   \intertext{erneutes Berechnen der unteren Grenzfrequenz mit neu gewählter Kapazität:}
   &\hspace*{1.5cm} f_{ug}=(2\pi\cdot R_{\text{EIN}} \cdot C_{\text{EIN}})^{-1} &&&& =\qty{37.40}{\hertz} \tag{B.1}
@@ -67,33 +67,33 @@ Berechnung des erforderlichen Basisstroms:
 \subsubsection*{Randbedingungen/gewünschte Parameter}
 \begin{multicols}{2}
 \begin{itemize}
-  \item Versorgungsspannung: $U_V = \qty{15}{\volt}$
-  \item Stromverstärkungsfaktor: $\beta = 400$
-  \item Basis-Emitter-Spannung: $U_{BE} = \qty{0.6}{\volt}$
-  \item Untere Grenzfrequenz: $f_{ug} = \qty{100}{\hertz}$
-  \item Emitterstrom / Kollektorstrom: $I_E = I_C = \qty{15}{\milli\ampere}$  
+  \item Versorgungsspannung: \(U_V = \qty{15}{\volt}\)
+  \item Stromverstärkungsfaktor: \(\beta = 400\)
+  \item Basis-Emitter-Spannung: \(U_{BE} = \qty{0.6}{\volt}\)
+  \item Untere Grenzfrequenz: \(f_{ug} = \qty{100}{\hertz}\)
+  \item Emitterstrom / Kollektorstrom: \(I_E = I_C = \qty{15}{\milli\ampere}\)  
 \end{itemize}
 \end{multicols}
 Berechnung des erforderlichen Basisstroms:
 \begin{flalign*}
   &\hspace*{1.5cm} I_B = \frac{I_C}{\beta} &&&& = \qty{37.50}{\micro\ampere} \\
-  \intertext{Dimensionierung des Emitterwiderstandes $R_E$ für $U_V/2$ am Emitter:}
+  \intertext{Dimensionierung des Emitterwiderstandes \(R_E\) für \(U_V/2\) am Emitter:}
   &\hspace*{1.5cm} R_E = \frac{U_V}{2 \cdot I_C} &&&& = \qty{470.00}{\ohm} \quad (\qty{500.00}{\ohm}) \\
-  \intertext{Berechnung der effektiven Emitterspannung $U_E$:}
+  \intertext{Berechnung der effektiven Emitterspannung \(U_E\):}
   &\hspace*{1.5cm} U_E = R_E \cdot I_C &&&& = \qty{7.05}{\volt} \quad (\qty{7.50}{\volt}) \\
-  \intertext{Berechnung der Basisspannung $U_{R2}$:}
+  \intertext{Berechnung der Basisspannung \(U_{R2}\):}
   &\hspace*{1.5cm} U_{R2} = \frac{U_V}{2} + U_{BE} &&&& = \qty{8.10}{\volt} \\
-  \intertext{Dimensionierung des unteren Spannungsteilerwiderstandes $R_2$:}
+  \intertext{Dimensionierung des unteren Spannungsteilerwiderstandes \(R_2\):}
   &\hspace*{1.5cm} R_2 = \frac{U_{R2}}{5 \cdot I_B} &&&& = \qty{39.00}{\kilo\ohm} \quad (\qty{43.20}{\kilo\ohm}) \\
-  \intertext{Dimensionierung des oberen Spannungsteilerwiderstandes $R_1$:}
+  \intertext{Dimensionierung des oberen Spannungsteilerwiderstandes \(R_1\):}
   &\hspace*{1.5cm} R_1 = \frac{U_V - U_{R2}}{6 \cdot I_B} &&&& = \qty{27.00}{\kilo\ohm} \quad (\qty{30.67}{\kilo\ohm}) \\
-  \intertext{Berechnung des effektiven Gesamteingangswiderstandes $R_{\text{EIN}}$ der gesamten Schaltung:}
+  \intertext{Berechnung des effektiven Gesamteingangswiderstandes \(R_{\text{EIN}}\) der gesamten Schaltung:}
   &\hspace*{1.5cm} R_{\text{EIN}} = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{\beta \cdot R_E}} &&&& = \qty{14.71}{\kilo\ohm} \quad (\qty{16.46}{\kilo\ohm}) \\
-  \intertext{Bestimmung des effektiven Ausgangswiderstandes $R_{\text{AUS}}$ der gesamten Schaltung:}
+  \intertext{Bestimmung des effektiven Ausgangswiderstandes \(R_{\text{AUS}}\) der gesamten Schaltung:}
   &\hspace*{1.5cm} R_{\text{AUS}} = R_E &&&& = \qty{470.00}{\ohm} \quad (\qty{500.00}{\ohm}) \\
-  \intertext{Dimensionierung der Eingangskapazität $C_{\text{EIN}}$ und Überdimensionierung aus Sicherheitsgründen:}
+  \intertext{Dimensionierung der Eingangskapazität \(C_{\text{EIN}}\) und Überdimensionierung aus Sicherheitsgründen:}
   &\hspace*{1.5cm} C_{\text{EIN}} = \frac{1}{2 \cdot \pi \cdot R_{\text{EIN}} \cdot f_{ug}} &&&& = \qty{220.00}{\nano\farad} \quad (\qty{96.70}{\nano\farad}) \\
-  \intertext{Dimensionierung der Ausgangskapazität $C_{\text{AUS}}$ für die untere Grenzfrequenz $f_{ug}$ und Überdimensionierung aus Sicherheitsgründen:}
+  \intertext{Dimensionierung der Ausgangskapazität \(C_{\text{AUS}}\) für die untere Grenzfrequenz \(f_{ug}\) und Überdimensionierung aus Sicherheitsgründen:}
   &\hspace*{1.5cm} C_{\text{AUS}} = \frac{1}{2 \cdot \pi \cdot R_{\text{AUS}} \cdot f_{ug}} &&&& = \qty{10.00}{\micro\farad} \quad (\qty{3.18}{\micro\farad})
   \intertext{erneutes Berechnen der unteren Grenzfrequenz mit neu gewählter Kapazität:}
   &\hspace*{1.5cm} f_{ug}=(2\pi\cdot R_{\text{EIN}}\cdot C_{\text{EIN}})^{-1}&&&&=\qty{49.10}{\hertz} \tag{B.2} \label{eq:f_ug_theo_kollektor}
@@ -105,26 +105,26 @@ Berechnung des erforderlichen Basisstroms:
 \subsection{PID-Regler}
 \subsubsection*{Gesetzte Parameter}
 \begin{itemize}
-  \item Widerstände: $R_2 = \qty{1.5}{\kilo\ohm}$, $R_5 = \qty{1}{\kilo\ohm}$, $R_7 = \qty{470}{\kilo\ohm}$, $R_8 = \qty{12}{\kilo\ohm}$, $R_{10} = \qty{100}{\kilo\ohm}$, $R_{17} = \qty{100}{\kilo\ohm}$, $R_{18} = \qty{2.2}{\kilo\ohm}$, $R_{23} = \qty{10}{\kilo\ohm}$, $R_{25} = \qty{10}{\kilo\ohm}$
-  \item Kapazität D-Glied: $C_4 = \qty{220}{\nano\farad}$
-  \item Grenzfrequenz / Verstärkung: $\omega_g = \qty{10}{\per\second}$, $V_{\min} = 1.15$
-  \item Reglerkenngrößen: $K_{0,\min} = 1$, $K_{P,\min} = 1.5$, $K_{I,\min} = \qty{10}{\per\second}$, $K_{D,\min} = \qty{0.001}{\second}$
+  \item Widerstände: \(R_2 = \qty{1.5}{\kilo\ohm}\), \(R_5 = \qty{1}{\kilo\ohm}\), \(R_7 = \qty{470}{\kilo\ohm}\), \(R_8 = \qty{12}{\kilo\ohm}\), \(R_{10} = \qty{100}{\kilo\ohm}\), \(R_{17} = \qty{100}{\kilo\ohm}\), \(R_{18} = \qty{2.2}{\kilo\ohm}\), \(R_{23} = \qty{10}{\kilo\ohm}\), \(R_{25} = \qty{10}{\kilo\ohm}\)
+  \item Kapazität D-Glied: \(C_4 = \qty{220}{\nano\farad}\)
+  \item Grenzfrequenz / Verstärkung: \(\omega_g = \qty{10}{\per\second}\), \(V_{\min} = 1.15\)
+  \item Reglerkenngrößen: \(K_{0,\min} = 1\), \(K_{P,\min} = 1.5\), \(K_{I,\min} = \qty{10}{\per\second}\), \(K_{D,\min} = \qty{0.001}{\second}\)
 \end{itemize}
 
-Dimensionierung der Tiefpasskapazität $C_6$ zur Istwertanpassung:
+Dimensionierung der Tiefpasskapazität \(C_6\) zur Istwertanpassung:
 \begin{flalign*}
   &\hspace*{1.5cm} C_6 = \frac{1}{\omega_g \cdot R_{17}} &&&& = \qty{1.00}{\micro\farad} \\
-  \intertext{Dimensionierung von $R_{19}$ für den nicht-invertierenden Verstärker:}
+  \intertext{Dimensionierung von \(R_{19}\) für den nicht-invertierenden Verstärker:}
   &\hspace*{1.5cm} R_{19} = \frac{R_{18}}{V_{\min} - 1} &&&& = \qty{15.00}{\kilo\ohm} \quad (\qty{14.67}{\kilo\ohm}) \\
   \intertext{Symmetrische Widerstände des Subtrahierers:}
   &\hspace*{1.5cm} R_{21} = R_{22} = R_{24} = R_{23} &&&& = \qty{10.00}{\kilo\ohm} \\
-  \intertext{Dimensionierung des Eingangswiderstandes $R_1$ für das P-Glied:}
+  \intertext{Dimensionierung des Eingangswiderstandes \(R_1\) für das P-Glied:}
   &\hspace*{1.5cm} R_1 = \frac{P_{1,\min} + R_2}{K_{P,\min}} &&&& = \qty{1.00}{\kilo\ohm} \\
-  \intertext{Dimensionierung des Widerstandes $R_6$ für das I-Glied:}
+  \intertext{Dimensionierung des Widerstandes \(R_6\) für das I-Glied:}
   &\hspace*{1.5cm} R_6 = K_{0,\min} \cdot R_5 + P_{2,\min} &&&& = \qty{1.00}{\kilo\ohm} \\
-  \intertext{Dimensionierung des Integrierkondensators $C_5$:}
+  \intertext{Dimensionierung des Integrierkondensators \(C_5\):}
   &\hspace*{1.5cm} C_5 = \frac{P_{2,\min} + R_6}{R_5 \cdot R_7 \cdot K_{I,\min}} &&&& = \qty{220.00}{\nano\farad} \quad (\qty{212.77}{\nano\farad}) \\
-  \intertext{Dimensionierung des Eingangswiderstandes $R_4$ für das D-Glied:}
+  \intertext{Dimensionierung des Eingangswiderstandes \(R_4\) für das D-Glied:}
   &\hspace*{1.5cm} R_4 = \frac{K_{D,\min}}{C_4} &&&& = \qty{4.70}{\kilo\ohm} \quad (\qty{4.55}{\kilo\ohm}) \\
   \intertext{Symmetrie-Widerstände für Inverter-Stufen:}
   &\hspace*{1.5cm} V=-1=\frac{R_{26}}{R_{25}}\implies R_{26} = R_{25} &&&& = \qty{10.00}{\kilo\ohm} \\

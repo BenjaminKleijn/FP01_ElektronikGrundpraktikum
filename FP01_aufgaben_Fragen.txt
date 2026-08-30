@@ -1,0 +1,44 @@
+
+Spannungsquelle richtig polen, wenn Verstärkung nicht optimal
+
+
+Aufgaben:
+Emitter: 2. Bestücken, Transistor richtig verkabeln, löten; 3. (Spannungs-) Größen messen
+4. Freqgang und Verstärkung mit Oszi?
+Freqgang: von 10 Hz bis Verstärkung wieder abfällt
+5. Emitter mit Gleichstromgegenkopplung: Verstärkung messen
+6. Eingangs- und Ausgangswiderstand bestimmen; welche Potenziemeter wann -- R_EIN und R_AUS theoretisch sollen Poti Wert sein
+
+Kollektor:
+2. Schaltung bauen, Größen bestimmen; Verstärkung und Phase bei 5kHz und Freqgang
+3. Koaxialkabel: Kabel an Verstärker, mit Oszi Anfang und Ende messen
+4. Wellenimpedanz: Poti parallel zum Oszi um Reflektionssignal zu minimieren
+
+PID:
+2. PCB bestücken
+3. umrissen: int. Sollwert ausmessen; P-Regler dazuschalten; 
+4. umrissen: Sollwertsprung (FuncGen) einstellen, Verhalten unter Regelung (P,PI,PD,PID) untersuchen
+5. Regelung unter Lastschwankung mit Glühbirne; Sinussollwertschwankung -> Regelstrecke untersuchen, kommt die Regelung hinterher?
+
+
+Verbesserungen der Emitterschaltung:
+R_C Widerstand für Verstärkery
+ToDos:
+S.6: "ohne die Schaltung": Wie misst man I_C?
+alle Verbesserungen nochmal rausschreiben und die Effekte die sie machen
+
+PID Regler Video von Manz
+
+Fragen:
+S.27 warum sollte U_R2 konstant bleiben? Das ist wichtig, da aus diesem Argument folgt, dass U_BE automatisch kleiner wird. U_R2=U_BE+U_RE
+-- Maschenregel, U_R2 hängt gar nicht von der Temperatur ab und bleibt konstant
+
+warum muss beta sehr groß sein, damit I_C=I_E
+-- beta = I_C/I_B => I_C>>I_B => Knotenregel I_C+I_B=I_E
+
+S.31 Abb.3.12 Warum sind bei der Eingangsimpedanz R1 und R2 parallel?
+-- macht schon sinn
+
+warum Gegenkopplung nur für Gleichströme wichtig?
+
+
