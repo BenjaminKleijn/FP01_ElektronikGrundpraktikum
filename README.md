@@ -1,3 +1,12 @@
+**Überblick**:\
+Elektronik_Grundpraktikum.pdf = Protokoll vom Versuch\
+FP_ElektronikGrundpraktikum_Gottwald,Kleijn_compressed.pdf = LaTeX Auswertung\
+Dimensionierung.jpynb = Dimensionierung Berechnung, Ergebnisse sind auch in LaTeX Anhang
+
+**Wie die TeX Datei funktioniert**:\
+in latex_class ist die cls Datei mit allen packages und globale tex dateien, die man immer braucht, sonst einfach im Auswertung_TeX Ordner schauen, dort führt main.tex alles zusammen. 
+
+**Wie wir Github benutzt haben**:\
 local main = main\
 remote main = origin/main\
 local branch = Benjamin\
