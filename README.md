@@ -1,6 +1,6 @@
 **Überblick**:\
 Elektronik_Grundpraktikum.pdf = Protokoll vom Versuch\
-Auswertung_TeX/main_klein.pdf = LaTeX Auswertung\
+main_klein.pdf = LaTeX Auswertung\
 Dimensionierung.jpynb = Dimensionierung Berechnung, Ergebnisse sind auch in LaTeX Anhang
 
 **Wie die TeX Datei funktioniert**:\
