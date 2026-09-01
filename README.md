@@ -12,7 +12,12 @@ remote main = origin/main\
 local branch = Benjamin\
 remote branch = origin/Benjamin  dient nur als Cloud Backup für die lokalen Änderungen\
 
-Arbeitsablauf:\
+**Arbeitsablauf**:\
+natürlich erstmal miktex, perl, latex-workshop (VS Code) als TeX-Installation für VS Code einrichten. Geht auch anders, hauptsache texen in VS Code.\
+Fürs Arbeiten mit Github anstelle von Overleaf:\
+Initial: Erstmal in VS Code gitgraph Erweiterung holen und git auf PC herunterladen. Dann leeres Repo (FP01_ElektronikGrundpraktikum) auf github erstellt, den Hauptordner (z.B. Studium/FP) im Explorer anklicken, als Terminal öffnen (oder in VS Code FP als Ordner öffnen, strg+ö für Terminal) und sich in das repo reinklonen mit `git clone <repo-URL>`, dann wird der Ordner Studium/FP/FP01_ElektronikGrundpraktikum erstellt. Den dann in VS Code öffnen, alle schon existierenden Dateien reinziehen, neu erstellen,..; dann mit gitgraph stagen, commit & pushen und fertig. Fürs Arbeiten zu zweit, siehe unten, muss man erstmal zwei branches erstellen, keine Ahnung mehr wie das ging.  
+
+actual progress/arbeiten:\
 In git graph schauen ob origin/main neu ist:\
   Ja - main auswählen und rightclick origin/main -> "Pull into current branch" anklicken (Neuer stand des origin/main wird auf main geschrieben, main wird also geupdatet)\
   Dann Benjamin auswählen und rightclick main -> "Merge into current branch" (main Stand (neuer) wird auch auf Benjamin übetragen)
