@@ -1,12 +1,7 @@
-% 1. PAPclass muss geladen werden, der Dateipfad wird angegeben. Problem ist, dass \documentclass{} keine Dateipfade verarbeiten kann
-\makeatletter
-\def\input@path{{../latex_class/}} % Relativer Pfad zum Ordner mit der .cls
-\makeatother
-% man könnte alternativ auch die PAPclass.cls in das lokale TeX-Verzeichnis der Installation legen, dann würde die Datei immer gefunden werden
 
 % use [draft] for quicker compiling (only loads images as frames and enables showkeys - labels are shown)
-\documentclass[final,ngerman]{PAPclass}   % to select the document's language, I tested multiple options and the best one is to use it as a global option so its passed down to all packages in PAPclass (especially to cleverref). One could use no main-language option and load \usepackage[english,ngermn]{babel} so ngerman as the second loaded language is automatically selected as default and then \selectlanguage{english} if needed. But without using \usepackage[ngerman]{cleverref}, the reference-abbreviations (e.g. fig 1.2) are still in english. So one must pass the global option to cleverref or set it locally - and locally is not that fun. All variable settings should be accessable in the main.tex. If you stick with babel loading options and set ngerman as a global option, then babel prints an error.
-\input{../latex_class/cmds.tex}
+\documentclass[final,ngerman]{latex_class/PAPclass}   % to select the document's language, I tested multiple options and the best one is to use it as a global option so its passed down to all packages in PAPclass (especially to cleverref). One could use no main-language option and load \usepackage[english,ngermn]{babel} so ngerman as the second loaded language is automatically selected as default and then \selectlanguage{english} if needed. But without using \usepackage[ngerman]{cleverref}, the reference-abbreviations (e.g. fig 1.2) are still in english. So one must pass the global option to cleverref or set it locally - and locally is not that fun. All variable settings should be accessable in the main.tex. If you stick with babel loading options and set ngerman as a global option, then babel prints an error.
+\input{latex_class/cmds.tex}
 
 % %comment% these in case of an english document
 \captionsetup[figure]{name=Abb.}
@@ -16,9 +11,8 @@
 \graphicspath{{./images/}{../Diagramme/}{../Bilder/}}
 % \svgpath{{../../Messwerte/}} % if you can bring your tex installation to compile svgs - congrats, pls send me an email: b.k.ballcr@gmail.com and tell me how its done
 
-%pages= {1-27},
 % Biblatex Einstellungen vornehmen
-\addbibresource{../latex_class/lit.bib}                         % initialisieren der .bib Datei
+\addbibresource{latex_class/lit.bib}                         % initialisieren der .bib Datei
 \defbibfilter{literature}{not keyword=figure}
 \defbibfilter{figures}{keyword=figure}
 % \NewBibliograhpyString{ZuletztOnline}                            % some way probably to automate setting a date, but idk
@@ -72,7 +66,7 @@
     \clearpage
     \section{Auswertung}\label{sec:Auswertung}
     \subsection*{Formeln der statistischen Analyse\autocite{Skript_01}}
-    \input{../latex_class/Statistik.tex}
+    \input{latex_class/Statistik.tex}
     \input{a_content/3_auswertung}
     \newpage
     \section{Diskussion}
