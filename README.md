@@ -4,7 +4,7 @@ main_klein.pdf = LaTeX Auswertung\
 Dimensionierung.jpynb = Dimensionierung Berechnung, Ergebnisse sind auch in LaTeX Anhang
 
 **Wie die TeX Datei funktioniert**:\
-in Auswertung__TeX/latex_class ist die cls Datei mit allen packages und globale tex dateien, die man immer braucht, sonst einfach im Auswertung_TeX Ordner schauen, dort führt main.tex alles zusammen. 
+in Auswertung_TeX/latex_class ist die cls Datei mit allen packages und globale tex dateien, die man immer braucht, und main.tex führt alle chapter dateien zusammen. 
 
 **Wie wir Github benutzt haben**:\
 local main = main\
