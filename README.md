@@ -1,5 +1,5 @@
 **Überblick**:\
-Elektronik_Grundpraktikum.pdf = Protokoll vom Versuch\
+Elektronik_Grundpraktikum.pdf = Protokoll des Versuchs\
 main_klein.pdf = LaTeX Auswertung\
 Dimensionierung.jpynb = Dimensionierung Berechnung, Ergebnisse sind auch in LaTeX Anhang
 
